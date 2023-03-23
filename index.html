@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard - Main</title>
+    <link rel="stylesheet" href="styles/style.scss" />
+  </head>
+
+  <header>
+
+    <div class="logo">
+      <img src="images/logo.png" />
+    </div>
+
+    <div class="navbar">
+      <div class="nav-links">
+        <div class="nav-link nav-active">
+          <!-- <span><a href="#">Heti menü rendelés</a></span>
+        </div>
+        <div class="nav-link">
+          <span><a href="#">Rendelések</a></span>
+        </div>
+        <div class="nav-link">
+          <span><a href="#">Heti menü rendelés</a></span>
+        </div>
+        <div class="nav-link">
+          <span><a href="#">Heti menü rendelés</a></span>
+        </div> -->
+      </div>
+
+      <div class="nav-items">
+
+        <div class="profile">
+          <img src="images/profile.png" />
+          <span>Fiókom</span>
+        </div>
+        <div class="nav-cart">
+          <img src="images/cart.png" />
+          <div class="cart-items">
+            <span>6</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </header>
+
+  <body>
+    <div class="main">
+      <div class="main-top">
+
+        <div class="main-top-card in-cart day-active">
+          <p class="day">Hétfő</p>
+          <span class="date">2023. feb 27.</span>
+          <span class="cart-tag">KOSÁRBAN</span>
+        </div>
+
+        <div class="main-top-card">
+          <p class="day">Kedd</p>
+          <span class="date">2023. feb 28.</span>
+        </div>
+
+        <div class="main-top-card in-cart">
+          <p class="day">Szerda</p>
+          <span class="date">2023. márc 01.</span>
+          <span class="cart-tag">KOSÁRBAN</span>
+        </div>
+
+        <div class="main-top-card">
+          <p class="day">Csütörtök</p>
+          <span class="date">2023. márc 02.</span>
+        </div>
+
+        <div class="main-top-card">
+          <p class="day">Péntek</p>
+          <span class="date">2023. márc 03.</span>
+        </div>
+      </div>
+
+      <div class="main-bottom">
+
+        <div class="top-container">
+
+          <div class="categories">
+            <p>Leves</p>
+            <p class="category-active">Főétel</p>
+            <p>Sportolói</p>
+            <p>Vegetáriánus</p>
+            <p>Vegán</p>
+            <p>Superfood</p>
+            <p>Smoothie</p>
+            <p>Gyümölcsleves</p>
+            <p>Kiegészítő ételek</p>
+          </div>
+
+          <div class="address-dropdown">
+            <select name="address" id="address">
+              <option value="address-1">
+                1091, Budapest, Mihálkovics u. 12
+              </option>
+              <option value="address-2">
+                1165, Budapest, Kossuth Lajos u. 2
+              </option>
+              <option value="address-3">1014, Budapest, Szép út 78</option>
+            </select>
+          </div>
+
+        </div>
+
+        <div class="cards-container">
+
+          <div class="cards-row">
+            <h2>Főétel</h2>
+            <div class="cards">
+
+              <div class="card">
+
+                <div class="card-image">
+                  <img src="images/placeholder-1.png" />
+                  <button>
+                    <span class="info-icon"></span>
+                    Infó
+                  </button>
+                </div>
+
+                <div class="card-body">
+                    <h3>Csirke teriyaki, szezámmagos rizzsel és brokkolival</h3>
+
+                    <div class="customize">
+                        <span>Személyreszabás</span>
+
+                        <label class="check-container">One
+                        <input type="checkbox" checked="checked">
+                        <span class="custom-checkbox"></span>
+                        </label>
+
+                        <label class="check-container">Two
+                        <input type="checkbox">
+                        <span class="custom-checkbox"></span>
+                        </label>
+                    </div>
+
+                    <div class="portion-size">
+                        <select>
+                            <option value="normal">4 290 Ft - Normál adag</option>
+                            <option value="small">4 290 Ft - Kicsi adag</option>
+                            <option value="large">4 290 Ft - Nagy adag</option>
+                        </select>
+                    </div>
+
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="cart"></div>
+    </div>
+  </body>
+</html>
