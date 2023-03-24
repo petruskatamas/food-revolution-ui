@@ -133,12 +133,12 @@
                     <div class="customize">
                         <span>Személyreszabás</span>
 
-                        <label class="check-container">One
+                        <label class="check-container">Gluténmentes
                         <input type="checkbox" checked="checked">
                         <span class="custom-checkbox"></span>
                         </label>
 
-                        <label class="check-container">Two
+                        <label class="check-container">Laktózmentes
                         <input type="checkbox">
                         <span class="custom-checkbox"></span>
                         </label>
@@ -146,10 +146,23 @@
 
                     <div class="portion-size">
                         <select>
-                            <option value="normal">4 290 Ft - Normál adag</option>
-                            <option value="small">4 290 Ft - Kicsi adag</option>
-                            <option value="large">4 290 Ft - Nagy adag</option>
+                            <option value="normal"><span>4 290 Ft</span> - Normál adag</option>
+                            <option value="small"><span>4 290 Ft</span> - Kicsi adag</option>
+                            <option value="large"><span>4 290 Ft</span> - Nagy adag</option>
                         </select>
+                    </div>
+
+                    <div class="card-bottom">
+                        <div class="quantity-container"> 
+                            <button class="decrase-btn">
+                                -
+                            </button>
+                            <span class="quantity">1</span>
+                            <button class="incrase-btn">
+                                +
+                            </button>
+                        </div>
+                        <button class="cancel-btn">Mégsem</button>
                     </div>
 
                 </div>
@@ -159,7 +172,56 @@
           </div>
         </div>
       </div>
-      <div class="cart"></div>
+
+      <div class="cart">
+
+        <div class="cart-list">
+
+            <div class="cart-item-container">
+                <h2>Hétfő</h2>
+
+                <div class="cart-item">
+                    <span class="category">LEVES</span>
+                        <div class="cart-item-left">
+                            <p class="food-name">Japán gombaleves</p>
+                             <div class="food-desc">
+                                    <span class="portion-size">Normál adag</span>
+                                </div>
+                        </div>
+                        <div class="cart-item-right">
+                            <span class="price">1 390 Ft</span>
+                            <span class="quantity">1x</span>
+                        </div>
+                </div>
+
+                <div class="cart-item">
+                    <span class="category">FŐÉTEL</span>
+                        <div class="cart-item-left">
+                            <p class="food-name">Csirke teriyaki, szezámmagos rizzsel és brokkolival</p>
+                                <div class="food-desc">
+                                    <span class="portion-size">Normál adag</span>
+                                    <span>-</span>
+                                    <span class="extra">Gluténmentes</span>
+                                    <span class="extra">Laktózmentes</span>
+                                </div>
+                        </div>
+                        <div class="cart-item-right">
+                            <span class="price">4 290 Ft </span>
+                            <span class="quantity">1x</span>
+                        </div>
+                </div>
+            </div> 
+
+
+        </div>
+
+        <div class="cart-summary">
+
+        </div>
+
+      </div>
+
     </div>
+
   </body>
 </html>
