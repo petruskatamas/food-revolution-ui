@@ -227,6 +227,157 @@ header .navbar .nav-items .nav-cart .cart-items span {
   flex-direction: column;
   align-items: flex-start;
 }
+.card .card-body .food-name {
+  font-family: "Conso";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 140%;
+  color: var(--black);
+  padding-bottom: 20px;
+}
+.card .card-body .customize {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.card .card-body .customize p {
+  font-family: "Red Hat Display";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 130%;
+  color: var(--black);
+  opacity: 0.4;
+  padding-bottom: 5px;
+}
+.card .card-body .customize .checkbox-container {
+  display: block;
+  position: relative;
+  padding-left: 25px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  font-family: "Red Hat Display";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 130%;
+  color: var(--black);
+}
+.card .card-body .customize .checkbox-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+.card .card-body .customize .checkbox-container input:checked ~ .custom-checkbox {
+  background-color: var(--secondary-colorful);
+}
+.card .card-body .customize .checkbox-container input:checked ~ .custom-checkbox::after {
+  display: block;
+}
+.card .card-body .customize .checkbox-container .custom-checkbox {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background-color: var(--white);
+  border: 2px solid var(--light-beige);
+}
+.card .card-body .customize .checkbox-container .custom-checkbox::after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+.card .card-body .customize .checkbox-container:hover input ~ .custom-checkbox {
+  background-color: var(--secondary);
+}
+.card .card-body .portion-size {
+  width: 100%;
+  height: 40px;
+}
+.card .card-body .portion-size select {
+  width: inherit;
+  height: inherit;
+  font-family: "Red Hat Display";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 130%;
+  color: var(--black);
+  border: 1px solid var(--light-beige);
+  padding: 5px 15px;
+  background: transparent;
+  background-image: url("../images/dropdown.png");
+  background-repeat: no-repeat;
+  background-position-x: 95%;
+  background-position-y: 45%;
+}
+.card .card-body .portion-size select option {
+  font-family: "Red Hat Display";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 130%;
+  color: var(--black);
+}
+.card .card-body .card-bottom {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-top: 10px;
+  gap: 10px;
+}
+.card .card-body .card-bottom .quantity-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 10px;
+  width: 95px;
+  height: 45px;
+  background: var(--white);
+  border: 1px solid var(--light-beige);
+}
+.card .card-body .card-bottom .quantity-container button {
+  font-family: "Red Hat Display";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 130%;
+  color: var(--black);
+  width: 40px;
+  height: inherit;
+}
+.card .card-body .card-bottom .quantity-container span {
+  font-family: "Red Hat Display";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 130%;
+  color: var(--black);
+  height: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.card .card-body .card-bottom button.add-to-cart-btn {
+  width: 125px;
+  height: 45px;
+  background: var(--primary-gradient);
+  font-family: "Conso";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 140%;
+  text-align: center;
+  color: var(--white);
+}
 
 /* --- MAIN DASHBOARD ---*/
 .dashboard {
@@ -308,12 +459,15 @@ header .navbar .nav-items .nav-cart .cart-items span {
 .dashboard .main .main-top .main-top-days .main-top-card.day-active {
   border-bottom: 3px solid var(--secondary-colorful);
 }
+.dashboard .main .main-bottom {
+  position: relative;
+}
 .dashboard .main .main-bottom .top-container {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: flex-end;
-  padding: 0px;
+  padding-bottom: 10px;
   gap: 20px;
   width: 100%;
   height: 40px;
@@ -396,6 +550,13 @@ header .navbar .nav-items .nav-cart .cart-items span {
 }
 .dashboard .main .main-bottom .cards-container {
   padding: 20px 90px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  max-height: 74vh;
+  overflow-y: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 .dashboard .main .main-bottom .cards-container .category-name {
   font-family: "Conso";
@@ -408,6 +569,21 @@ header .navbar .nav-items .nav-cart .cart-items span {
 .dashboard .main .main-bottom .cards-container .cards {
   padding-top: 10px;
   padding-bottom: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 25px;
+}
+.dashboard .main .main-bottom .bottom-gradient {
+  position: absolute;
+  width: 100%;
+  height: 150px;
+  left: 0px;
+  bottom: 0px;
+  background: linear-gradient(180deg, rgba(233, 226, 219, 0) 0%, #e9e2db 100%);
+}
+.dashboard .main .main-bottom .cards-container::-webkit-scrollbar {
+  display: none;
 }
 .dashboard .cart {
   width: 20%;
