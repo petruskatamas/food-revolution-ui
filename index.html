@@ -5,156 +5,176 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dashboard - Main</title>
-    <link rel="stylesheet" href="styles/style.scss" />
+    <link rel="stylesheet" href="styles/style.css" />
   </head>
 
-  <header>
-    <div class="logo">
-      <img src="images/logo.png" />
-    </div>
-
-    <div class="navbar">
-      <ul class="nav-links">
-        <li class="nav-link nav-active">
-          <a href="#">Heti menü rendelés</a>
-        </li>
-        <li class="nav-link">
-          <a href="#">Rendelések</a>
-        </li>
-        <li class="nav-link">
-          <a href="#">Heti menü rendelés</a>
-        </li>
-        <li class="nav-link">
-          <a href="#">Heti menü rendelés</a>
-        </li>
-      </ul>
-
-      <div class="nav-items">
-        <div class="profile">
-          <img src="images/profile.png" />
-          <span>Fiókom</span>
-        </div>
-        <div class="nav-cart">
-          <img src="images/cart.png" />
-          <div class="cart-items">
-            <span>6</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </header>
-
   <body>
-    <div class="main">
-      <div class="main-top">
-        <div class="main-top-card in-cart day-active">
-          <p class="day">Hétfő</p>
-          <span class="date">2023. feb 27.</span>
-          <span class="cart-tag">KOSÁRBAN</span>
-        </div>
-
-        <div class="main-top-card">
-          <p class="day">Kedd</p>
-          <span class="date">2023. feb 28.</span>
-        </div>
-
-        <div class="main-top-card in-cart">
-          <p class="day">Szerda</p>
-          <span class="date">2023. márc 01.</span>
-          <span class="cart-tag">KOSÁRBAN</span>
-        </div>
-
-        <div class="main-top-card">
-          <p class="day">Csütörtök</p>
-          <span class="date">2023. márc 02.</span>
-        </div>
-
-        <div class="main-top-card">
-          <p class="day">Péntek</p>
-          <span class="date">2023. márc 03.</span>
-        </div>
+    <header>
+      <div class="logo">
+        <img src="images/logo.png" />
       </div>
 
-      <div class="main-bottom">
-        <div class="top-container">
-          <div class="categories">
-            <p>Leves</p>
-            <p class="category-active">Főétel</p>
-            <p>Sportolói</p>
-            <p>Vegetáriánus</p>
-            <p>Vegán</p>
-            <p>Superfood</p>
-            <p>Smoothie</p>
-            <p>Gyümölcsleves</p>
-            <p>Kiegészítő ételek</p>
-          </div>
+      <div class="navbar">
+        <ul class="nav-links">
+          <li class="nav-link nav-active">
+            <a href="#">Heti menü rendelés</a>
+          </li>
+          <li class="nav-link">
+            <a href="#">Rendelések</a>
+          </li>
+          <li class="nav-link">
+            <a href="#">Pénzügyek</a>
+          </li>
+          <li class="nav-link">
+            <a href="#">Tudnivalók</a>
+          </li>
+        </ul>
 
-          <div class="address-dropdown">
-            <select name="address" id="address">
-              <option value="address-1">
-                1091, Budapest, Mihálkovics u. 12
-              </option>
-              <option value="address-2">
-                1165, Budapest, Kossuth Lajos u. 2
-              </option>
-              <option value="address-3">1014, Budapest, Szép út 78</option>
-            </select>
+        <div class="nav-items">
+          <div class="profile">
+            <a href="#">
+              <img src="images/profile.png" />
+              <span>Fiókom</span>
+            </a>
+          </div>
+          <div class="nav-cart">
+            <a href="#">
+              <img src="images/cart.png" />
+              <div class="cart-items">
+                <span>6</span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="dashboard">
+      <div class="main">
+        <div class="main-top">
+          <div class="main-top-days">
+            <a href="#">
+              <div class="main-top-card in-cart day-active">
+                <p class="day">Hétfő</p>
+                <span class="date">2023. feb 27.</span>
+                <span class="cart-tag">KOSÁRBAN</span>
+              </div>
+            </a>
+
+            <a href="#">
+              <div class="main-top-card">
+                <p class="day">Kedd</p>
+                <span class="date">2023. feb 28.</span>
+              </div>
+            </a>
+
+            <a href="#">
+              <div class="main-top-card in-cart">
+                <p class="day">Szerda</p>
+                <span class="date">2023. márc 01.</span>
+                <span class="cart-tag">KOSÁRBAN</span>
+              </div>
+            </a>
+
+            <a href="#">
+              <div class="main-top-card">
+                <p class="day">Csütörtök</p>
+                <span class="date">2023. márc 02.</span>
+              </div>
+            </a>
+
+            <a href="#">
+              <div class="main-top-card">
+                <p class="day">Péntek</p>
+                <span class="date">2023. márc 03.</span>
+              </div>
+            </a>
           </div>
         </div>
 
-        <div class="cards-container">
-          <div class="cards-row">
-            <h2>Főétel</h2>
-            <div class="cards">
-              <div class="card">
-                <div class="card-image">
-                  <img src="images/placeholder-1.png" />
-                  <button>
-                    <span class="info-icon"></span>
-                    Infó
-                  </button>
-                </div>
+        <div class="main-bottom">
+          <div class="top-container">
+            <div class="categories">
+              <p><a href="#">Leves</a></p>
+              <p class="category-active"><a href="#">Főétel</a></p>
+              <p><a href="#">Sportolói</a></p>
+              <p><a href="#">Vegetáriánus</a></p>
+              <p><a href="#">Vegán</a></p>
+              <p><a href="#">Superfood</a></p>
+              <p><a href="#">Smoothie</a></p>
+              <p><a href="#">Gyümölcsleves</a></p>
+              <p><a href="#">Kiegészítő ételek</a></p>
+            </div>
 
-                <div class="card-body">
-                  <h3>Csirke teriyaki, szezámmagos rizzsel és brokkolival</h3>
+            <div class="address-dropdown">
+              <select name="address" id="address">
+                <option value="address-1">
+                  1091, Budapest, Mihálkovics u. 12
+                </option>
+                <option value="address-2">
+                  1165, Budapest, Kossuth Lajos u. 2
+                </option>
+                <option value="address-3">1014, Budapest, Szép út 78</option>
+              </select>
+            </div>
+          </div>
 
-                  <div class="customize">
-                    <span>Személyreszabás</span>
-
-                    <label class="check-container"
-                      >Gluténmentes
-                      <input type="checkbox" checked="checked" />
-                      <span class="custom-checkbox"></span>
-                    </label>
-
-                    <label class="check-container"
-                      >Laktózmentes
-                      <input type="checkbox" />
-                      <span class="custom-checkbox"></span>
-                    </label>
+          <div class="cards-container">
+            <div class="cards-row">
+              <h2 class="category-name">Főétel</h2>
+              <div class="cards">
+                <div class="card">
+                  <div class="card-image">
+                    <img src="images/placeholder-1.png" />
+                    <button>
+                      <span class="info-icon"></span>
+                      Infó
+                    </button>
                   </div>
 
-                  <div class="portion-size">
-                    <select>
-                      <option value="normal">
-                        <span>4 290 Ft</span> - Normál adag
-                      </option>
-                      <option value="small">
-                        <span>4 290 Ft</span> - Kicsi adag
-                      </option>
-                      <option value="large">
-                        <span>4 290 Ft</span> - Nagy adag
-                      </option>
-                    </select>
-                  </div>
+                  <div class="card-body">
+                    <h3 class="food-name">
+                      Csirke teriyaki, szezámmagos rizzsel és brokkolival
+                    </h3>
 
-                  <div class="card-bottom">
-                    <div class="quantity-container">
-                      <button class="decrase-btn">-</button>
-                      <span class="quantity">1</span>
-                      <button class="incrase-btn">+</button>
+                    <div class="customize">
+                      <span>Személyreszabás</span>
+
+                      <label class="check-container"
+                        >Gluténmentes
+                        <input type="checkbox" checked="checked" />
+                        <span class="custom-checkbox"></span>
+                      </label>
+
+                      <label class="check-container"
+                        >Laktózmentes
+                        <input type="checkbox" />
+                        <span class="custom-checkbox"></span>
+                      </label>
                     </div>
-                    <button class="cancel-btn">Mégsem</button>
+
+                    <div class="portion-size">
+                      <select>
+                        <option value="normal">
+                          <span>4 290 Ft</span> - Normál adag
+                        </option>
+                        <option value="small">
+                          <span>4 290 Ft</span> - Kicsi adag
+                        </option>
+                        <option value="large">
+                          <span>4 290 Ft</span> - Nagy adag
+                        </option>
+                      </select>
+                    </div>
+
+                    <div class="card-bottom">
+                      <div class="quantity-container">
+                        <button class="decrase-btn">-</button>
+                        <span class="quantity">1</span>
+                        <button class="incrase-btn">+</button>
+                      </div>
+                      <button class="add-to-cart-btn">Kosárba</button>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -171,7 +191,7 @@
             <div class="cart-item">
               <span class="category">LEVES</span>
               <div class="cart-item-left">
-                <p class="food-name">Japán gombaleves</p>
+                <p class="item-name">Japán gombaleves</p>
                 <div class="food-desc">
                   <span class="portion-size">Normál adag</span>
                 </div>
@@ -185,7 +205,7 @@
             <div class="cart-item">
               <span class="category">FŐÉTEL</span>
               <div class="cart-item-left">
-                <p class="food-name">
+                <p class="item-name">
                   Csirke teriyaki, szezámmagos rizzsel és brokkolival
                 </p>
                 <div class="food-desc">
