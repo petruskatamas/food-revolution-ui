@@ -378,6 +378,18 @@ header .navbar .nav-items .nav-cart .cart-items span {
   text-align: center;
   color: var(--white);
 }
+.card .card-body .card-bottom button.cancel-btn {
+  width: 125px;
+  height: 45px;
+  background: #e9e2db;
+  font-family: "Conso";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 140%;
+  text-align: center;
+  color: var(--black);
+}
 
 /* --- MAIN DASHBOARD ---*/
 .dashboard {
@@ -586,5 +598,310 @@ header .navbar .nav-items .nav-cart .cart-items span {
   display: none;
 }
 .dashboard .cart {
+  position: relative;
   width: 20%;
+}
+.dashboard .cart .cart-list {
+  display: flex;
+  flex-direction: column;
+  padding-top: 10px;
+  background: #fbf4ee;
+  max-height: 90vh;
+  overflow-y: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.dashboard .cart .cart-list .cart-item-container {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 20px;
+}
+.dashboard .cart .cart-list .cart-item-container .cart-item-day {
+  font-family: "Conso";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 140%;
+  color: var(--secondary);
+  padding-left: 10px;
+}
+.dashboard .cart .cart-list .cart-item-container .cart-item {
+  padding: 0 10px;
+  display: flex;
+  flex-direction: column;
+}
+.dashboard .cart .cart-list .cart-item-container .cart-item .category {
+  font-family: "Red Hat Display";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 130%;
+  color: var(--black);
+  opacity: 0.6;
+  text-transform: uppercase;
+}
+.dashboard .cart .cart-list .cart-item-container .cart-item .item-container {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  padding: 10px 0;
+}
+.dashboard .cart .cart-list .cart-item-container .cart-item .item-container .item-left {
+  width: 230px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 3px;
+}
+.dashboard .cart .cart-list .cart-item-container .cart-item .item-container .item-left .item-name {
+  font-family: "Red Hat Display";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 130%;
+  color: var(--primary);
+}
+.dashboard .cart .cart-list .cart-item-container .cart-item .item-container .item-left .food-desc {
+  font-family: "Red Hat Display";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 130%;
+  color: var(--black);
+}
+.dashboard .cart .cart-list .cart-item-container .cart-item .item-container .item-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  width: 75px;
+  gap: 3px;
+}
+.dashboard .cart .cart-list .cart-item-container .cart-item .item-container .item-right .price {
+  font-family: "Red Hat Display";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 130%;
+  color: var(--black);
+}
+.dashboard .cart .cart-list .cart-item-container .cart-item .item-container .item-right .quantity {
+  font-family: "Red Hat Display";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 130%;
+  color: var(--black);
+}
+.dashboard .cart .cart-list::-webkit-scrollbar {
+  display: none;
+}
+.dashboard .cart .cart-summary {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 100%;
+  height: 310px;
+  right: 0px;
+  bottom: 0px;
+  background: #e4dad0;
+  padding: 20px;
+}
+.dashboard .cart .cart-summary .order-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.dashboard .cart .cart-summary .order-row p {
+  font-family: "Red Hat Display";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 130%;
+  color: var(--primary);
+}
+.dashboard .cart .cart-summary .order-row .order-value {
+  font-family: "Red Hat Display";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 130%;
+  color: var(--black);
+}
+.dashboard .cart .cart-summary .available-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.dashboard .cart .cart-summary .available-row p {
+  font-family: "Red Hat Display";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 130%;
+  color: var(--primary);
+}
+.dashboard .cart .cart-summary .available-row .available-value {
+  font-family: "Red Hat Display";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 130%;
+  color: var(--black);
+}
+.dashboard .cart .cart-summary .discount-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.dashboard .cart .cart-summary .discount-row .discount-name {
+  font-family: "Red Hat Display";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 130%;
+  color: var(--primary);
+}
+.dashboard .cart .cart-summary .discount-row .discount-percentage {
+  font-family: "Red Hat Display";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 130%;
+  color: var(--black);
+  padding-right: 10px;
+}
+.dashboard .cart .cart-summary .discount-row .discount-value {
+  font-family: "Red Hat Display";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 130%;
+  color: var(--black);
+}
+.dashboard .cart .cart-summary .discount-row:nth-child(2) {
+  display: flex;
+  flex-direction: row;
+}
+.dashboard .cart .cart-summary .delivery-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.dashboard .cart .cart-summary .delivery-row p {
+  font-family: "Red Hat Display";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 130%;
+  color: var(--primary);
+}
+.dashboard .cart .cart-summary .delivery-row .delivery-multiplier {
+  font-family: "Red Hat Display";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 130%;
+  color: var(--black);
+  padding-right: 10px;
+}
+.dashboard .cart .cart-summary .delivery-row .delivery-fee {
+  font-family: "Red Hat Display";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 130%;
+  color: var(--black);
+}
+.dashboard .cart .cart-summary .delivery-row:nth-child(2) {
+  display: flex;
+  flex-direction: row;
+}
+.dashboard .cart .cart-summary .coupon-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background: var(--white);
+  padding: 10px;
+}
+.dashboard .cart .cart-summary .coupon-row p {
+  font-family: "Red Hat Display";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 130%;
+  color: var(--primary);
+}
+.dashboard .cart .cart-summary .coupon-row .coupon-code {
+  font-family: "Red Hat Display";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 110%;
+  color: var(--black);
+  padding-right: 10px;
+}
+.dashboard .cart .cart-summary .coupon-row .add-coupon-btn {
+  width: 20px;
+  height: 20px;
+  background: var(--light-beige);
+  font-family: "Red Hat Display";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 110%;
+  color: var(--black);
+}
+.dashboard .cart .cart-summary .coupon-row:nth-child(2) {
+  display: flex;
+  flex-direction: row;
+}
+.dashboard .cart .cart-summary .summary-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 10px 0;
+}
+.dashboard .cart .cart-summary .summary-row p {
+  font-family: "Red Hat Display";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 130%;
+  color: var(--primary);
+}
+.dashboard .cart .cart-summary .summary-row .summary-value {
+  font-family: "Red Hat Display";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 130%;
+  color: var(--black);
+}
+.dashboard .cart .cart-summary .cart-btn-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.dashboard .cart .cart-summary .cart-btn-row .summary-cart-btn {
+  width: 102px;
+  height: 56px;
+  border: 2px solid rgba(12, 28, 24, 0.3);
+  font-family: "Conso";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 140%;
+  color: var(--primary);
+}
+.dashboard .cart .cart-summary .cart-btn-row .summary-pay-btn {
+  width: 192px;
+  height: 56px;
+  background: var(--primary-gradient);
+  font-family: "Conso";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 140%;
+  color: var(--white);
 }/*# sourceMappingURL=style.css.map */

@@ -422,6 +422,21 @@ header {
         text-align: center;
         color: var(--white);
       }
+
+      button.cancel-btn {
+        width: 125px;
+        height: 45px;
+
+        background: #e9e2db;
+
+        font-family: "Conso";
+        font-style: normal;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 140%;
+        text-align: center;
+        color: var(--black);
+      }
     }
   }
 }
@@ -666,6 +681,357 @@ header {
   }
 
   .cart {
+    position: relative;
     width: 20%;
+
+    .cart-list {
+      display: flex;
+      flex-direction: column;
+      padding-top: 10px;
+
+      background: #fbf4ee;
+
+      max-height: 90vh;
+      overflow-y: scroll;
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+
+      .cart-item-container {
+        display: flex;
+        flex-direction: column;
+        padding: 10px 20px;
+
+        .cart-item-day {
+          font-family: "Conso";
+          font-style: normal;
+          font-weight: 600;
+          font-size: 18px;
+          line-height: 140%;
+          color: var(--secondary);
+          padding-left: 10px;
+        }
+
+        .cart-item {
+          padding: 0 10px;
+          display: flex;
+          flex-direction: column;
+
+          .category {
+            font-family: "Red Hat Display";
+            font-style: normal;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 130%;
+            color: var(--black);
+            opacity: 0.6;
+            text-transform: uppercase;
+          }
+
+          .item-container {
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+            padding: 10px 0;
+
+            .item-left {
+              width: 230px;
+              display: flex;
+              flex-direction: column;
+              align-items: flex-start;
+              gap: 3px;
+
+              .item-name {
+                font-family: "Red Hat Display";
+                font-style: normal;
+                font-weight: 700;
+                font-size: 15px;
+                line-height: 130%;
+                color: var(--primary);
+              }
+
+              .food-desc {
+                font-family: "Red Hat Display";
+                font-style: normal;
+                font-weight: 400;
+                font-size: 12px;
+                line-height: 130%;
+                color: var(--black);
+              }
+            }
+
+            .item-right {
+              display: flex;
+              flex-direction: column;
+              align-items: flex-end;
+              width: 75px;
+              gap: 3px;
+
+              .price {
+                font-family: "Red Hat Display";
+                font-style: normal;
+                font-weight: 400;
+                font-size: 15px;
+                line-height: 130%;
+                color: var(--black);
+              }
+
+              .quantity {
+                font-family: "Red Hat Display";
+                font-style: normal;
+                font-weight: 400;
+                font-size: 12px;
+                line-height: 130%;
+                color: var(--black);
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .cart-list::-webkit-scrollbar {
+      display: none;
+    }
+    .cart-summary {
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+
+      width: 100%;
+      height: 310px;
+      right: 0px;
+      bottom: 0px;
+      background: #e4dad0;
+      padding: 20px;
+
+      .order-row {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        p {
+          font-family: "Red Hat Display";
+          font-style: normal;
+          font-weight: 700;
+          font-size: 15px;
+          line-height: 130%;
+          color: var(--primary);
+        }
+
+        .order-value {
+          font-family: "Red Hat Display";
+          font-style: normal;
+          font-weight: 400;
+          font-size: 15px;
+          line-height: 130%;
+          color: var(--black);
+        }
+      }
+
+      .available-row {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        p {
+          font-family: "Red Hat Display";
+          font-style: normal;
+          font-weight: 700;
+          font-size: 15px;
+          line-height: 130%;
+          color: var(--primary);
+        }
+
+        .available-value {
+          font-family: "Red Hat Display";
+          font-style: normal;
+          font-weight: 400;
+          font-size: 15px;
+          line-height: 130%;
+          color: var(--black);
+        }
+      }
+
+      .discount-row {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        .discount-name {
+          font-family: "Red Hat Display";
+          font-style: normal;
+          font-weight: 400;
+          font-size: 15px;
+          line-height: 130%;
+          color: var(--primary);
+        }
+
+        .discount-percentage {
+          font-family: "Red Hat Display";
+          font-style: normal;
+          font-weight: 400;
+          font-size: 15px;
+          line-height: 130%;
+          color: var(--black);
+
+          padding-right: 10px;
+        }
+
+        .discount-value {
+          font-family: "Red Hat Display";
+          font-style: normal;
+          font-weight: 400;
+          font-size: 15px;
+          line-height: 130%;
+          color: var(--black);
+        }
+      }
+
+      .discount-row:nth-child(2) {
+        display: flex;
+        flex-direction: row;
+      }
+
+      .delivery-row {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        p {
+          font-family: "Red Hat Display";
+          font-style: normal;
+          font-weight: 400;
+          font-size: 15px;
+          line-height: 130%;
+          color: var(--primary);
+        }
+
+        .delivery-multiplier {
+          font-family: "Red Hat Display";
+          font-style: normal;
+          font-weight: 400;
+          font-size: 15px;
+          line-height: 130%;
+          color: var(--black);
+
+          padding-right: 10px;
+        }
+        .delivery-fee {
+          font-family: "Red Hat Display";
+          font-style: normal;
+          font-weight: 400;
+          font-size: 15px;
+          line-height: 130%;
+          color: var(--black);
+        }
+      }
+
+      .delivery-row:nth-child(2) {
+        display: flex;
+        flex-direction: row;
+      }
+
+      .coupon-row {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        background: var(--white);
+        padding: 10px;
+
+        p {
+          font-family: "Red Hat Display";
+          font-style: normal;
+          font-weight: 400;
+          font-size: 15px;
+          line-height: 130%;
+          color: var(--primary);
+        }
+
+        .coupon-code {
+          font-family: "Red Hat Display";
+          font-style: normal;
+          font-weight: 400;
+          font-size: 18px;
+          line-height: 110%;
+          color: var(--black);
+          padding-right: 10px;
+        }
+
+        .add-coupon-btn {
+          width: 20px;
+          height: 20px;
+          background: var(--light-beige);
+          font-family: "Red Hat Display";
+          font-style: normal;
+          font-weight: 700;
+          font-size: 20px;
+          line-height: 110%;
+          color: var(--black);
+        }
+      }
+
+      .coupon-row:nth-child(2) {
+        display: flex;
+        flex-direction: row;
+      }
+
+      .summary-row {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 10px 0;
+
+        p {
+          font-family: "Red Hat Display";
+          font-style: normal;
+          font-weight: 700;
+          font-size: 15px;
+          line-height: 130%;
+          color: var(--primary);
+        }
+
+        .summary-value {
+          font-family: "Red Hat Display";
+          font-style: normal;
+          font-weight: 400;
+          font-size: 15px;
+          line-height: 130%;
+          color: var(--black);
+        }
+      }
+
+      .cart-btn-row {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        .summary-cart-btn {
+          width: 102px;
+          height: 56px;
+          border: 2px solid rgba(12, 28, 24, 0.3);
+
+          font-family: "Conso";
+          font-style: normal;
+          font-weight: 600;
+          font-size: 18px;
+          line-height: 140%;
+          color: var(--primary);
+        }
+
+        .summary-pay-btn {
+          width: 192px;
+          height: 56px;
+          background: var(--primary-gradient);
+
+          font-family: "Conso";
+          font-style: normal;
+          font-weight: 600;
+          font-size: 18px;
+          line-height: 140%;
+          color: var(--white);
+        }
+      }
+    }
   }
 }
