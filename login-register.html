@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register</title>
+    <link rel="stylesheet" href="styles/login.css" />
+  </head>
+  <body>
+    <div class="login-bg register">
+      <div class="login-container register">
+        <div class="logo">
+          <img src="images/logo.png" />
+        </div>
+        <div class="login-form">
+          <h2>Regisztráció</h2>
+          <form>
+            <div class="address-dropdown">
+              <select name="residency" id="residency">
+                <option value="residency-1">1091, Budapest</option>
+                <option value="residency-2">1165, Budapest</option>
+                <option value="residency-3">1014, Budapest</option>
+              </select>
+            </div>
+            <div class="form-input-row">
+              <div class="form-input half">
+                <label class="input-label" for="lastname">családnév</label>
+                <input
+                  class="input-area"
+                  type="text"
+                  id="lastname"
+                  name="lastname"
+                />
+              </div>
+              <div class="form-input half">
+                <label class="input-label" for="firstname">keresztnév</label>
+                <input
+                  class="input-area"
+                  type="text"
+                  id="firstname"
+                  name="firstname"
+                />
+              </div>
+            </div>
+            <div class="form-input">
+              <label class="input-label" for="email">email</label>
+              <input class="input-area" type="text" id="email" name="email" />
+            </div>
+            <div class="form-input">
+              <label class="input-label" for="tel">telefonszám</label>
+              <input class="input-area" type="text" id="tel" name="tel" />
+            </div>
+            <div class="form-input-block">
+              <h2>Vegán vagy vegetáriánus</h2>
+              <p>
+                Pipáld be, ha vega vagy vegán életmódot folytatsz, így a húsos
+                ételeket nem fogod látni.
+              </p>
+              <label class="checkbox-container"
+                >Vegetáriánus vagy vegán
+                <input type="checkbox" />
+                <span class="custom-checkbox"></span>
+              </label>
+            </div>
+            <h2>Szállítási cím</h2>
+            <div class="form-input-row">
+              <div class="form-input third">
+                <label class="input-label" for="area-code">irányítószám</label>
+                <input
+                  class="input-area"
+                  type="text"
+                  id="area-code"
+                  name="area-code"
+                />
+              </div>
+              <div class="form-input two-third">
+                <label class="input-label" for="city">település</label>
+                <input class="input-area" type="text" id="city" name="city" />
+              </div>
+            </div>
+            <div class="form-input">
+              <label class="input-label" for="address">cim</label>
+              <input
+                class="input-area"
+                type="text"
+                id="address"
+                name="address"
+              />
+            </div>
+            <div class="form-input">
+              <label class="input-label" for="note"
+                >megjegyzés a futárnak</label
+              >
+              <textarea
+                rows="3"
+                class="input-area double"
+                type="text"
+                id="note"
+                name="note"
+              ></textarea>
+            </div>
+            <h2>Számlázási cím</h2>
+            <div class="form-input-row">
+              <div class="form-input third">
+                <label class="input-label" for="area-code-billing"
+                  >irányítószám</label
+                >
+                <input
+                  class="input-area"
+                  type="text"
+                  id="area-code-billing"
+                  name="area-code-billing"
+                />
+              </div>
+              <div class="form-input two-third">
+                <label class="input-label" for="city-billing">település</label>
+                <input
+                  class="input-area"
+                  type="text"
+                  id="city-billing"
+                  name="city-billing"
+                />
+              </div>
+            </div>
+            <div class="form-input">
+              <label class="input-label" for="address-billing">cim</label>
+              <input
+                class="input-area"
+                type="text"
+                id="address-billing"
+                name="address-billing"
+              />
+            </div>
+            <div class="form-btns">
+              <a href="#" class="secondary-btn forgot-psw-btn"
+                >Vissza a belépéshez</a
+              >
+              <button class="primary-btn register-btn">Regisztráció</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

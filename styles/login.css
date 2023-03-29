@@ -1,0 +1,348 @@
+/* --- CSS RESET --- */
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: none;
+  box-sizing: border-box;
+  background: transparent;
+  font-family: inherit;
+}
+
+a {
+  text-decoration: none;
+}
+
+a img {
+  border: none;
+}
+
+button,
+a {
+  cursor: pointer;
+  color: inherit;
+}
+
+textarea {
+  resize: none;
+}
+
+button,
+textarea,
+select {
+  -webkit-appearance: none !important;
+     -moz-appearance: none !important;
+          appearance: none !important;
+  border-radius: 0;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+body::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+body {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* --- GLOBAL VARIABLES --- */
+:root {
+  --primary: #1b3e3d;
+  --light-beige: #e9e2db;
+  --secondary: #c18f75;
+  --secondary-colorful: #a65023;
+  --black: #0c1c18;
+  --white: #ffffff;
+  --primary-gradient: linear-gradient(82.02deg, #1b3e3d 4.42%, #0c1c18 93.85%);
+  --secondary-gradient: linear-gradient(
+    268.85deg,
+    #c18f75 0.98%,
+    #a65023 99.42%
+  );
+}
+
+@font-face {
+  font-family: "Conso";
+  src: url(fonts/Conso.ttf);
+}
+@font-face {
+  font-family: "Red Hat Display";
+  src: url(fonts/RedHatDisplay.ttf);
+}
+@font-face {
+  font-family: "Abril Fat Face";
+  src: url(fonts/AbrilFatFace.ttf);
+}
+@font-face {
+  font-family: "Mulish";
+  src: url(fonts/Mulish.ttf);
+}
+/* --- LOGIN --- */
+.login-bg {
+  width: 100vw;
+  height: 100vh;
+  background: var(--primary-gradient);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.login-bg.register {
+  position: absolute;
+  overflow-y: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.login-bg.register::-webkit-scrollbar {
+  display: none;
+}
+.login-bg .login-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.login-bg .login-container.register {
+  position: relative;
+  top: 35%;
+  padding-bottom: 80px;
+}
+.login-bg .login-container .logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  padding-bottom: 36px;
+}
+.login-bg .login-container .logo .img {
+  -o-object-fit: contain;
+     object-fit: contain;
+  min-width: 100%;
+  min-height: 100%;
+}
+.login-bg .login-container .login-form {
+  display: flex;
+  flex-direction: column;
+  background: var(--white);
+  width: 560px;
+  padding: 30px 40px;
+}
+.login-bg .login-container .login-form h2 {
+  font-family: "Conso";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 130%;
+  color: var(--black);
+}
+.login-bg .login-container .login-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-top: 16px;
+}
+.login-bg .login-container .login-form form h2 {
+  padding-top: 10px;
+}
+.login-bg .login-container .login-form form .form-input-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.login-bg .login-container .login-form form .form-input-block p {
+  font-family: "Red Hat Display";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 130%;
+  color: var(--primary);
+  padding-top: 10px;
+  padding-bottom: 20px;
+}
+.login-bg .login-container .login-form form .form-input-block .checkbox-container {
+  display: block;
+  position: relative;
+  padding-left: 25px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  font-family: "Red Hat Display";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 130%;
+  color: var(--black);
+}
+.login-bg .login-container .login-form form .form-input-block .checkbox-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+.login-bg .login-container .login-form form .form-input-block .checkbox-container input:checked ~ .custom-checkbox {
+  background-color: var(--secondary-colorful);
+}
+.login-bg .login-container .login-form form .form-input-block .checkbox-container input:checked ~ .custom-checkbox::after {
+  display: block;
+}
+.login-bg .login-container .login-form form .form-input-block .checkbox-container .custom-checkbox {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background-color: var(--white);
+  border: 2px solid var(--light-beige);
+}
+.login-bg .login-container .login-form form .form-input-block .checkbox-container .custom-checkbox::after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+.login-bg .login-container .login-form form .form-input-block .checkbox-container:hover input ~ .custom-checkbox {
+  background-color: var(--secondary);
+}
+.login-bg .login-container .login-form form .form-input {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.login-bg .login-container .login-form form .form-input.half {
+  width: 47.5%;
+}
+.login-bg .login-container .login-form form .form-input.third {
+  width: 27.5%;
+}
+.login-bg .login-container .login-form form .form-input.two-third {
+  width: 67.5%;
+}
+.login-bg .login-container .login-form form .form-input .double {
+  height: 85px;
+}
+.login-bg .login-container .login-form form .input-label {
+  font-family: "Red Hat Display";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 130%;
+  text-transform: uppercase;
+  color: var(--black);
+}
+.login-bg .login-container .login-form form .input-area {
+  width: 100%;
+  padding: 16px;
+  border: 1px solid var(--light-beige);
+  font-family: "Red Hat Display";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 130%;
+  color: var(--black);
+}
+.login-bg .login-container .login-form form .form-btns {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding-top: 10px;
+}
+.login-bg .login-container .login-form form .form-btns .secondary-btn {
+  font-family: "Red Hat Display";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 130%;
+  color: var(--black);
+}
+.login-bg .login-container .login-form form .form-btns .primary-btn {
+  width: 192px;
+  height: 60px;
+  font-family: "Conso";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 140%;
+  text-align: center;
+  color: var(--white);
+  background: var(--primary-gradient);
+}
+.login-bg .login-container .login-form form .form-btns .primary-btn.send-reminder-btn {
+  width: 251px;
+  height: 60px;
+  font-family: "Conso";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 140%;
+  text-align: center;
+  color: var(--white);
+  background: var(--primary-gradient);
+}
+.login-bg .login-container .login-form form .form-btns .primary-btn.register-btn {
+  width: 177px;
+  height: 60px;
+  font-family: "Conso";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 140%;
+  text-align: center;
+  color: var(--white);
+  background: var(--primary-gradient);
+}
+.login-bg .login-container .login-form form .address-dropdown {
+  width: 100%;
+  background: var(--white);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  border: 1px solid var(--light-beige);
+  gap: 20px;
+  cursor: pointer;
+}
+.login-bg .login-container .login-form form .address-dropdown select {
+  width: inherit;
+  height: inherit;
+  font-family: "Red Hat Display";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 130%;
+  color: var(--black);
+  cursor: pointer;
+  background: transparent;
+  background-image: url("../images/dropdown.png");
+  background-repeat: no-repeat;
+  background-position-x: 100%;
+  background-position-y: 45%;
+}
+.login-bg .login-container .login-form form .address-dropdown select option {
+  cursor: pointer;
+  font-family: "Red Hat Display";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 130%;
+  color: var(--black);
+}
+.login-bg .login-container .register-user {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 26px;
+}
+.login-bg .login-container .register-user a {
+  font-family: "Red Hat Display";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 15px;
+  color: var(--white);
+}/*# sourceMappingURL=login.css.map */
