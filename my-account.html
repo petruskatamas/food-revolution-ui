@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My account</title>
+    <link rel="stylesheet" href="styles/my-account.css" />
+  </head>
+
+  <body>
+    <header>
+      <div class="logo">
+        <img src="images/logo.png" />
+      </div>
+
+      <div class="navbar">
+        <ul class="nav-links">
+          <li class="nav-link nav-active">
+            <a href="#">Heti menü rendelés</a>
+          </li>
+          <li class="nav-link">
+            <a href="#">Rendelések</a>
+          </li>
+          <li class="nav-link">
+            <a href="#">Pénzügyek</a>
+          </li>
+          <li class="nav-link">
+            <a href="#">Tudnivalók</a>
+          </li>
+        </ul>
+
+        <div class="nav-items">
+          <div class="profile">
+            <a href="#">
+              <img src="images/profile.png" />
+              <span>Fiókom</span>
+            </a>
+          </div>
+          <div class="nav-cart">
+            <a href="#">
+              <img src="images/cart.png" />
+              <div class="cart-items">
+                <span>6</span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="my-account-bg">
+      <div class="my-account-container">
+        <h2 class="account-name">John Doe</h2>
+        <div class="info-block">
+          <div class="info-block-row">
+            <p>Email címem:</p>
+            <span id="info-email">john.doe@gmail.com</span>
+          </div>
+          <div class="info-block-row">
+            <p>Telefonszámom:</p>
+            <span id="info-tel">+36 20 786 3676</span>
+          </div>
+          <div class="info-block-row">
+            <p>Születésnapom:</p>
+            <span id="info-birthday">1990. július. 7.</span>
+          </div>
+          <div class="info-block-row">
+            <p>Csak a vega/vegán menüt szeretném látni:</p>
+            <label class="checkbox-container"
+              >Nem
+              <input type="checkbox" id="show-vegan-only" />
+              <span class="custom-checkbox"></span>
+            </label>
+          </div>
+        </div>
+        <div class="delivery-block">
+          <h2>Szállítással kapcsolatos információk</h2>
+          <div class="delivery-block-row">
+            <p>Számlázási cím:</p>
+            <span id="delivery-address"
+              >1084, Budapest VIII. kerület Józsefu. 29., 7. emelet 14.
+              lakás</span
+            >
+          </div>
+          <div class="delivery-block-row full-width">
+            <p>Megjegyzés a futárnak</p>
+            <span id="delivery-note"
+              >Fusce id posuere elit. Vivamus at vehicula nulla, ut sodales
+              turpis. Nullam ipsum velit, pellentesque vel sagittis feugiat,
+              congue quis arcu. Aenean eget enim libero.</span
+            >
+          </div>
+          <div class="delivery-block-row">
+            <p>Visszaigazolás a kiszállításról:</p>
+            <label class="checkbox-container"
+              >Igen
+              <input
+                type="checkbox"
+                checked="checked"
+                id="delivery-verification"
+              />
+              <span class="custom-checkbox"></span>
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

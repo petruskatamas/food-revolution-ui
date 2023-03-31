@@ -1,0 +1,472 @@
+/* --- CSS RESET --- */
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: none;
+  box-sizing: border-box;
+  background: transparent;
+  font-family: inherit;
+}
+
+a {
+  text-decoration: none;
+}
+
+a img {
+  border: none;
+}
+
+button,
+a {
+  cursor: pointer;
+  color: inherit;
+}
+
+textarea {
+  resize: none;
+}
+
+button,
+textarea,
+select {
+  appearance: none !important;
+  border-radius: 0;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+body::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+body {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* --- GLOBAL VARIABLES --- */
+
+:root {
+  --primary: #1b3e3d;
+  --light-beige: #e9e2db;
+  --secondary: #c18f75;
+  --secondary-colorful: #a65023;
+  --black: #0c1c18;
+  --white: #ffffff;
+  --primary-gradient: linear-gradient(82.02deg, #1b3e3d 4.42%, #0c1c18 93.85%);
+  --secondary-gradient: linear-gradient(
+    268.85deg,
+    #c18f75 0.98%,
+    #a65023 99.42%
+  );
+}
+
+@font-face {
+  font-family: "Conso";
+  src: url(fonts/Conso.ttf);
+}
+
+@font-face {
+  font-family: "Red Hat Display";
+  src: url(fonts/RedHatDisplay.ttf);
+}
+
+@font-face {
+  font-family: "Abril Fat Face";
+  src: url(fonts/AbrilFatFace.ttf);
+}
+
+@font-face {
+  font-family: "Mulish";
+  src: url(fonts/Mulish.ttf);
+}
+
+/* --- HEADER --- */
+
+header {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  padding: 15px 20px;
+  gap: 10px;
+  max-width: 100vw;
+  height: 80px;
+  background: var(--primary);
+
+  .navbar {
+    display: flex;
+    flex-direction: row;
+    padding-top: 5px;
+    width: 100%;
+
+    .nav-links {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      padding-left: 60px;
+      gap: 35px;
+      list-style-type: none;
+
+      .nav-link {
+        float: left;
+        &.nav-active {
+          position: relative;
+
+          a {
+            font-family: "Conso";
+            font-style: normal;
+            font-weight: 600;
+            font-size: 16px;
+            line-height: 26px;
+          }
+
+          a::after {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+            width: 95%;
+            content: "";
+            height: 2px;
+            background: #c18f75;
+          }
+        }
+      }
+
+      a {
+        display: block;
+        padding: 8px;
+        color: var(--light-beige);
+        font-family: "Conso";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 26px;
+      }
+    }
+
+    .nav-items {
+      display: flex;
+      padding-top: 8px;
+      margin-left: auto;
+      padding-right: 20px;
+      gap: 25px;
+
+      .profile {
+        span {
+          margin-left: 10px;
+          color: var(--light-beige);
+          font-family: "Conso";
+          font-style: normal;
+          font-weight: 400;
+          font-size: 16px;
+          line-height: 26px;
+        }
+      }
+
+      .nav-cart {
+        img {
+          position: relative;
+        }
+
+        .cart-items {
+          position: absolute;
+          bottom: 38px;
+          right: 35px;
+          width: 20px;
+          height: 20px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          background-color: var(--secondary-colorful);
+          border-radius: 10px;
+
+          span {
+            color: #e9e2db;
+            font-family: "Mulish";
+            font-style: normal;
+            font-weight: 800;
+            font-size: 14px;
+            line-height: 150%;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* --- MY ACCOUNT --- */
+
+.my-account-bg {
+  width: 100vw;
+  height: 91.5vh;
+
+  background: var(--light-beige);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &.edit {
+    position: absolute;
+    overflow-y: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  &.edit::-webkit-scrollbar {
+    display: none;
+  }
+
+  h2 {
+    font-family: "Conso";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 130%;
+    color: var(--black);
+  }
+
+  p {
+    font-family: "Red Hat Display";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 130%;
+    color: var(--primary);
+  }
+
+  span {
+    font-family: "Red Hat Display";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 130%;
+    color: var(--primary);
+  }
+
+  .checkbox-container {
+    display: block;
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    font-family: "Red Hat Display";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 130%;
+    color: var(--black);
+
+    input {
+      position: absolute;
+      opacity: 0;
+      cursor: pointer;
+      height: 0;
+      width: 0;
+    }
+    input:checked ~ .custom-checkbox {
+      background-color: var(--secondary-colorful);
+    }
+    input:checked ~ .custom-checkbox::after {
+      display: block;
+    }
+
+    .custom-checkbox {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 20px;
+      width: 20px;
+      background-color: var(--white);
+      border: 2px solid var(--light-beige);
+    }
+    .custom-checkbox::after {
+      content: "";
+      position: absolute;
+      display: none;
+    }
+  }
+  .checkbox-container:hover input ~ .custom-checkbox {
+    background-color: var(--secondary);
+  }
+
+  .my-account-container {
+    display: flex;
+    flex-direction: column;
+
+    width: 560px;
+    padding: 30px 40px;
+
+    background: var(--white);
+
+    &.edit-password {
+      span {
+        font-family: "Red Hat Display";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 130%;
+        color: var(--primary);
+        opacity: 0.4;
+      }
+    }
+
+    &.edit {
+      position: absolute;
+      top: 10%;
+    }
+
+    h2 {
+      padding-bottom: 16px;
+    }
+
+    .form-input-block {
+      padding: 20px 0;
+
+      p {
+        padding-bottom: 10px;
+      }
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .form-input-row {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+
+      .form-input {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+
+        &.half {
+          width: 47.5%;
+        }
+
+        &.third {
+          width: 27.5%;
+        }
+
+        &.two-third {
+          width: 67.5%;
+        }
+
+        .double {
+          height: 85px;
+        }
+      }
+    }
+
+    .input-label {
+      font-family: "Red Hat Display";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 130%;
+      text-transform: uppercase;
+      color: var(--black);
+    }
+
+    .input-area {
+      width: 100%;
+      padding: 16px;
+      border: 1px solid var(--light-beige);
+
+      font-family: "Red Hat Display";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 15px;
+      line-height: 130%;
+      color: var(--black);
+    }
+
+    .form-btns {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      padding-top: 10px;
+
+      .primary-btn {
+        width: 192px;
+        height: 60px;
+
+        font-family: "Conso";
+        font-style: normal;
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 140%;
+        text-align: center;
+        color: var(--white);
+        background: var(--primary-gradient);
+      }
+    }
+
+    .info-block {
+      display: flex;
+      flex-direction: column;
+
+      width: 100%;
+      gap: 16px;
+
+      padding-bottom: 20px;
+
+      .info-block-row {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+      }
+    }
+
+    .delivery-block {
+      display: flex;
+      flex-direction: column;
+
+      width: 100%;
+      gap: 16px;
+
+      h2 {
+        padding-bottom: 0;
+      }
+
+      .delivery-block-row {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        span {
+          max-width: 50%;
+          text-align: right;
+        }
+
+        &.full-width {
+          display: flex;
+          flex-direction: column;
+          gap: 16px;
+
+          span {
+            max-width: 100%;
+            text-align: left;
+          }
+        }
+      }
+    }
+  }
+}
