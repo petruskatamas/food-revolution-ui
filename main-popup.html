@@ -8,6 +8,866 @@
     <link rel="stylesheet" href="styles/main.css" />
   </head>
   <body>
+    <header>
+      <div class="logo">
+        <img src="images/logo.png" />
+      </div>
+
+      <div class="navbar">
+        <ul class="nav-links">
+          <li class="nav-link nav-active">
+            <a href="#">Heti menü rendelés</a>
+          </li>
+          <li class="nav-link">
+            <a href="#">Rendelések</a>
+          </li>
+          <li class="nav-link">
+            <a href="#">Pénzügyek</a>
+          </li>
+          <li class="nav-link">
+            <a href="#">Tudnivalók</a>
+          </li>
+        </ul>
+
+        <div class="nav-items">
+          <div class="profile">
+            <a href="#">
+              <img src="images/profile.png" />
+              <span>Fiókom</span>
+            </a>
+          </div>
+          <div class="nav-cart">
+            <a href="#">
+              <img src="images/cart.png" />
+              <div class="cart-items">
+                <span>6</span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="dashboard">
+      <div class="main">
+        <div class="main-top">
+          <div class="main-top-days">
+            <a href="#">
+              <div class="main-top-card in-cart day-active">
+                <p class="day">Hétfő</p>
+                <span class="date">2023. feb 27.</span>
+                <span class="cart-tag">KOSÁRBAN</span>
+              </div>
+            </a>
+
+            <a href="#">
+              <div class="main-top-card">
+                <p class="day">Kedd</p>
+                <span class="date">2023. feb 28.</span>
+              </div>
+            </a>
+
+            <a href="#">
+              <div class="main-top-card in-cart">
+                <p class="day">Szerda</p>
+                <span class="date">2023. márc 01.</span>
+                <span class="cart-tag">KOSÁRBAN</span>
+              </div>
+            </a>
+
+            <a href="#">
+              <div class="main-top-card">
+                <p class="day">Csütörtök</p>
+                <span class="date">2023. márc 02.</span>
+              </div>
+            </a>
+
+            <a href="#">
+              <div class="main-top-card">
+                <p class="day">Péntek</p>
+                <span class="date">2023. márc 03.</span>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div class="main-bottom">
+          <div class="top-container">
+            <div class="categories">
+              <p><a href="#">Leves</a></p>
+              <p class="category-active"><a href="#">Főétel</a></p>
+              <p><a href="#">Sportolói</a></p>
+              <p><a href="#">Vegetáriánus</a></p>
+              <p><a href="#">Vegán</a></p>
+              <p><a href="#">Superfood</a></p>
+              <p><a href="#">Smoothie</a></p>
+              <p><a href="#">Gyümölcsleves</a></p>
+              <p><a href="#">Kiegészítő ételek</a></p>
+            </div>
+
+            <div class="address-dropdown">
+              <select name="address" id="address">
+                <option value="address-1">
+                  1091, Budapest, Mihálkovics u. 12
+                </option>
+                <option value="address-2">
+                  1165, Budapest, Kossuth Lajos u. 2
+                </option>
+                <option value="address-3">1014, Budapest, Szép út 78</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="cards-container">
+            <div class="cards-row">
+              <h2 class="category-name">Főétel</h2>
+              <div class="cards">
+                <div class="card">
+                  <div class="card-image">
+                    <img src="images/placeholder-1.png" />
+                    <button>
+                      <span class="info-icon"></span>
+                      Infó
+                    </button>
+                  </div>
+
+                  <div class="card-body">
+                    <h3 class="food-name">
+                      Csirke teriyaki, szezámmagos rizzsel és brokkolival
+                    </h3>
+
+                    <div class="customize">
+                      <p>Személyreszabás</p>
+
+                      <label class="checkbox-container"
+                        >Gluténmentes
+                        <input type="checkbox" checked="checked" />
+                        <span class="custom-checkbox"></span>
+                      </label>
+
+                      <label class="checkbox-container"
+                        >Laktózmentes
+                        <input type="checkbox" />
+                        <span class="custom-checkbox"></span>
+                      </label>
+                    </div>
+
+                    <div class="portion-size">
+                      <select>
+                        <option value="normal">
+                          <span>4 290 Ft</span> - Normál adag
+                        </option>
+                        <option value="small">
+                          <span>4 290 Ft</span> - Kicsi adag
+                        </option>
+                        <option value="large">
+                          <span>4 290 Ft</span> - Nagy adag
+                        </option>
+                      </select>
+                    </div>
+
+                    <div class="card-bottom">
+                      <div class="quantity-container">
+                        <button class="decrase-btn">-</button>
+                        <span class="quantity">1</span>
+                        <button class="incrase-btn">+</button>
+                      </div>
+                      <button class="cancel-btn">Mégsem</button>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="card">
+                  <div class="card-image">
+                    <img src="images/placeholder-1.png" />
+                    <button>
+                      <span class="info-icon"></span>
+                      Infó
+                    </button>
+                  </div>
+
+                  <div class="card-body">
+                    <h3 class="food-name">
+                      Csirke teriyaki, szezámmagos rizzsel és brokkolival
+                    </h3>
+
+                    <div class="customize">
+                      <p>Személyreszabás</p>
+
+                      <label class="checkbox-container"
+                        >Gluténmentes
+                        <input type="checkbox" checked="checked" />
+                        <span class="custom-checkbox"></span>
+                      </label>
+
+                      <label class="checkbox-container"
+                        >Laktózmentes
+                        <input type="checkbox" />
+                        <span class="custom-checkbox"></span>
+                      </label>
+                    </div>
+
+                    <div class="portion-size">
+                      <select>
+                        <option value="normal">
+                          <span>4 290 Ft</span> - Normál adag
+                        </option>
+                        <option value="small">
+                          <span>4 290 Ft</span> - Kicsi adag
+                        </option>
+                        <option value="large">
+                          <span>4 290 Ft</span> - Nagy adag
+                        </option>
+                      </select>
+                    </div>
+
+                    <div class="card-bottom">
+                      <div class="quantity-container">
+                        <button class="decrase-btn">-</button>
+                        <span class="quantity">1</span>
+                        <button class="incrase-btn">+</button>
+                      </div>
+                      <button class="add-to-cart-btn">Kosárba</button>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="card">
+                  <div class="card-image">
+                    <img src="images/placeholder-1.png" />
+                    <button>
+                      <span class="info-icon"></span>
+                      Infó
+                    </button>
+                  </div>
+
+                  <div class="card-body">
+                    <h3 class="food-name">
+                      Csirke teriyaki, szezámmagos rizzsel és brokkolival
+                    </h3>
+
+                    <div class="customize">
+                      <p>Személyreszabás</p>
+
+                      <label class="checkbox-container"
+                        >Gluténmentes
+                        <input type="checkbox" checked="checked" />
+                        <span class="custom-checkbox"></span>
+                      </label>
+
+                      <label class="checkbox-container"
+                        >Laktózmentes
+                        <input type="checkbox" />
+                        <span class="custom-checkbox"></span>
+                      </label>
+                    </div>
+
+                    <div class="portion-size">
+                      <select>
+                        <option value="normal">
+                          <span>4 290 Ft</span> - Normál adag
+                        </option>
+                        <option value="small">
+                          <span>4 290 Ft</span> - Kicsi adag
+                        </option>
+                        <option value="large">
+                          <span>4 290 Ft</span> - Nagy adag
+                        </option>
+                      </select>
+                    </div>
+
+                    <div class="card-bottom">
+                      <div class="quantity-container">
+                        <button class="decrase-btn">-</button>
+                        <span class="quantity">1</span>
+                        <button class="incrase-btn">+</button>
+                      </div>
+                      <button class="add-to-cart-btn">Kosárba</button>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="card">
+                  <div class="card-image">
+                    <img src="images/placeholder-1.png" />
+                    <button>
+                      <span class="info-icon"></span>
+                      Infó
+                    </button>
+                  </div>
+
+                  <div class="card-body">
+                    <h3 class="food-name">
+                      Csirke teriyaki, szezámmagos rizzsel és brokkolival
+                    </h3>
+
+                    <div class="customize">
+                      <p>Személyreszabás</p>
+
+                      <label class="checkbox-container"
+                        >Gluténmentes
+                        <input type="checkbox" checked="checked" />
+                        <span class="custom-checkbox"></span>
+                      </label>
+
+                      <label class="checkbox-container"
+                        >Laktózmentes
+                        <input type="checkbox" />
+                        <span class="custom-checkbox"></span>
+                      </label>
+                    </div>
+
+                    <div class="portion-size">
+                      <select>
+                        <option value="normal">
+                          <span>4 290 Ft</span> - Normál adag
+                        </option>
+                        <option value="small">
+                          <span>4 290 Ft</span> - Kicsi adag
+                        </option>
+                        <option value="large">
+                          <span>4 290 Ft</span> - Nagy adag
+                        </option>
+                      </select>
+                    </div>
+
+                    <div class="card-bottom">
+                      <div class="quantity-container">
+                        <button class="decrase-btn">-</button>
+                        <span class="quantity">1</span>
+                        <button class="incrase-btn">+</button>
+                      </div>
+                      <button class="add-to-cart-btn">Kosárba</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="cards-row">
+              <h2 class="category-name">Főétel</h2>
+              <div class="cards">
+                <div class="card">
+                  <div class="card-image">
+                    <img src="images/placeholder-1.png" />
+                    <button>
+                      <span class="info-icon"></span>
+                      Infó
+                    </button>
+                  </div>
+
+                  <div class="card-body">
+                    <h3 class="food-name">
+                      Csirke teriyaki, szezámmagos rizzsel és brokkolival
+                    </h3>
+
+                    <div class="customize">
+                      <p>Személyreszabás</p>
+
+                      <label class="checkbox-container"
+                        >Gluténmentes
+                        <input type="checkbox" checked="checked" />
+                        <span class="custom-checkbox"></span>
+                      </label>
+
+                      <label class="checkbox-container"
+                        >Laktózmentes
+                        <input type="checkbox" />
+                        <span class="custom-checkbox"></span>
+                      </label>
+                    </div>
+
+                    <div class="portion-size">
+                      <select>
+                        <option value="normal">
+                          <span>4 290 Ft</span> - Normál adag
+                        </option>
+                        <option value="small">
+                          <span>4 290 Ft</span> - Kicsi adag
+                        </option>
+                        <option value="large">
+                          <span>4 290 Ft</span> - Nagy adag
+                        </option>
+                      </select>
+                    </div>
+
+                    <div class="card-bottom">
+                      <div class="quantity-container">
+                        <button class="decrase-btn">-</button>
+                        <span class="quantity">1</span>
+                        <button class="incrase-btn">+</button>
+                      </div>
+                      <button class="add-to-cart-btn">Kosárba</button>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="card">
+                  <div class="card-image">
+                    <img src="images/placeholder-1.png" />
+                    <button>
+                      <span class="info-icon"></span>
+                      Infó
+                    </button>
+                  </div>
+
+                  <div class="card-body">
+                    <h3 class="food-name">
+                      Csirke teriyaki, szezámmagos rizzsel és brokkolival
+                    </h3>
+
+                    <div class="customize">
+                      <p>Személyreszabás</p>
+
+                      <label class="checkbox-container"
+                        >Gluténmentes
+                        <input type="checkbox" checked="checked" />
+                        <span class="custom-checkbox"></span>
+                      </label>
+
+                      <label class="checkbox-container"
+                        >Laktózmentes
+                        <input type="checkbox" />
+                        <span class="custom-checkbox"></span>
+                      </label>
+                    </div>
+
+                    <div class="portion-size">
+                      <select>
+                        <option value="normal">
+                          <span>4 290 Ft</span> - Normál adag
+                        </option>
+                        <option value="small">
+                          <span>4 290 Ft</span> - Kicsi adag
+                        </option>
+                        <option value="large">
+                          <span>4 290 Ft</span> - Nagy adag
+                        </option>
+                      </select>
+                    </div>
+
+                    <div class="card-bottom">
+                      <div class="quantity-container">
+                        <button class="decrase-btn">-</button>
+                        <span class="quantity">1</span>
+                        <button class="incrase-btn">+</button>
+                      </div>
+                      <button class="add-to-cart-btn">Kosárba</button>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="card">
+                  <div class="card-image">
+                    <img src="images/placeholder-1.png" />
+                    <button>
+                      <span class="info-icon"></span>
+                      Infó
+                    </button>
+                  </div>
+
+                  <div class="card-body">
+                    <h3 class="food-name">
+                      Csirke teriyaki, szezámmagos rizzsel és brokkolival
+                    </h3>
+
+                    <div class="customize">
+                      <p>Személyreszabás</p>
+
+                      <label class="checkbox-container"
+                        >Gluténmentes
+                        <input type="checkbox" checked="checked" />
+                        <span class="custom-checkbox"></span>
+                      </label>
+
+                      <label class="checkbox-container"
+                        >Laktózmentes
+                        <input type="checkbox" />
+                        <span class="custom-checkbox"></span>
+                      </label>
+                    </div>
+
+                    <div class="portion-size">
+                      <select>
+                        <option value="normal">
+                          <span>4 290 Ft</span> - Normál adag
+                        </option>
+                        <option value="small">
+                          <span>4 290 Ft</span> - Kicsi adag
+                        </option>
+                        <option value="large">
+                          <span>4 290 Ft</span> - Nagy adag
+                        </option>
+                      </select>
+                    </div>
+
+                    <div class="card-bottom">
+                      <div class="quantity-container">
+                        <button class="decrase-btn">-</button>
+                        <span class="quantity">1</span>
+                        <button class="incrase-btn">+</button>
+                      </div>
+                      <button class="add-to-cart-btn">Kosárba</button>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="card">
+                  <div class="card-image">
+                    <img src="images/placeholder-1.png" />
+                    <button>
+                      <span class="info-icon"></span>
+                      Infó
+                    </button>
+                  </div>
+
+                  <div class="card-body">
+                    <h3 class="food-name">
+                      Csirke teriyaki, szezámmagos rizzsel és brokkolival
+                    </h3>
+
+                    <div class="customize">
+                      <p>Személyreszabás</p>
+
+                      <label class="checkbox-container"
+                        >Gluténmentes
+                        <input type="checkbox" checked="checked" />
+                        <span class="custom-checkbox"></span>
+                      </label>
+
+                      <label class="checkbox-container"
+                        >Laktózmentes
+                        <input type="checkbox" />
+                        <span class="custom-checkbox"></span>
+                      </label>
+                    </div>
+
+                    <div class="portion-size">
+                      <select>
+                        <option value="normal">
+                          <span>4 290 Ft</span> - Normál adag
+                        </option>
+                        <option value="small">
+                          <span>4 290 Ft</span> - Kicsi adag
+                        </option>
+                        <option value="large">
+                          <span>4 290 Ft</span> - Nagy adag
+                        </option>
+                      </select>
+                    </div>
+
+                    <div class="card-bottom">
+                      <div class="quantity-container">
+                        <button class="decrase-btn">-</button>
+                        <span class="quantity">1</span>
+                        <button class="incrase-btn">+</button>
+                      </div>
+                      <button class="add-to-cart-btn">Kosárba</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="bottom-gradient"></div>
+        </div>
+      </div>
+
+      <div class="cart">
+        <div class="cart-list">
+          <div class="cart-item-container">
+            <h2 class="cart-item-day">Hétfő</h2>
+
+            <div class="cart-item">
+              <span class="category">LEVES</span>
+              <div class="item-container">
+                <div class="item-left">
+                  <p class="item-name">Japán gombaleves</p>
+                  <div class="food-desc">
+                    <span class="portion-size">Normál adag</span>
+                  </div>
+                </div>
+                <div class="item-right">
+                  <span class="price">1 390 Ft</span>
+                  <span class="quantity">1x</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="cart-item">
+              <span class="category">FŐÉTEL</span>
+              <div class="item-container">
+                <div class="item-left">
+                  <p class="item-name">
+                    Csirke teriyaki, szezámmagos rizzsel és brokkolival
+                  </p>
+                  <div class="food-desc">
+                    <span class="portion-size">Normál adag</span>
+                    <span>-</span>
+                    <span class="extra">Gluténmentes</span>
+                    <span class="extra">Laktózmentes</span>
+                  </div>
+                </div>
+                <div class="item-right">
+                  <span class="price">4 290 Ft </span>
+                  <span class="quantity">1x</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="cart-item">
+              <span class="category">Kiegészítő ÉTELEK</span>
+              <div class="item-container">
+                <div class="item-left">
+                  <p class="item-name">Saláta</p>
+                  <div class="food-desc">
+                    <span class="portion-size">200 g</span>
+                  </div>
+                </div>
+                <div class="item-right">
+                  <span class="price">500 Ft </span>
+                  <span class="quantity">1x</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="cart-item-container">
+            <h2 class="cart-item-day">Kedd</h2>
+
+            <div class="cart-item">
+              <span class="category">LEVES</span>
+              <div class="item-container">
+                <div class="item-left">
+                  <p class="item-name">Japán gombaleves</p>
+                  <div class="food-desc">
+                    <span class="portion-size">Normál adag</span>
+                  </div>
+                </div>
+                <div class="item-right">
+                  <span class="price">1 390 Ft</span>
+                  <span class="quantity">1x</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="cart-item">
+              <span class="category">FŐÉTEL</span>
+              <div class="item-container">
+                <div class="item-left">
+                  <p class="item-name">
+                    Csirke teriyaki, szezámmagos rizzsel és brokkolival
+                  </p>
+                  <div class="food-desc">
+                    <span class="portion-size">Normál adag</span>
+                    <span>-</span>
+                    <span class="extra">Gluténmentes</span>
+                    <span class="extra">Laktózmentes</span>
+                  </div>
+                </div>
+                <div class="item-right">
+                  <span class="price">4 290 Ft </span>
+                  <span class="quantity">1x</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="cart-item">
+              <span class="category">Kiegészítő ÉTELEK</span>
+              <div class="item-container">
+                <div class="item-left">
+                  <p class="item-name">Saláta</p>
+                  <div class="food-desc">
+                    <span class="portion-size">200 g</span>
+                  </div>
+                </div>
+                <div class="item-right">
+                  <span class="price">500 Ft </span>
+                  <span class="quantity">1x</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="cart-item-container">
+            <h2 class="cart-item-day">Szerda</h2>
+
+            <div class="cart-item">
+              <span class="category">LEVES</span>
+              <div class="item-container">
+                <div class="item-left">
+                  <p class="item-name">Japán gombaleves</p>
+                  <div class="food-desc">
+                    <span class="portion-size">Normál adag</span>
+                  </div>
+                </div>
+                <div class="item-right">
+                  <span class="price">1 390 Ft</span>
+                  <span class="quantity">1x</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="cart-item">
+              <span class="category">FŐÉTEL</span>
+              <div class="item-container">
+                <div class="item-left">
+                  <p class="item-name">
+                    Csirke teriyaki, szezámmagos rizzsel és brokkolival
+                  </p>
+                  <div class="food-desc">
+                    <span class="portion-size">Normál adag</span>
+                    <span>-</span>
+                    <span class="extra">Gluténmentes</span>
+                    <span class="extra">Laktózmentes</span>
+                  </div>
+                </div>
+                <div class="item-right">
+                  <span class="price">4 290 Ft </span>
+                  <span class="quantity">1x</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="cart-item">
+              <span class="category">Kiegészítő ÉTELEK</span>
+              <div class="item-container">
+                <div class="item-left">
+                  <p class="item-name">Saláta</p>
+                  <div class="food-desc">
+                    <span class="portion-size">200 g</span>
+                  </div>
+                </div>
+                <div class="item-right">
+                  <span class="price">500 Ft </span>
+                  <span class="quantity">1x</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="cart-item-container">
+            <h2 class="cart-item-day">Csütörtök</h2>
+
+            <div class="cart-item">
+              <span class="category">LEVES</span>
+              <div class="item-container">
+                <div class="item-left">
+                  <p class="item-name">Japán gombaleves</p>
+                  <div class="food-desc">
+                    <span class="portion-size">Normál adag</span>
+                  </div>
+                </div>
+                <div class="item-right">
+                  <span class="price">1 390 Ft</span>
+                  <span class="quantity">1x</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="cart-item">
+              <span class="category">FŐÉTEL</span>
+              <div class="item-container">
+                <div class="item-left">
+                  <p class="item-name">
+                    Csirke teriyaki, szezámmagos rizzsel és brokkolival
+                  </p>
+                  <div class="food-desc">
+                    <span class="portion-size">Normál adag</span>
+                    <span>-</span>
+                    <span class="extra">Gluténmentes</span>
+                    <span class="extra">Laktózmentes</span>
+                  </div>
+                </div>
+                <div class="item-right">
+                  <span class="price">4 290 Ft </span>
+                  <span class="quantity">1x</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="cart-item">
+              <span class="category">Kiegészítő ÉTELEK</span>
+              <div class="item-container">
+                <div class="item-left">
+                  <p class="item-name">Saláta</p>
+                  <div class="food-desc">
+                    <span class="portion-size">200 g</span>
+                  </div>
+                </div>
+                <div class="item-right">
+                  <span class="price">500 Ft </span>
+                  <span class="quantity">1x</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="cart-summary">
+          <div class="order-row">
+            <p>Rendelés összege:</p>
+            <span class="order-value">26 180 Ft</span>
+          </div>
+
+          <div class="available-row">
+            <p>Felhasználható összeg:</p>
+            <span class="available-value">168 240 Ft</span>
+          </div>
+
+          <div class="discount-row">
+            <div>
+              <p class="discount-name">Kedvezmény</p>
+            </div>
+            <div>
+              <span class="discount-percentage">10%</span>
+              <span class="discount-value">-2 618 Ft</span>
+            </div>
+          </div>
+
+          <div class="discount-row">
+            <div>
+              <p class="discount-name">Első rendelés kedvezmény</p>
+            </div>
+            <div>
+              <span class="discount-percentage">15%</span>
+              <span class="discount-value">-927 Ft</span>
+            </div>
+          </div>
+
+          <div class="delivery-row">
+            <div>
+              <p>Szállítás (800Ft/nap)</p>
+            </div>
+            <div>
+              <span class="delivery-multiplier">4x</span>
+              <span class="delivery-fee">3200 Ft</span>
+            </div>
+          </div>
+
+          <div class="coupon-row">
+            <div>
+              <p>Kuponkód:</p>
+            </div>
+            <div>
+              <span class="coupon-code">50OFF</span>
+              <button class="add-coupon-btn">+</button>
+            </div>
+          </div>
+
+          <div class="summary-row">
+            <p>Fizetendő összeg:</p>
+            <span class="summary-value">29 760 Ft</span>
+          </div>
+
+          <div class="cart-btn-row">
+            <button class="summary-cart-btn">Kosár</button>
+            <button class="summary-pay-btn">Fizetés</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <div class="popup-bg">
       <div class="popup-container">
         <div class="popup-top">

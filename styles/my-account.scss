@@ -204,14 +204,16 @@ header {
 .my-account-bg {
   width: 100vw;
   height: 91.5vh;
-
+  padding-top: 50px;
   background: var(--light-beige);
 
   display: flex;
   justify-content: center;
-  align-items: center;
 
   &.edit {
+    display: flex;
+    justify-content: center;
+
     position: absolute;
     overflow-y: scroll;
     -ms-overflow-style: none;
@@ -304,6 +306,7 @@ header {
   .my-account-container {
     display: flex;
     flex-direction: column;
+    height: fit-content;
 
     width: 560px;
     padding: 30px 40px;
@@ -311,6 +314,7 @@ header {
     background: var(--white);
 
     &.edit-password {
+      height: fit-content;
       span {
         font-family: "Red Hat Display";
         font-style: normal;
@@ -323,8 +327,7 @@ header {
     }
 
     &.edit {
-      position: absolute;
-      top: 10%;
+      height: fit-content;
     }
 
     h2 {

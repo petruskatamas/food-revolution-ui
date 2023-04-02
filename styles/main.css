@@ -908,6 +908,9 @@ header .navbar .nav-items .nav-cart .cart-items span {
 
 /* --- MAIN POPUP --- */
 .popup-bg {
+  position: absolute;
+  top: 0;
+  z-index: 10000;
   display: flex;
   flex-direction: row;
   justify-content: center;
