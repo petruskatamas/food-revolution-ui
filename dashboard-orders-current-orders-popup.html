@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Current Order Popup</title>
+    <link rel="stylesheet" href="styles/dashboard.css" />
+  </head>
+  <body>
+    <div class="popup-bg">
+      <div class="popup-container">
+        <div class="popup-top">
+          <img class="popup-img" src="images/placeholder-2.png" />
+          <button class="popup-close-btn"></button>
+        </div>
+
+        <div class="popup-bottom">
+          <h2 class="popup-food-name">
+            Édesburgonya krémleves karamellizált baconnel
+          </h2>
+          <span>Személyre szabás</span>
+
+          <div class="options-row">
+            <label class="checkbox-container"
+              >Gluténmentes
+              <input type="checkbox" checked="checked" />
+              <span class="custom-checkbox"></span>
+            </label>
+
+            <label class="checkbox-container"
+              >Laktózmentes
+              <input type="checkbox" />
+              <span class="custom-checkbox"></span>
+            </label>
+          </div>
+
+          <div class="options-row bottom">
+            <div class="portion-size">
+              <select>
+                <option value="normal">
+                  <span>4 290 Ft</span> - Normál adag
+                </option>
+                <option value="small">
+                  <span>4 290 Ft</span> - Kicsi adag
+                </option>
+                <option value="large"><span>4 290 Ft</span> - Nagy adag</option>
+              </select>
+            </div>
+
+            <div class="quantity-container">
+              <button class="decrase-btn">-</button>
+              <span class="quantity">1</span>
+              <button class="incrase-btn">+</button>
+            </div>
+          </div>
+
+          <div class="popup-btns">
+            <button class="update-btn">Frissítés</button>
+            <a class="delete-btn" href="#">Étel törlése</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
