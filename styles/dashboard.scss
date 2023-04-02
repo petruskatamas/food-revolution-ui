@@ -1122,3 +1122,435 @@ header {
 }
 
 /* --- DASHBOARD CART --- */
+
+.cart-bg {
+  width: 100vw;
+  height: 91.5vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 25px;
+  padding: 50px 0;
+  background-color: var(--light-beige);
+
+  position: absolute;
+  overflow-y: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  .cart-list-container {
+    width: 857px;
+    height: fit-content;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-color: var(--white);
+
+    .cart-item-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      gap: 10px;
+
+      h2 {
+        font-family: "Conso";
+        font-style: normal;
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 140%;
+        color: var(--secondary);
+      }
+
+      .cart-items {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+
+        .cart-item {
+          display: flex;
+          flex-direction: column;
+          gap: 6px;
+
+          .cart-items-category {
+            font-family: "Red Hat Display";
+            font-style: normal;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 130%;
+            color: var(--black);
+            opacity: 0.6;
+            text-transform: uppercase;
+          }
+
+          .cart-item-cols {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+
+            .cart-item-col {
+              &.name {
+                display: flex;
+                flex-direction: column;
+                gap: 3px;
+                width: 50%;
+
+                p {
+                  font-family: "Red Hat Display";
+                  font-style: normal;
+                  font-weight: 700;
+                  font-size: 15px;
+                  line-height: 130%;
+                  color: var(--primary);
+                }
+
+                span {
+                  font-family: "Red Hat Display";
+                  font-style: normal;
+                  font-weight: 400;
+                  font-size: 12px;
+                  line-height: 130%;
+                  color: var(--black);
+                }
+              }
+              &.quantity {
+                .quantity-container {
+                  display: flex;
+                  flex-direction: row;
+                  justify-content: space-between;
+                  gap: 10px;
+
+                  width: 95px;
+                  height: 45px;
+
+                  background: var(--white);
+                  border: 1px solid var(--light-beige);
+
+                  button {
+                    font-family: "Red Hat Display";
+                    font-style: normal;
+                    font-weight: 700;
+                    font-size: 15px;
+                    line-height: 130%;
+                    color: var(--black);
+                    width: 40px;
+                    height: inherit;
+                  }
+                  span {
+                    font-family: "Red Hat Display";
+                    font-style: normal;
+                    font-weight: 700;
+                    font-size: 15px;
+                    line-height: 130%;
+                    color: var(--black);
+                    height: inherit;
+
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                  }
+                }
+              }
+              &.customize {
+                a {
+                  font-family: "Red Hat Display";
+                  font-style: normal;
+                  font-weight: 400;
+                  font-size: 15px;
+                  line-height: 130%;
+                  color: var(--black);
+                  text-decoration: underline;
+                }
+              }
+              &.price {
+                p {
+                  font-family: "Red Hat Display";
+                  font-style: normal;
+                  font-weight: 700;
+                  font-size: 15px;
+                  line-height: 130%;
+                  color: var(--black);
+                }
+              }
+              &.btn {
+                .cart-item-delete-btn {
+                  width: 20px;
+                  height: 20px;
+                  background-image: url("../images/delete-btn.png");
+                  background-repeat: no-repeat;
+                  background-position: center;
+                  background-color: var(--light-beige);
+                  border: 1px solid #d7d2cd;
+                  border-radius: 999px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .cart-summary-container {
+    position: sticky;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+
+    width: 415px;
+    height: fit-content;
+    background: var(--white);
+    padding: 30px 20px;
+
+    h2 {
+      font-family: "Conso";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 24px;
+      line-height: 130%;
+      color: var(--primary);
+      padding-bottom: 16px;
+    }
+
+    .order-row {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+
+      p {
+        font-family: "Red Hat Display";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 15px;
+        line-height: 130%;
+        color: var(--primary);
+      }
+
+      .order-value {
+        font-family: "Red Hat Display";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 130%;
+        color: var(--black);
+      }
+    }
+
+    .available-row {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+
+      p {
+        font-family: "Red Hat Display";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 15px;
+        line-height: 130%;
+        color: var(--primary);
+      }
+
+      .available-value {
+        font-family: "Red Hat Display";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 130%;
+        color: var(--black);
+      }
+    }
+
+    .discount-row {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+
+      .discount-name {
+        font-family: "Red Hat Display";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 130%;
+        color: var(--primary);
+      }
+
+      .discount-percentage {
+        font-family: "Red Hat Display";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 130%;
+        color: var(--black);
+
+        padding-right: 10px;
+      }
+
+      .discount-value {
+        font-family: "Red Hat Display";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 130%;
+        color: var(--black);
+      }
+    }
+
+    .discount-row:nth-child(2) {
+      display: flex;
+      flex-direction: row;
+    }
+
+    .delivery-row {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+
+      p {
+        font-family: "Red Hat Display";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 130%;
+        color: var(--primary);
+      }
+
+      .delivery-multiplier {
+        font-family: "Red Hat Display";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 130%;
+        color: var(--black);
+
+        padding-right: 10px;
+      }
+      .delivery-fee {
+        font-family: "Red Hat Display";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 130%;
+        color: var(--black);
+      }
+    }
+
+    .delivery-row:nth-child(2) {
+      display: flex;
+      flex-direction: row;
+    }
+
+    .coupon-row {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      background: var(--white);
+      border: 1px solid #e0e0e0;
+      padding: 10px;
+
+      div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      p {
+        font-family: "Red Hat Display";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 130%;
+        color: var(--primary);
+      }
+
+      .coupon-code {
+        font-family: "Red Hat Display";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 110%;
+        color: var(--black);
+        padding-right: 10px;
+      }
+
+      .add-coupon-btn {
+        width: 20px;
+        height: 20px;
+        background: var(--light-beige);
+        font-family: "Red Hat Display";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 110%;
+        color: var(--black);
+      }
+    }
+
+    .coupon-row:nth-child(2) {
+      display: flex;
+      flex-direction: row;
+    }
+
+    .summary-row {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      padding: 10px 0;
+
+      p {
+        font-family: "Red Hat Display";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 15px;
+        line-height: 130%;
+        color: var(--primary);
+      }
+
+      .summary-value {
+        font-family: "Red Hat Display";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 130%;
+        color: var(--black);
+      }
+    }
+
+    .cart-btn-row {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+
+      .summary-cart-btn {
+        width: 102px;
+        height: 56px;
+        border: 2px solid rgba(12, 28, 24, 0.3);
+
+        font-family: "Conso";
+        font-style: normal;
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 140%;
+        color: var(--primary);
+      }
+
+      .summary-pay-btn {
+        width: 100%;
+        height: 56px;
+        background: var(--primary-gradient);
+
+        font-family: "Conso";
+        font-style: normal;
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 140%;
+        color: var(--white);
+      }
+    }
+  }
+}
+
+.cart-bg::-webkit-scrollbar {
+  display: none;
+}
