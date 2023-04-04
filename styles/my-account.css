@@ -79,6 +79,10 @@ body {
   font-family: "Mulish";
   src: url(fonts/Mulish.ttf);
 }
+.hidden {
+  display: none !important;
+}
+
 /* --- HEADER --- */
 header {
   position: relative;
@@ -144,6 +148,9 @@ header .navbar .nav-items {
   margin-left: auto;
   padding-right: 20px;
   gap: 25px;
+}
+header .navbar .nav-items .mobile-nav-hamburger {
+  display: none;
 }
 header .navbar .nav-items .profile span {
   margin-left: 10px;
@@ -409,4 +416,147 @@ header .navbar .nav-items .nav-cart .cart-items span {
 .my-account-bg .my-account-container .delivery-block .delivery-block-row.full-width span {
   max-width: 100%;
   text-align: left;
+}
+
+/* --- MOBILE VIEW --- */
+@media only screen and (max-width: 450px) {
+  /* --- MOBILE HEADER ---*/
+  header {
+    height: 68px;
+    padding: 14.5px 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  header .logo img {
+    width: 121px;
+    height: 39px;
+  }
+  header .navbar {
+    padding: 0;
+  }
+  header .navbar .nav-links {
+    display: none;
+  }
+  header .navbar .nav-items {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    padding-right: 0;
+  }
+  header .navbar .nav-items .profile {
+    display: none;
+  }
+  header .navbar .nav-items .nav-cart .cart-items {
+    bottom: 30px;
+    right: 15px;
+  }
+  header .navbar .nav-items .mobile-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  header .navbar .nav-items .mobile-nav .mobile-nav-hamburger {
+    display: flex;
+    width: 24px;
+    height: 21px;
+    background-image: url("../images/mobile-hamburger.png");
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  .mobile-header-nav {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 90vw;
+    z-index: 20;
+    background-color: var(--primary);
+    padding: 20px 27px;
+  }
+  .mobile-header-nav .logo img {
+    width: 174px;
+    height: 56px;
+  }
+  .mobile-header-nav .navbar {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    font-family: "Conso";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 140%;
+    color: var(--white);
+  }
+  .mobile-header-nav .navbar .nav-links {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    list-style-type: none;
+  }
+  .mobile-header-nav .navbar .nav-links .nav-link.nav-active {
+    font-family: "Conso";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    color: var(--secondary);
+  }
+  .mobile-header-nav .navbar .nav-items {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+  .mobile-header-nav-overlay {
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 19;
+    background-color: var(--light-beige);
+    opacity: 0.8;
+  }
+  /* --- MOBILE MY ACCOUNT --- */
+  .my-account-bg {
+    padding-bottom: 20px;
+  }
+  .my-account-bg h2 {
+    font-size: 23px;
+  }
+  .my-account-bg .my-account-container {
+    width: 90% !important;
+    padding: 30px 20px;
+  }
+  .my-account-bg .my-account-container .info-block-row p {
+    max-width: 50%;
+  }
+  .my-account-bg .my-account-container .delivery-block-row {
+    flex-direction: column !important;
+    gap: 6px;
+  }
+  .my-account-bg .my-account-container .delivery-block-row #delivery-address {
+    width: 100%;
+    max-width: 100%;
+    text-align: left;
+  }
+  .my-account-bg .my-account-container .form-input-row {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .my-account-bg .my-account-container .form-input-row .form-input.half {
+    width: 100% !important;
+  }
+  .my-account-bg .my-account-container .form-input-row .form-input.third {
+    width: 100% !important;
+  }
+  .my-account-bg .my-account-container .form-input-row .form-input.two-third {
+    width: 100% !important;
+  }
+  .my-account-bg .my-account-container .primary-btn {
+    width: 100% !important;
+  }
 }/*# sourceMappingURL=my-account.css.map */
