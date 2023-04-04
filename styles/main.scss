@@ -83,6 +83,10 @@ body {
   src: url(fonts/Mulish.ttf);
 }
 
+.hidden {
+  display: none !important;
+}
+
 /* --- HEADER --- */
 
 header {
@@ -154,6 +158,10 @@ header {
       margin-left: auto;
       padding-right: 20px;
       gap: 25px;
+
+      .mobile-nav-hamburger {
+        display: none;
+      }
 
       .profile {
         span {
@@ -447,6 +455,7 @@ header {
   display: flex;
   flex-direction: row;
   max-width: 100vw;
+  height: calc(100vh - 80px);
 
   .main {
     width: 80%;
@@ -519,14 +528,13 @@ header {
 
           &.in-cart {
             height: 85px;
-
-            .day {
-              color: var(--secondary-colorful);
-            }
           }
 
           &.day-active {
             border-bottom: 3px solid var(--secondary-colorful);
+            .day {
+              color: var(--secondary-colorful);
+            }
           }
         }
       }
@@ -534,6 +542,10 @@ header {
 
     .main-bottom {
       position: relative;
+
+      .mobile-categories-dropdown {
+        display: none;
+      }
 
       .top-container {
         display: flex;
@@ -805,6 +817,12 @@ header {
       background: #e4dad0;
       padding: 20px;
 
+      .cart-summary-sub {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+
       .order-row {
         display: flex;
         flex-direction: row;
@@ -1034,6 +1052,20 @@ header {
       }
     }
   }
+
+  .mobile-cart-btn {
+    display: none;
+  }
+  .mobile-cart-overlay {
+    display: none;
+  }
+  .mobile-cart-details {
+    display: none;
+  }
+}
+
+.dashboard::-webkit-scrollbar {
+  display: none;
 }
 
 /* --- MAIN POPUP --- */
@@ -1050,8 +1082,7 @@ header {
   width: 100vw;
   height: 100vh;
 
-  background: var(--black);
-  opacity: 0.85;
+  background: rgba(0, 0, 0, 0.692);
 
   .popup-container {
     display: block;
@@ -1136,6 +1167,366 @@ header {
               line-height: 130%;
               color: var(--primary);
             }
+          }
+        }
+      }
+    }
+  }
+}
+
+/* --- MOBILE VIEW --- */
+
+@media only screen and (max-width: 450px) {
+  /* --- MOBILE HEADER ---*/
+
+  header {
+    height: 68px;
+    padding: 14.5px 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    .logo {
+      img {
+        width: 121px;
+        height: 39px;
+      }
+    }
+
+    .navbar {
+      padding: 0;
+      .nav-links {
+        display: none;
+      }
+
+      .nav-items {
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+        padding-right: 0;
+
+        .profile {
+          display: none;
+        }
+
+        .nav-cart {
+          .cart-items {
+            bottom: 30px;
+            right: 15px;
+          }
+        }
+
+        .mobile-nav {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          .mobile-nav-hamburger {
+            display: flex;
+            width: 24px;
+            height: 21px;
+            background-image: url("../images/mobile-hamburger.png");
+            background-position: center;
+            background-repeat: no-repeat;
+          }
+        }
+      }
+    }
+  }
+
+  .mobile-header-nav {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 90vw;
+    z-index: 20;
+    background-color: var(--primary);
+    padding: 20px 27px;
+
+    .logo {
+      img {
+        width: 174px;
+        height: 56px;
+      }
+    }
+
+    .navbar {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
+
+      font-family: "Conso";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 140%;
+      color: var(--white);
+
+      .nav-links {
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+        list-style-type: none;
+
+        .nav-link {
+          &.nav-active {
+            font-family: "Conso";
+            font-style: normal;
+            font-weight: 600;
+            font-size: 18px;
+            color: var(--secondary);
+          }
+        }
+      }
+
+      .nav-items {
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+      }
+    }
+  }
+
+  .mobile-header-nav-overlay {
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 19;
+    background-color: var(--light-beige);
+    opacity: 0.8;
+  }
+
+  /* --- MOBILE MAIN DASHBOARD ---*/
+
+  .dashboard {
+    height: calc(100vh - 68px);
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    overflow-y: hidden;
+
+    .main {
+      width: 100%;
+      height: calc(100vh - 68px);
+      .main-top {
+        padding-left: 0;
+        overflow-x: scroll;
+        height: 100px;
+
+        background: rgb(233, 226, 219);
+        background: linear-gradient(
+          0deg,
+          rgba(233, 226, 219, 1) 0%,
+          rgba(233, 226, 219, 1) 20%,
+          rgba(255, 255, 255, 1) 20%
+        );
+
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+
+        .main-top-days {
+          padding-left: 0;
+          left: 20px;
+
+          .main-top-card {
+            gap: 2px;
+
+            p {
+              margin-bottom: -4px;
+            }
+          }
+        }
+      }
+
+      .main-top::-webkit-scrollbar {
+        display: none;
+      }
+
+      .main-bottom {
+        height: calc(100vh - 68px - 100px);
+        .top-container {
+          padding: 10px 20px;
+          height: 60px;
+          .categories {
+            display: none;
+          }
+
+          .mobile-categories-dropdown {
+            width: 108px;
+            height: 40px;
+            background: var(--white);
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 14px;
+            gap: 20px;
+
+            select {
+              width: inherit;
+              height: inherit;
+              font-family: "Red Hat Display";
+              font-style: normal;
+              font-weight: 400;
+              font-size: 15px;
+              line-height: 130%;
+              color: var(--black);
+              padding: 10px 40px 10px 14px;
+
+              background: transparent;
+              background-image: url("../images/dropdown.png");
+              background-repeat: no-repeat;
+              background-position-x: 90%;
+              background-position-y: 45%;
+
+              option {
+                font-family: "Red Hat Display";
+                font-style: normal;
+                font-weight: 400;
+                font-size: 15px;
+                line-height: 130%;
+                color: var(--black);
+              }
+            }
+          }
+
+          .address-dropdown {
+            width: 228px;
+            overflow: hidden;
+
+            select {
+              padding: 10px 40px 10px 14px;
+              background-position-x: 90%;
+            }
+          }
+        }
+
+        .cards-container {
+          padding: 10px 20px;
+          height: 100%;
+        }
+
+        .bottom-gradient {
+          display: none;
+        }
+      }
+    }
+
+    .cart {
+      position: absolute;
+      top: 68px;
+      right: 0;
+      width: 90vw;
+      height: calc(100vh - 68px);
+      z-index: 10;
+      .cart-summary {
+        height: fit-content;
+      }
+      .cart-btn-row {
+        justify-content: center;
+        .summary-cart-btn {
+          display: none;
+        }
+        .summary-pay-btn {
+          width: 100% !important;
+        }
+      }
+    }
+
+    .cart-summary-sub {
+      display: none !important;
+    }
+
+    .mobile-cart-btn {
+      display: flex;
+      position: absolute;
+      top: 50%;
+      right: 10px;
+
+      width: 56px;
+      height: 56px;
+      background-color: var(--secondary-colorful);
+      background-image: url("../images/mobile-cart-btn.png");
+      background-position: center;
+      background-repeat: no-repeat;
+      box-shadow: 0px 4px 40px rgba(0, 0, 0, 0.25);
+      border-radius: 999px;
+    }
+
+    .mobile-cart-details {
+      display: flex;
+      justify-content: flex-start;
+      gap: 6px;
+
+      font-family: "Red Hat Display";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 15px;
+      line-height: 130%;
+      color: var(--primary);
+
+      a {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 6px;
+      }
+
+      .details-arrow {
+        display: flex;
+        background-image: url("../images/mobile-details-arrow.png");
+        background-position: center;
+        background-repeat: no-repeat;
+        width: 8px;
+        height: 5px;
+      }
+    }
+
+    .mobile-cart-overlay {
+      display: block;
+      position: absolute;
+      top: 68px;
+
+      background-color: var(--primary);
+      opacity: 0.4;
+      z-index: 1;
+      width: 100vw;
+      height: calc(100vh - 68px);
+    }
+  }
+
+  .dashboard::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* --- MOBILE MAIN POPUP --- */
+
+  .popup-bg {
+    .popup-container {
+      width: 90%;
+      height: fit-content;
+
+      h2 {
+        font-family: "Conso";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 140%;
+        padding-bottom: 20px;
+      }
+
+      .popup-bottom {
+        gap: 0;
+        padding: 16px 20px;
+        .popup-data-container {
+          flex-direction: column;
+          .data-col {
+            width: 100%;
           }
         }
       }

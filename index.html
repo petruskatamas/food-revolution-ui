@@ -37,6 +37,9 @@
               <span>Fiókom</span>
             </a>
           </div>
+          <div class="mobile-nav">
+            <button class="mobile-nav-hamburger"></button>
+          </div>
           <div class="nav-cart">
             <a href="#">
               <img src="images/cart.png" />
@@ -48,6 +51,47 @@
         </div>
       </div>
     </header>
+
+    <div class="mobile-header-nav hidden">
+      <div class="logo">
+        <img src="images/logo.png" />
+      </div>
+
+      <div class="navbar">
+        <ul class="nav-links">
+          <li class="nav-link nav-active">
+            <a href="#">Főoldal</a>
+          </li>
+          <li class="nav-link">
+            <a href="#">Heti menü rendelés</a>
+          </li>
+          <li class="nav-link">
+            <a href="#">Rendelések</a>
+          </li>
+          <li class="nav-link">
+            <a href="#">Pénzügyek</a>
+          </li>
+          <li class="nav-link">
+            <a href="#">Tudnivalók</a>
+          </li>
+        </ul>
+
+        <div class="nav-items">
+          <div class="profile">
+            <a href="#">
+              <span>Fiókom</span>
+            </a>
+          </div>
+
+          <div class="logout">
+            <a href="#">
+              <span>Kijelentkezés</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="mobile-header-nav-overlay hidden"></div>
 
     <div class="dashboard">
       <div class="main">
@@ -104,6 +148,19 @@
               <p><a href="#">Smoothie</a></p>
               <p><a href="#">Gyümölcsleves</a></p>
               <p><a href="#">Kiegészítő ételek</a></p>
+            </div>
+
+            <div class="mobile-categories-dropdown">
+              <select name="category" id="category">
+                <option value="category-1">Leves</option>
+                <option value="category-2">Főétel</option>
+                <option value="category-3">Sportolói</option>
+                <option value="category-4">Vegetáriánus</option>
+                <option value="category-5">Vegán</option>
+                <option value="category-6">Superfood</option>
+                <option value="category-7">Smoothie</option>
+                <option value="category-8">Kiegészítő ételek</option>
+              </select>
             </div>
 
             <div class="address-dropdown">
@@ -572,6 +629,8 @@
           </div>
           <div class="bottom-gradient"></div>
         </div>
+
+        <button class="mobile-cart-btn"></button>
       </div>
 
       <div class="cart">
@@ -806,53 +865,62 @@
         </div>
 
         <div class="cart-summary">
-          <div class="order-row">
-            <p>Rendelés összege:</p>
-            <span class="order-value">26 180 Ft</span>
+          <div class="mobile-cart-details">
+            <a href="#">
+              <span>Megrendelés részletei</span>
+              <span class="details-arrow"></span>
+            </a>
           </div>
 
-          <div class="available-row">
-            <p>Felhasználható összeg:</p>
-            <span class="available-value">168 240 Ft</span>
-          </div>
+          <div class="cart-summary-sub">
+            <div class="order-row">
+              <p>Rendelés összege:</p>
+              <span class="order-value">26 180 Ft</span>
+            </div>
 
-          <div class="discount-row">
-            <div>
-              <p class="discount-name">Kedvezmény</p>
+            <div class="available-row">
+              <p>Felhasználható összeg:</p>
+              <span class="available-value">168 240 Ft</span>
             </div>
-            <div>
-              <span class="discount-percentage">10%</span>
-              <span class="discount-value">-2 618 Ft</span>
-            </div>
-          </div>
 
-          <div class="discount-row">
-            <div>
-              <p class="discount-name">Első rendelés kedvezmény</p>
+            <div class="discount-row">
+              <div>
+                <p class="discount-name">Kedvezmény</p>
+              </div>
+              <div>
+                <span class="discount-percentage">10%</span>
+                <span class="discount-value">-2 618 Ft</span>
+              </div>
             </div>
-            <div>
-              <span class="discount-percentage">15%</span>
-              <span class="discount-value">-927 Ft</span>
-            </div>
-          </div>
 
-          <div class="delivery-row">
-            <div>
-              <p>Szállítás (800Ft/nap)</p>
+            <div class="discount-row">
+              <div>
+                <p class="discount-name">Első rendelés kedvezmény</p>
+              </div>
+              <div>
+                <span class="discount-percentage">15%</span>
+                <span class="discount-value">-927 Ft</span>
+              </div>
             </div>
-            <div>
-              <span class="delivery-multiplier">4x</span>
-              <span class="delivery-fee">3200 Ft</span>
-            </div>
-          </div>
 
-          <div class="coupon-row">
-            <div>
-              <p>Kuponkód:</p>
+            <div class="delivery-row">
+              <div>
+                <p>Szállítás (800Ft/nap)</p>
+              </div>
+              <div>
+                <span class="delivery-multiplier">4x</span>
+                <span class="delivery-fee">3200 Ft</span>
+              </div>
             </div>
-            <div>
-              <span class="coupon-code">50OFF</span>
-              <button class="add-coupon-btn">+</button>
+
+            <div class="coupon-row">
+              <div>
+                <p>Kuponkód:</p>
+              </div>
+              <div>
+                <span class="coupon-code">50OFF</span>
+                <button class="add-coupon-btn">+</button>
+              </div>
             </div>
           </div>
 
@@ -867,6 +935,7 @@
           </div>
         </div>
       </div>
+      <div class="mobile-cart-overlay hidden"></div>
     </div>
   </body>
 </html>
