@@ -83,6 +83,10 @@ body {
   src: url(fonts/Mulish.ttf);
 }
 
+.hidden {
+  display: none !important;
+}
+
 /* --- LOGIN --- */
 
 .login-bg {
@@ -393,6 +397,89 @@ body {
         font-weight: 700;
         font-size: 15px;
         color: var(--white);
+      }
+    }
+  }
+}
+
+/* --- MOBILE VIEW --- */
+
+@media only screen and (max-width: 450px) {
+  /* --- MOBILE LOGIN --- */
+  .login-bg {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    overflow-y: hidden;
+    .login-container {
+      width: 90%;
+
+      &.register {
+        top: 65% !important;
+      }
+
+      .login-form {
+        width: 100%;
+        padding: 20px 30px;
+
+        .login-btn {
+          width: 156px !important;
+          height: 56px !important;
+        }
+
+        .form-btns {
+          padding-top: 0;
+        }
+
+        &.register {
+          .form-input-row {
+            flex-direction: column;
+            gap: 20px;
+
+            .form-input {
+              &.half {
+                width: 100% !important;
+              }
+
+              &.third {
+                width: 100% !important;
+              }
+
+              &.two-third {
+                width: 100% !important;
+              }
+            }
+          }
+
+          .form-btns {
+            flex-direction: column-reverse;
+            gap: 20px;
+            width: 100%;
+
+            .back-to-login-btn {
+              text-align: center;
+            }
+
+            .register-btn {
+              width: 100% !important;
+            }
+          }
+        }
+
+        &.forgot-psw-form {
+          .form-btns {
+            flex-direction: column-reverse;
+            gap: 20px;
+            width: 100%;
+
+            .send-reminder-btn {
+              width: 100% !important;
+            }
+
+            .back-to-login-btn {
+              text-align: center;
+            }
+          }
+        }
       }
     }
   }

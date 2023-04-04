@@ -79,6 +79,10 @@ body {
   font-family: "Mulish";
   src: url(fonts/Mulish.ttf);
 }
+.hidden {
+  display: none !important;
+}
+
 /* --- LOGIN --- */
 .login-bg {
   width: 100vw;
@@ -345,4 +349,66 @@ body {
   font-weight: 700;
   font-size: 15px;
   color: var(--white);
+}
+
+/* --- MOBILE VIEW --- */
+@media only screen and (max-width: 450px) {
+  /* --- MOBILE LOGIN --- */
+  .login-bg {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    overflow-y: hidden;
+  }
+  .login-bg .login-container {
+    width: 90%;
+  }
+  .login-bg .login-container.register {
+    top: 65% !important;
+  }
+  .login-bg .login-container .login-form {
+    width: 100%;
+    padding: 20px 30px;
+  }
+  .login-bg .login-container .login-form .login-btn {
+    width: 156px !important;
+    height: 56px !important;
+  }
+  .login-bg .login-container .login-form .form-btns {
+    padding-top: 0;
+  }
+  .login-bg .login-container .login-form.register .form-input-row {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .login-bg .login-container .login-form.register .form-input-row .form-input.half {
+    width: 100% !important;
+  }
+  .login-bg .login-container .login-form.register .form-input-row .form-input.third {
+    width: 100% !important;
+  }
+  .login-bg .login-container .login-form.register .form-input-row .form-input.two-third {
+    width: 100% !important;
+  }
+  .login-bg .login-container .login-form.register .form-btns {
+    flex-direction: column-reverse;
+    gap: 20px;
+    width: 100%;
+  }
+  .login-bg .login-container .login-form.register .form-btns .back-to-login-btn {
+    text-align: center;
+  }
+  .login-bg .login-container .login-form.register .form-btns .register-btn {
+    width: 100% !important;
+  }
+  .login-bg .login-container .login-form.forgot-psw-form .form-btns {
+    flex-direction: column-reverse;
+    gap: 20px;
+    width: 100%;
+  }
+  .login-bg .login-container .login-form.forgot-psw-form .form-btns .send-reminder-btn {
+    width: 100% !important;
+  }
+  .login-bg .login-container .login-form.forgot-psw-form .form-btns .back-to-login-btn {
+    text-align: center;
+  }
 }/*# sourceMappingURL=login.css.map */
