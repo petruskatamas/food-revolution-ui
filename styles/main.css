@@ -1027,6 +1027,9 @@ header .navbar .nav-items .nav-cart .cart-items span {
 
 /* --- MOBILE VIEW --- */
 @media only screen and (max-width: 450px) {
+  .checkbox-container:hover input ~ .custom-checkbox {
+    background-color: var(--secondary-colorful) !important;
+  }
   /* --- MOBILE HEADER ---*/
   header {
     height: 68px;
@@ -1240,9 +1243,6 @@ header .navbar .nav-items .nav-cart .cart-items span {
   }
   .dashboard .cart .cart-btn-row .summary-pay-btn {
     width: 100% !important;
-  }
-  .dashboard .cart-summary-sub {
-    display: none !important;
   }
   .dashboard .mobile-cart-btn {
     display: flex;

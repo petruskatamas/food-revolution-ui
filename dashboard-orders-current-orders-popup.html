@@ -96,15 +96,19 @@
       <div class="sub-header-container">
         <ul class="nav-links">
           <li class="nav-link nav-active">
-            <a href="#">Rendelések</a>
+            <a href="#">Aktív rendelések</a>
           </li>
           <li class="nav-link">
-            <a href="#">Befizetések</a>
-          </li>
-          <li class="nav-link">
-            <a href="#">Számláim</a>
+            <a href="#">Régebbi rendelések</a>
           </li>
         </ul>
+
+        <div class="mobile-link-dropdown">
+          <select name="link-dropdown" id="link-dropdown">
+            <option value="link-1">Aktív rendelések</option>
+            <option value="link-2">Régebbi rendelések</option>
+          </select>
+        </div>
       </div>
 
       <div class="orders-container">
@@ -227,6 +231,18 @@
 
           <div class="popup-btns">
             <button class="update-btn">Frissítés</button>
+            <a class="delete-btn" href="#">Étel törlése</a>
+          </div>
+
+          <div class="mobile-popup-bottom">
+            <div class="mobile-options">
+              <div class="quantity-container">
+                <button class="decrase-btn">-</button>
+                <span class="quantity">1</span>
+                <button class="incrase-btn">+</button>
+              </div>
+              <button class="update-btn">Frissítés</button>
+            </div>
             <a class="delete-btn" href="#">Étel törlése</a>
           </div>
         </div>
