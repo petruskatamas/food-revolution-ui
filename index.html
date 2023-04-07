@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="styles/main.css" />
   </head>
 
-  <body>
+  <body id="root">
     <header>
       <div class="logo">
         <img src="images/logo.png" />
@@ -633,7 +633,7 @@
         <button class="mobile-cart-btn"></button>
       </div>
 
-      <div class="cart hidden">
+      <div class="cart">
         <div class="cart-list">
           <div class="cart-item-container">
             <h2 class="cart-item-day">Hétfő</h2>
@@ -866,8 +866,8 @@
 
         <div class="cart-summary">
           <div class="mobile-cart-details">
-            <a href="#">
-              <span>Megrendelés részletei</span>
+            <a class="mobile-details-link" href="#">
+              <span class="details-text">Megrendelés részletei</span>
               <span class="details-arrow"></span>
             </a>
           </div>
@@ -937,5 +937,107 @@
       </div>
       <div class="mobile-cart-overlay hidden"></div>
     </div>
+
+    <script>
+      const rootElement = document.querySelector("#root");
+      const mobileHamburgerBtn = document.querySelector(
+        ".mobile-nav-hamburger"
+      );
+      const mobileHeaderNav = document.querySelector(".mobile-header-nav");
+      const mobileHeaderNavOverlay = document.querySelector(
+        ".mobile-header-nav-overlay"
+      );
+      const mobileCartBtn = document.querySelector(".mobile-cart-btn");
+      const mobileCartDiv = document.querySelector(".cart");
+      const mobileCartOverlay = document.querySelector(".mobile-cart-overlay");
+      const mobileCartDetailsBtn = document.querySelector(
+        ".mobile-details-link"
+      );
+      const mobileCartDetailsDiv = document.querySelector(".cart-summary-sub");
+
+      const responsive = () => {
+        console.log("responsive");
+        if (window.innerWidth < 450) {
+          mobileCartDiv.classList.add("hidden");
+          mobileCartDetailsDiv.classList.add("hidden");
+        }
+      };
+
+      rootElement.addEventListener("loaded", responsive());
+
+      mobileHamburgerBtn.addEventListener("click", function () {
+        if (mobileHeaderNav.classList.contains("hidden")) {
+          mobileHeaderNav.classList.remove("hidden");
+        } else {
+          mobileHeaderNav.classList.add("hidden");
+        }
+
+        if (mobileHeaderNavOverlay.classList.contains("hidden")) {
+          mobileHeaderNavOverlay.classList.remove("hidden");
+        } else {
+          mobileHeaderNavOverlay.classList.add("hidden");
+        }
+      });
+
+      mobileCartBtn.addEventListener("click", function () {
+        if (mobileCartDiv.classList.contains("hidden")) {
+          mobileCartDiv.classList.remove("hidden");
+        } else {
+          mobileCartDiv.classList.add("hidden");
+        }
+
+        if (mobileCartOverlay.classList.contains("hidden")) {
+          mobileCartOverlay.classList.remove("hidden");
+        } else {
+          mobileCartOverlay.classList.add("hidden");
+        }
+      });
+
+      const mobileDetailsText = document.querySelector(".details-text");
+      const mobileDetailsArrow = document.querySelector(".details-arrow");
+
+      mobileCartDetailsBtn.addEventListener("click", function () {
+        console.log("details");
+        if (mobileCartDetailsDiv.classList.contains("hidden")) {
+          mobileCartDetailsDiv.classList.remove("hidden");
+          mobileDetailsText.textContent = "Részletek elrejtése";
+          mobileDetailsArrow.style.backgroundImage =
+            "url('./images/details-arrow-down.png')";
+        } else {
+          mobileCartDetailsDiv.classList.add("hidden");
+          mobileDetailsText.textContent = "Megrendelés részletei";
+          mobileDetailsArrow.style.backgroundImage =
+            'url("./images/mobile-details-arrow.png")';
+        }
+      });
+
+      mobileCartOverlay.addEventListener("click", function () {
+        if (mobileCartDiv.classList.contains("hidden")) {
+          mobileCartDiv.classList.remove("hidden");
+        } else {
+          mobileCartDiv.classList.add("hidden");
+        }
+
+        if (mobileCartOverlay.classList.contains("hidden")) {
+          mobileCartOverlay.classList.remove("hidden");
+        } else {
+          mobileCartOverlay.classList.add("hidden");
+        }
+      });
+
+      mobileHeaderNavOverlay.addEventListener("click", function () {
+        if (mobileHeaderNav.classList.contains("hidden")) {
+          mobileHeaderNav.classList.remove("hidden");
+        } else {
+          mobileHeaderNav.classList.add("hidden");
+        }
+
+        if (mobileHeaderNavOverlay.classList.contains("hidden")) {
+          mobileHeaderNavOverlay.classList.remove("hidden");
+        } else {
+          mobileHeaderNavOverlay.classList.add("hidden");
+        }
+      });
+    </script>
   </body>
 </html>

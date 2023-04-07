@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="styles/dashboard.css" />
   </head>
 
-  <body>
+  <body id="root">
     <header>
       <div class="logo">
         <img src="images/logo.png" />
@@ -613,13 +613,13 @@
 
       <div class="cart-summary-container">
         <div class="mobile-details-btn">
-          <a href="#">
-            <span>Megrendelés részletei</span>
+          <a class="mobile-details-link" href="#">
+            <span class="details-text">Megrendelés részletei</span>
             <span class="details-arrow"></span>
           </a>
         </div>
         <h2>Rendelés összesítő</h2>
-        <div class="summary-details">
+        <div class="cart-summary-sub">
           <div class="order-row">
             <p>Rendelés összege:</p>
             <span class="order-value">26 180 Ft</span>
@@ -681,5 +681,74 @@
         </div>
       </div>
     </div>
+
+    <script>
+      const mobileCartDetailsBtn = document.querySelector(
+        ".mobile-details-link"
+      );
+      const mobileCartDetailsDiv = document.querySelector(".cart-summary-sub");
+      const mobileDetailsText = document.querySelector(".details-text");
+      const mobileDetailsArrow = document.querySelector(".details-arrow");
+      const mobileHamburgerBtn = document.querySelector(
+        ".mobile-nav-hamburger"
+      );
+      const mobileHeaderNav = document.querySelector(".mobile-header-nav");
+      const mobileHeaderNavOverlay = document.querySelector(
+        ".mobile-header-nav-overlay"
+      );
+      const rootElement = document.querySelector("#root");
+
+      const responsive = () => {
+        console.log("responsive");
+        if (window.innerWidth < 450) {
+          mobileCartDetailsDiv.classList.add("hidden");
+        }
+      };
+
+      rootElement.addEventListener("loaded", responsive());
+
+      mobileCartDetailsBtn.addEventListener("click", function () {
+        console.log("details");
+        if (mobileCartDetailsDiv.classList.contains("hidden")) {
+          mobileCartDetailsDiv.classList.remove("hidden");
+          mobileDetailsText.textContent = "Részletek elrejtése";
+          mobileDetailsArrow.style.backgroundImage =
+            "url('./images/details-arrow-down.png')";
+        } else {
+          mobileCartDetailsDiv.classList.add("hidden");
+          mobileDetailsText.textContent = "Megrendelés részletei";
+          mobileDetailsArrow.style.backgroundImage =
+            'url("./images/mobile-details-arrow.png")';
+        }
+      });
+
+      mobileHamburgerBtn.addEventListener("click", function () {
+        if (mobileHeaderNav.classList.contains("hidden")) {
+          mobileHeaderNav.classList.remove("hidden");
+        } else {
+          mobileHeaderNav.classList.add("hidden");
+        }
+
+        if (mobileHeaderNavOverlay.classList.contains("hidden")) {
+          mobileHeaderNavOverlay.classList.remove("hidden");
+        } else {
+          mobileHeaderNavOverlay.classList.add("hidden");
+        }
+      });
+
+      mobileHeaderNavOverlay.addEventListener("click", function () {
+        if (mobileHeaderNav.classList.contains("hidden")) {
+          mobileHeaderNav.classList.remove("hidden");
+        } else {
+          mobileHeaderNav.classList.add("hidden");
+        }
+
+        if (mobileHeaderNavOverlay.classList.contains("hidden")) {
+          mobileHeaderNavOverlay.classList.remove("hidden");
+        } else {
+          mobileHeaderNavOverlay.classList.add("hidden");
+        }
+      });
+    </script>
   </body>
 </html>

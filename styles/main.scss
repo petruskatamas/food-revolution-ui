@@ -1248,6 +1248,7 @@ header {
     z-index: 20;
     background-color: var(--primary);
     padding: 20px 27px;
+    transition: all ease 0.2s !important;
 
     .logo {
       img {
@@ -1302,6 +1303,8 @@ header {
     z-index: 19;
     background-color: var(--light-beige);
     opacity: 0.8;
+
+    transition: ease-in 1s;
   }
 
   /* --- MOBILE MAIN DASHBOARD ---*/

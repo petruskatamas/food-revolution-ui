@@ -1086,6 +1086,7 @@ header .navbar .nav-items .nav-cart .cart-items span {
     z-index: 20;
     background-color: var(--primary);
     padding: 20px 27px;
+    transition: all ease 0.2s !important;
   }
   .mobile-header-nav .logo img {
     width: 174px;
@@ -1129,6 +1130,7 @@ header .navbar .nav-items .nav-cart .cart-items span {
     z-index: 19;
     background-color: var(--light-beige);
     opacity: 0.8;
+    transition: ease-in 1s;
   }
   /* --- MOBILE MAIN DASHBOARD ---*/
   .dashboard {

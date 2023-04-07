@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="styles/dashboard.css" />
   </head>
 
-  <body>
+  <body id="root">
     <header>
       <div class="logo">
         <img src="images/logo.png" />
@@ -106,5 +106,43 @@
         <button class="thank-you-btn">Rendeléseim</button>
       </div>
     </div>
+
+    <script>
+      const mobileHamburgerBtn = document.querySelector(
+        ".mobile-nav-hamburger"
+      );
+      const mobileHeaderNav = document.querySelector(".mobile-header-nav");
+      const mobileHeaderNavOverlay = document.querySelector(
+        ".mobile-header-nav-overlay"
+      );
+
+      mobileHamburgerBtn.addEventListener("click", function () {
+        if (mobileHeaderNav.classList.contains("hidden")) {
+          mobileHeaderNav.classList.remove("hidden");
+        } else {
+          mobileHeaderNav.classList.add("hidden");
+        }
+
+        if (mobileHeaderNavOverlay.classList.contains("hidden")) {
+          mobileHeaderNavOverlay.classList.remove("hidden");
+        } else {
+          mobileHeaderNavOverlay.classList.add("hidden");
+        }
+      });
+
+      mobileHeaderNavOverlay.addEventListener("click", function () {
+        if (mobileHeaderNav.classList.contains("hidden")) {
+          mobileHeaderNav.classList.remove("hidden");
+        } else {
+          mobileHeaderNav.classList.add("hidden");
+        }
+
+        if (mobileHeaderNavOverlay.classList.contains("hidden")) {
+          mobileHeaderNavOverlay.classList.remove("hidden");
+        } else {
+          mobileHeaderNavOverlay.classList.add("hidden");
+        }
+      });
+    </script>
   </body>
 </html>

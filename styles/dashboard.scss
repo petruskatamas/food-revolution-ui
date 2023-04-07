@@ -630,7 +630,7 @@ header {
 
 .orders-container {
   width: inherit;
-  height: 81.5vh;
+  height: calc(100vh - 80px - 7vh);
   background-color: var(--light-beige);
 
   position: absolute;
@@ -1100,7 +1100,7 @@ header {
 
   .thank-you-container {
     width: 642px;
-    height: fit-content;
+    height: 614px;
     background: var(--white);
 
     display: flex;
@@ -1109,6 +1109,7 @@ header {
     align-items: center;
     gap: 20px;
     padding: 20px;
+    padding-top: 0;
 
     .thank-you-img {
       position: relative;
@@ -2030,7 +2031,7 @@ header {
         display: none;
       }
 
-      .summary-details {
+      .cart-summary-sub {
         display: flex;
         flex-direction: column;
         gap: 6px;

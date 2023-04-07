@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="styles/dashboard.css" />
   </head>
 
-  <body>
+  <body id="root">
     <header>
       <div class="logo">
         <img src="images/logo.png" />
@@ -101,17 +101,81 @@
         <div class="faq-about-us">
           <h2>A rendszerünk</h2>
           <p>
-            Az ételek között a Heti menü rendelés oldalon keresztül tudsz válogatni. A weboldalra minden héten szombaton délig kerül fel a következő heti menü, amit a „Heti menü rendelés” alatt találsz - erről mindig küldünk egy értesítőt is e-mailben.</br></br> Az ételeket naponta egyszer szállítjuk és igyekszünk legkésőbb délig megérkezni hozzád. Rendelni és rendelést lemondani tárgynap előtt este 8 óráig lehet. Lemondás esetén a kifizetett összeg kreditként jóváíródik a számládon, a következő rendelésed során levonódik a számlád végösszegéből.</br></br>Szállítási címet módosítani az adott nap, reggel 8 óráig lehet - ez akkor jöhet jól, ha például home office helyett mégis az irodában kell dolgoznod. Az ételeket ökotáskában és üvegtálban szállítjuk, amiket legkésőbb minden második nap tisztán, elmosva kérjük vissza adni a futárnak. Természetesen az edényt ezután mi is elmossuk a HACCP rendszer követelményeinek betartásával. Ha egy tálat bármilyen okból nem tudsz visszaadni, akkor annak a beszerzési árát hozzáadjuk a következő számládhoz.
+            Az ételek között a Heti menü rendelés oldalon keresztül tudsz
+            válogatni. A weboldalra minden héten szombaton délig kerül fel a
+            következő heti menü, amit a „Heti menü rendelés” alatt találsz -
+            erről mindig küldünk egy értesítőt is e-mailben.<br /><br />
+            Az ételeket naponta egyszer szállítjuk és igyekszünk legkésőbb délig
+            megérkezni hozzád. Rendelni és rendelést lemondani tárgynap előtt
+            este 8 óráig lehet. Lemondás esetén a kifizetett összeg kreditként
+            jóváíródik a számládon, a következő rendelésed során levonódik a
+            számlád végösszegéből.<br /><br />Szállítási címet módosítani az
+            adott nap, reggel 8 óráig lehet - ez akkor jöhet jól, ha például
+            home office helyett mégis az irodában kell dolgoznod. Az ételeket
+            ökotáskában és üvegtálban szállítjuk, amiket legkésőbb minden
+            második nap tisztán, elmosva kérjük vissza adni a futárnak.
+            Természetesen az edényt ezután mi is elmossuk a HACCP rendszer
+            követelményeinek betartásával. Ha egy tálat bármilyen okból nem
+            tudsz visszaadni, akkor annak a beszerzési árát hozzáadjuk a
+            következő számládhoz.
           </p>
         </div>
         <div class="faq-contact">
-            <h2>Kapcsolat</h2>
-            <p>Az Ügyfélszolgálat segítségedre lehet abban is, ha esetleg tudni akarod, hogy mikor érkezik meg az ebéded, de bármely más kérdéssel, észrevétellel fordulhatsz hozzánk bizalommal.</p>
-            <p class="contact-phone"><a href="tel:+36202088139">+ 36 20 208 8139</a></p>
-            <p class="conatct-email"><a href="mailto:ugyfelszolgalat@foodrevolution.hu">ugyfelszolgalat@foodrevolution.hu</a></p>
-            <span>Jó étvágyat!</span>
+          <h2>Kapcsolat</h2>
+          <p>
+            Az Ügyfélszolgálat segítségedre lehet abban is, ha esetleg tudni
+            akarod, hogy mikor érkezik meg az ebéded, de bármely más kérdéssel,
+            észrevétellel fordulhatsz hozzánk bizalommal.
+          </p>
+          <p class="contact-phone">
+            <a href="tel:+36202088139">+ 36 20 208 8139</a>
+          </p>
+          <p class="conatct-email">
+            <a href="mailto:ugyfelszolgalat@foodrevolution.hu"
+              >ugyfelszolgalat@foodrevolution.hu</a
+            >
+          </p>
+          <span>Jó étvágyat!</span>
         </div>
       </div>
     </div>
+
+    <script>
+      const mobileHamburgerBtn = document.querySelector(
+        ".mobile-nav-hamburger"
+      );
+      const mobileHeaderNav = document.querySelector(".mobile-header-nav");
+      const mobileHeaderNavOverlay = document.querySelector(
+        ".mobile-header-nav-overlay"
+      );
+
+      mobileHamburgerBtn.addEventListener("click", function () {
+        if (mobileHeaderNav.classList.contains("hidden")) {
+          mobileHeaderNav.classList.remove("hidden");
+        } else {
+          mobileHeaderNav.classList.add("hidden");
+        }
+
+        if (mobileHeaderNavOverlay.classList.contains("hidden")) {
+          mobileHeaderNavOverlay.classList.remove("hidden");
+        } else {
+          mobileHeaderNavOverlay.classList.add("hidden");
+        }
+      });
+
+      mobileHeaderNavOverlay.addEventListener("click", function () {
+        if (mobileHeaderNav.classList.contains("hidden")) {
+          mobileHeaderNav.classList.remove("hidden");
+        } else {
+          mobileHeaderNav.classList.add("hidden");
+        }
+
+        if (mobileHeaderNavOverlay.classList.contains("hidden")) {
+          mobileHeaderNavOverlay.classList.remove("hidden");
+        } else {
+          mobileHeaderNavOverlay.classList.add("hidden");
+        }
+      });
+    </script>
   </body>
 </html>

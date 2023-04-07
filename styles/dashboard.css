@@ -549,7 +549,7 @@ header .navbar .nav-items .nav-cart .cart-items span {
 /* --- ORDERS --- */
 .orders-container {
   width: inherit;
-  height: 81.5vh;
+  height: calc(100vh - 80px - 7vh);
   background-color: var(--light-beige);
   position: absolute;
   overflow-y: scroll;
@@ -961,8 +961,7 @@ header .navbar .nav-items .nav-cart .cart-items span {
 }
 .thank-you-bg .thank-you-container {
   width: 642px;
-  height: -moz-fit-content;
-  height: fit-content;
+  height: 614px;
   background: var(--white);
   display: flex;
   flex-direction: column;
@@ -970,6 +969,7 @@ header .navbar .nav-items .nav-cart .cart-items span {
   align-items: center;
   gap: 20px;
   padding: 20px;
+  padding-top: 0;
 }
 .thank-you-bg .thank-you-container .thank-you-img {
   position: relative;
@@ -1743,7 +1743,7 @@ header .navbar .nav-items .nav-cart .cart-items span {
   .cart-bg .cart-summary-container h2 {
     display: none;
   }
-  .cart-bg .cart-summary-container .summary-details {
+  .cart-bg .cart-summary-container .cart-summary-sub {
     display: flex;
     flex-direction: column;
     gap: 6px;
