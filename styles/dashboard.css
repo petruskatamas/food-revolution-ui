@@ -239,7 +239,7 @@ header .navbar .nav-items .nav-cart .cart-items span {
   bottom: 0;
   left: 0;
   right: 0;
-  top: 40px;
+  top: 190%;
   margin: 0 auto;
   width: 100%;
   content: "";
@@ -653,6 +653,119 @@ header .navbar .nav-items .nav-cart .cart-items span {
   justify-content: space-between;
   padding-top: 20px;
 }
+.orders-container .latest-order-cards-container {
+  padding: 30px 5%;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.orders-container .latest-order-cards-container .latest-order-cards-row {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  justify-content: flex-start;
+}
+.orders-container .latest-order-cards-container .latest-order-cards-row .latest-order-card {
+  width: 417px;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 24px;
+  background-color: var(--white);
+}
+.orders-container .latest-order-cards-container .latest-order-cards-row .latest-order-card h2 {
+  font-family: "Conso";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 130%;
+  color: var(--black);
+}
+.orders-container .latest-order-cards-container .latest-order-cards-row .latest-order-card p {
+  font-family: "Red Hat Display";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 130%;
+  color: var(--primary);
+}
+.orders-container .latest-order-cards-container .latest-order-cards-row .latest-order-card span {
+  font-family: "Red Hat Display";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 130%;
+  color: var(--black);
+}
+.orders-container .latest-order-cards-container .latest-order-cards-row .latest-order-card .card-top {
+  display: flex;
+  flex-direction: column;
+}
+.orders-container .latest-order-cards-container .latest-order-cards-row .latest-order-card .card-top span {
+  font-family: "Red Hat Display";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 130%;
+  color: var(--black);
+  opacity: 0.4;
+  padding-bottom: 10px;
+}
+.orders-container .latest-order-cards-container .latest-order-cards-row .latest-order-card .card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.orders-container .latest-order-cards-container .latest-order-cards-row .latest-order-card .card-body .card-item {
+  display: flex;
+  flex-direction: column;
+}
+.orders-container .latest-order-cards-container .latest-order-cards-row .latest-order-card .card-body .card-item .top-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.orders-container .latest-order-cards-container .latest-order-cards-row .latest-order-card .card-body .card-item .top-row p {
+  max-width: 75%;
+}
+.orders-container .latest-order-cards-container .latest-order-cards-row .latest-order-card .card-body .card-item .middle-row {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+}
+.orders-container .latest-order-cards-container .latest-order-cards-row .latest-order-card .card-body .card-item .bottom-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-top: 10px;
+}
+.orders-container .latest-order-cards-container .latest-order-cards-row .latest-order-card .card-body .card-item .bottom-row .rating {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+}
+.orders-container .latest-order-cards-container .latest-order-cards-row .latest-order-card .card-body .card-item .bottom-row .rating .rating-icon {
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.orders-container .latest-order-cards-container .latest-order-cards-row .latest-order-card .card-body .card-item .bottom-row a {
+  font-family: "Red Hat Display";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 130%;
+  color: var(--primary);
+  text-decoration: underline;
+}
+.orders-container .latest-order-cards-container .latest-order-cards-row .latest-order-card .card-body .card-bottom {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-top: 20px;
+}
+
+.latest-container::-webkit-scrollbar {
+  display: none;
+}
 
 .order-container::-webkit-scrollbar {
   display: none;
@@ -873,6 +986,117 @@ header .navbar .nav-items .nav-cart .cart-items span {
 }
 .popup-bg .popup-container .checkbox-container:hover input ~ .custom-checkbox {
   background-color: var(--secondary);
+}
+
+.latest-popup-bg {
+  position: absolute;
+  top: 0;
+  z-index: 10000;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.692);
+}
+.latest-popup-bg .latest-popup-container {
+  display: block;
+  width: 564px;
+  height: 627px;
+}
+.latest-popup-bg .latest-popup-container .popup-top {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  height: 376px;
+}
+.latest-popup-bg .latest-popup-container .popup-top img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  min-width: 100%;
+  min-height: 100%;
+}
+.latest-popup-bg .latest-popup-container .popup-top .popup-close-btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 26px;
+  height: 26px;
+  background-color: var(--secondary-colorful);
+  background-image: url("../images/popup-close.png");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.latest-popup-bg .latest-popup-container .popup-bottom {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 30px;
+  background: var(--white);
+}
+.latest-popup-bg .latest-popup-container .popup-bottom .popup-food-name {
+  font-family: "Conso";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 140%;
+  color: var(--primary);
+  padding-bottom: 6px;
+}
+.latest-popup-bg .latest-popup-container .popup-bottom .rating {
+  padding: 18px 0;
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+}
+.latest-popup-bg .latest-popup-container .popup-bottom .rating .rating-icon {
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.latest-popup-bg .latest-popup-container .popup-bottom button {
+  width: 220px;
+  height: 56px;
+  margin-top: 20px;
+  font-family: "Conso";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 140%;
+  text-align: center;
+  color: var(--white);
+  background: var(--primary-gradient);
+}
+.latest-popup-bg .latest-popup-container .popup-bottom label {
+  font-family: "Red Hat Display";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 130%;
+  text-transform: uppercase;
+  color: var(--black);
+}
+.latest-popup-bg .latest-popup-container .popup-bottom textarea {
+  width: 100%;
+  height: 105px;
+  border: 1px solid var(--light-beige);
+}
+.latest-popup-bg .latest-popup-container .popup-bottom textarea::-moz-placeholder {
+  font-family: "Red Hat Display";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 130%;
+  color: var(--black);
+}
+.latest-popup-bg .latest-popup-container .popup-bottom textarea::placeholder {
+  font-family: "Red Hat Display";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 130%;
+  color: var(--black);
 }
 
 /* --- FAQ --- */
@@ -1633,6 +1857,23 @@ header .navbar .nav-items .nav-cart .cart-items span {
   .orders-container .current-order-cards-container {
     padding: 20px;
   }
+  .orders-container .current-order-cards-container .current-order-cards-row {
+    display: flex;
+    flex-direction: column;
+  }
+  .orders-container .current-order-cards-container .current-order-cards-row .current-order-card {
+    width: 100%;
+  }
+  .orders-container .latest-order-cards-container {
+    padding: 20px;
+  }
+  .orders-container .latest-order-cards-container .latest-order-cards-row {
+    display: flex;
+    flex-direction: column;
+  }
+  .orders-container .latest-order-cards-container .latest-order-cards-row .latest-order-card {
+    width: 100%;
+  }
   .popup-bg {
     width: 100vw;
     height: 100vh;
@@ -1689,6 +1930,16 @@ header .navbar .nav-items .nav-cart .cart-items span {
     line-height: 130%;
     color: var(--black);
     opacity: 0.4;
+  }
+  .latest-popup-bg {
+    width: 100vw;
+    height: 100vh;
+  }
+  .latest-popup-bg .latest-popup-container {
+    width: 90%;
+  }
+  .latest-popup-bg .latest-popup-container .popup-top {
+    height: 190px;
   }
   /* --- MOBILE CART --- */
   .cart-bg {

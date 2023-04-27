@@ -263,7 +263,7 @@ header {
             bottom: 0;
             left: 0;
             right: 0;
-            top: 40px;
+            top: 190%;
             margin: 0 auto;
             width: 100%;
             content: "";
@@ -749,6 +749,136 @@ header {
       }
     }
   }
+
+  .latest-order-cards-container {
+    padding: 30px 5%;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    .latest-order-cards-row {
+      display: flex;
+      flex-direction: row;
+      gap: 20px;
+      justify-content: flex-start;
+
+      .latest-order-card {
+        width: 417px;
+        display: flex;
+        flex-direction: column;
+        padding: 20px 24px;
+        background-color: var(--white);
+
+        h2 {
+          font-family: "Conso";
+          font-style: normal;
+          font-weight: 400;
+          font-size: 24px;
+          line-height: 130%;
+          color: var(--black);
+        }
+
+        p {
+          font-family: "Red Hat Display";
+          font-style: normal;
+          font-weight: 700;
+          font-size: 15px;
+          line-height: 130%;
+          color: var(--primary);
+        }
+
+        span {
+          font-family: "Red Hat Display";
+          font-style: normal;
+          font-weight: 400;
+          font-size: 15px;
+          line-height: 130%;
+          color: var(--black);
+        }
+
+        .card-top {
+          display: flex;
+          flex-direction: column;
+
+          span {
+            font-family: "Red Hat Display";
+            font-style: normal;
+            font-weight: 400;
+            font-size: 15px;
+            line-height: 130%;
+            color: var(--black);
+            opacity: 0.4;
+            padding-bottom: 10px;
+          }
+        }
+
+        .card-body {
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
+
+          .card-item {
+            display: flex;
+            flex-direction: column;
+
+            .top-row {
+              display: flex;
+              flex-direction: row;
+              justify-content: space-between;
+
+              p {
+                max-width: 75%;
+              }
+            }
+
+            .middle-row {
+              display: flex;
+              flex-direction: row;
+              gap: 5px;
+            }
+
+            .bottom-row {
+              display: flex;
+              flex-direction: row;
+              justify-content: space-between;
+              padding-top: 10px;
+
+              .rating {
+                display: flex;
+                flex-direction: row;
+                gap: 5px;
+
+                .rating-icon {
+                  object-fit: contain;
+                }
+              }
+
+              a {
+                font-family: "Red Hat Display";
+                font-style: normal;
+                font-weight: 400;
+                font-size: 13px;
+                line-height: 130%;
+                color: var(--primary);
+                text-decoration: underline;
+              }
+            }
+          }
+
+          .card-bottom {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            padding-top: 20px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.latest-container::-webkit-scrollbar {
+  display: none;
 }
 
 .order-container::-webkit-scrollbar {
@@ -1000,6 +1130,125 @@ header {
     }
     .checkbox-container:hover input ~ .custom-checkbox {
       background-color: var(--secondary);
+    }
+  }
+}
+
+.latest-popup-bg {
+  position: absolute;
+  top: 0;
+  z-index: 10000;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  width: 100vw;
+  height: 100vh;
+
+  background: rgba(0, 0, 0, 0.692);
+
+  .latest-popup-container {
+    display: block;
+    width: 564px;
+    height: 627px;
+
+    .popup-top {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      height: 376px;
+
+      img {
+        object-fit: cover;
+        min-width: 100%;
+        min-height: 100%;
+      }
+
+      .popup-close-btn {
+        position: absolute;
+        top: 0;
+        right: 0;
+
+        width: 26px;
+        height: 26px;
+
+        background-color: var(--secondary-colorful);
+        background-image: url("../images/popup-close.png");
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+    }
+
+    .popup-bottom {
+      display: flex;
+      flex-direction: column;
+      padding: 20px 30px;
+
+      background: var(--white);
+
+      .popup-food-name {
+        font-family: "Conso";
+        font-style: normal;
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 140%;
+        color: var(--primary);
+        padding-bottom: 6px;
+      }
+
+      .rating {
+        padding: 18px 0;
+        display: flex;
+        flex-direction: row;
+        gap: 5px;
+
+        .rating-icon {
+          object-fit: contain;
+        }
+      }
+
+      button {
+        width: 220px;
+        height: 56px;
+        margin-top: 20px;
+
+        font-family: "Conso";
+        font-style: normal;
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 140%;
+        text-align: center;
+        color: var(--white);
+        background: var(--primary-gradient);
+      }
+
+      label {
+        font-family: "Red Hat Display";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 130%;
+        text-transform: uppercase;
+        color: var(--black);
+      }
+
+      textarea {
+        width: 100%;
+        height: 105px;
+        border: 1px solid var(--light-beige);
+      }
+
+      textarea::placeholder {
+        font-family: "Red Hat Display";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 130%;
+        color: var(--black);
+      }
     }
   }
 }
@@ -1895,6 +2144,28 @@ header {
 
     .current-order-cards-container {
       padding: 20px;
+
+      .current-order-cards-row {
+        display: flex;
+        flex-direction: column;
+
+        .current-order-card {
+          width: 100%;
+        }
+      }
+    }
+
+    .latest-order-cards-container {
+      padding: 20px;
+
+      .latest-order-cards-row {
+        display: flex;
+        flex-direction: column;
+
+        .latest-order-card {
+          width: 100%;
+        }
+      }
     }
   }
 
@@ -1962,6 +2233,19 @@ header {
           color: var(--black);
           opacity: 0.4;
         }
+      }
+    }
+  }
+
+  .latest-popup-bg {
+    width: 100vw;
+    height: 100vh;
+
+    .latest-popup-container {
+      width: 90%;
+
+      .popup-top {
+        height: 190px;
       }
     }
   }

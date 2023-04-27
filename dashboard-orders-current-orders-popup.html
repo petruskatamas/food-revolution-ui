@@ -248,5 +248,55 @@
         </div>
       </div>
     </div>
+
+    <script>
+      const rootElement = document.querySelector("#root");
+      const mobileHamburgerBtn = document.querySelector(
+        ".mobile-nav-hamburger"
+      );
+      const mobileHeaderNav = document.querySelector(".mobile-header-nav");
+      const mobileHeaderNavOverlay = document.querySelector(
+        ".mobile-header-nav-overlay"
+      );
+      const mobilePopUp = document.querySelector(".mobile-popup-bottom");
+
+      const responsive = () => {
+        if (window.innerWidth > 450) {
+          mobilePopUp.classList.add("hidden");
+        } else {
+          mobilePopUp.classList.remove("hidden");
+        }
+      };
+
+      rootElement.addEventListener("loaded", responsive());
+
+      mobileHamburgerBtn.addEventListener("click", function () {
+        if (mobileHeaderNav.classList.contains("hidden")) {
+          mobileHeaderNav.classList.remove("hidden");
+        } else {
+          mobileHeaderNav.classList.add("hidden");
+        }
+
+        if (mobileHeaderNavOverlay.classList.contains("hidden")) {
+          mobileHeaderNavOverlay.classList.remove("hidden");
+        } else {
+          mobileHeaderNavOverlay.classList.add("hidden");
+        }
+      });
+
+      mobileHeaderNavOverlay.addEventListener("click", function () {
+        if (mobileHeaderNav.classList.contains("hidden")) {
+          mobileHeaderNav.classList.remove("hidden");
+        } else {
+          mobileHeaderNav.classList.add("hidden");
+        }
+
+        if (mobileHeaderNavOverlay.classList.contains("hidden")) {
+          mobileHeaderNavOverlay.classList.remove("hidden");
+        } else {
+          mobileHeaderNavOverlay.classList.add("hidden");
+        }
+      });
+    </script>
   </body>
 </html>
