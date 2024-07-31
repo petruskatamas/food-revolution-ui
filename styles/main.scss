@@ -549,6 +549,7 @@ header {
 
       .top-container {
         display: flex;
+        flex-wrap: wrap;
         flex-direction: row;
         justify-content: space-between;
         align-items: flex-end;
@@ -556,20 +557,20 @@ header {
         gap: 20px;
 
         width: 100%;
-        height: 40px;
-        padding-top: 70px;
+        padding-top: 50px;
         padding-left: 90px;
         padding-right: 30px;
 
         .categories {
           display: flex;
+          flex-wrap: wrap;
           flex-direction: row;
           align-items: flex-start;
           padding: 0px;
           gap: 30px;
 
-          width: 868px;
-          height: 31px;
+          min-width: fit-content;
+          min-height: 31px;
 
           p {
             font-family: "Red Hat Display";
@@ -579,6 +580,7 @@ header {
             line-height: 130%;
             color: var(--black);
             opacity: 0.6;
+            min-width: fit-content;
 
             &.category-active {
               position: relative;
@@ -769,7 +771,12 @@ header {
 
   .cart {
     position: relative;
+    min-width: 345px;
     width: 20%;
+    background: #fbf4ee;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 
     .cart-list {
       display: flex;
@@ -778,7 +785,8 @@ header {
 
       background: #fbf4ee;
 
-      max-height: 90vh;
+      max-height: calc(100vh - 80px - 167px);
+      height: fit-content;
       overflow-y: scroll;
       -ms-overflow-style: none;
       scrollbar-width: none;
@@ -880,8 +888,8 @@ header {
       display: none;
     }
     .cart-summary {
-      position: absolute;
       display: flex;
+      justify-items: end;
       flex-direction: column;
       gap: 6px;
 
@@ -1251,7 +1259,7 @@ header {
 
 /* --- MOBILE VIEW --- */
 
-@media only screen and (max-width: 450px) {
+@media only screen and (max-width: 1080px) {
   .checkbox-container:hover input ~ .custom-checkbox {
     background-color: var(--secondary-colorful) !important;
   }
@@ -1319,6 +1327,8 @@ header {
     top: 0;
     left: 0;
     height: 100vh;
+    min-width: none;
+    max-width: 250px;
     width: 90vw;
     z-index: 20;
     background-color: var(--primary);
@@ -1431,7 +1441,7 @@ header {
         height: calc(100vh - 68px - 100px);
         .top-container {
           padding: 10px 20px;
-          height: 60px;
+          height: fit-content;
           .categories {
             display: none;
           }
@@ -1505,6 +1515,8 @@ header {
       position: absolute;
       top: 68px;
       right: 0;
+      min-width: none;
+      max-width: 250px;
       width: 90vw;
       height: calc(100vh - 68px);
       z-index: 10;

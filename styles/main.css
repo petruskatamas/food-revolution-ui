@@ -487,25 +487,27 @@ header .navbar .nav-items .nav-cart .cart-items span {
 }
 .dashboard .main .main-bottom .top-container {
   display: flex;
+  flex-wrap: wrap;
   flex-direction: row;
   justify-content: space-between;
   align-items: flex-end;
   padding-bottom: 10px;
   gap: 20px;
   width: 100%;
-  height: 40px;
-  padding-top: 70px;
+  padding-top: 50px;
   padding-left: 90px;
   padding-right: 30px;
 }
 .dashboard .main .main-bottom .top-container .categories {
   display: flex;
+  flex-wrap: wrap;
   flex-direction: row;
   align-items: flex-start;
   padding: 0px;
   gap: 30px;
-  width: 868px;
-  height: 31px;
+  min-width: -moz-fit-content;
+  min-width: fit-content;
+  min-height: 31px;
 }
 .dashboard .main .main-bottom .top-container .categories p {
   font-family: "Red Hat Display";
@@ -515,6 +517,8 @@ header .navbar .nav-items .nav-cart .cart-items span {
   line-height: 130%;
   color: var(--black);
   opacity: 0.6;
+  min-width: -moz-fit-content;
+  min-width: fit-content;
 }
 .dashboard .main .main-bottom .top-container .categories p.category-active {
   position: relative;
@@ -672,14 +676,21 @@ header .navbar .nav-items .nav-cart .cart-items span {
 }
 .dashboard .cart {
   position: relative;
+  min-width: 345px;
   width: 20%;
+  background: #fbf4ee;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 .dashboard .cart .cart-list {
   display: flex;
   flex-direction: column;
   padding-top: 10px;
   background: #fbf4ee;
-  max-height: 90vh;
+  max-height: calc(100vh - 80px - 167px);
+  height: -moz-fit-content;
+  height: fit-content;
   overflow-y: scroll;
   -ms-overflow-style: none;
   scrollbar-width: none;
@@ -769,8 +780,8 @@ header .navbar .nav-items .nav-cart .cart-items span {
   display: none;
 }
 .dashboard .cart .cart-summary {
-  position: absolute;
   display: flex;
+  justify-items: end;
   flex-direction: column;
   gap: 6px;
   width: 100%;
@@ -1088,7 +1099,7 @@ header .navbar .nav-items .nav-cart .cart-items span {
 }
 
 /* --- MOBILE VIEW --- */
-@media only screen and (max-width: 450px) {
+@media only screen and (max-width: 1080px) {
   .checkbox-container:hover input ~ .custom-checkbox {
     background-color: var(--secondary-colorful) !important;
   }
@@ -1144,6 +1155,8 @@ header .navbar .nav-items .nav-cart .cart-items span {
     top: 0;
     left: 0;
     height: 100vh;
+    min-width: none;
+    max-width: 250px;
     width: 90vw;
     z-index: 20;
     background-color: var(--primary);
@@ -1232,7 +1245,8 @@ header .navbar .nav-items .nav-cart .cart-items span {
   }
   .dashboard .main .main-bottom .top-container {
     padding: 10px 20px;
-    height: 60px;
+    height: -moz-fit-content;
+    height: fit-content;
   }
   .dashboard .main .main-bottom .top-container .categories {
     display: none;
@@ -1294,6 +1308,8 @@ header .navbar .nav-items .nav-cart .cart-items span {
     position: absolute;
     top: 68px;
     right: 0;
+    min-width: none;
+    max-width: 250px;
     width: 90vw;
     height: calc(100vh - 68px);
     z-index: 10;

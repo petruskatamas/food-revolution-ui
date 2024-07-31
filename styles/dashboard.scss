@@ -1873,7 +1873,7 @@ header {
 }
 
 /* --- MOBILE VIEW --- */
-@media only screen and (max-width: 450px) {
+@media only screen and (max-width: 1080px) {
   .checkbox-container:hover input ~ .custom-checkbox {
     background-color: var(--secondary-colorful) !important;
   }
