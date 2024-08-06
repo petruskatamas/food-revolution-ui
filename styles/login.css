@@ -90,10 +90,10 @@ body {
   background: var(--primary-gradient);
   display: flex;
   justify-content: center;
-  align-items: center;
+  padding-top: 35px;
+  align-items: start;
 }
 .login-bg.register {
-  position: absolute;
   overflow-y: scroll;
   -ms-overflow-style: none;
   scrollbar-width: none;
@@ -104,12 +104,11 @@ body {
 .login-bg .login-container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: start;
   align-items: center;
 }
 .login-bg .login-container.register {
   position: relative;
-  top: 35%;
   padding-bottom: 80px;
 }
 .login-bg .login-container .logo {
@@ -352,7 +351,7 @@ body {
 }
 
 /* --- MOBILE VIEW --- */
-@media only screen and (max-width: 450px) {
+@media only screen and (max-width: 750px) {
   /* --- MOBILE LOGIN --- */
   .login-bg {
     -ms-overflow-style: none;
@@ -361,9 +360,6 @@ body {
   }
   .login-bg .login-container {
     width: 90%;
-  }
-  .login-bg .login-container.register {
-    top: 65% !important;
   }
   .login-bg .login-container .login-form {
     width: 100%;

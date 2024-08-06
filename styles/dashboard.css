@@ -80,10 +80,8 @@ body {
   src: url(fonts/Mulish.ttf);
 }
 body {
-  width: 100vw;
-  height: 100vh;
-  position: absolute;
-  overflow-y: scroll;
+  width: 100dvw;
+  height: 100dvh;
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
@@ -1102,7 +1100,7 @@ header .navbar .nav-items .nav-cart .cart-items span {
 /* --- FAQ --- */
 .faq-bg {
   width: 100vw;
-  height: 91.5vh;
+  height: calc(100vh - 68px);
   display: flex;
   justify-content: center;
   padding: 50px 0;
@@ -1173,7 +1171,7 @@ header .navbar .nav-items .nav-cart .cart-items span {
 /* --- THANK YOU --- */
 .thank-you-bg {
   width: 100vw;
-  height: 91.5vh;
+  height: calc(100vh - 80px);
   display: flex;
   justify-content: center;
   padding: 50px 0;
@@ -1693,6 +1691,8 @@ header .navbar .nav-items .nav-cart .cart-items span {
     top: 0;
     left: 0;
     height: 100vh;
+    min-width: none;
+    max-width: 250px;
     width: 90vw;
     z-index: 20;
     background-color: var(--primary);
@@ -1787,6 +1787,9 @@ header .navbar .nav-items .nav-cart .cart-items span {
     color: var(--black);
   }
   /* --- MOBILE THANK YOU --- */
+  .thank-you-bg {
+    height: calc(100vh - 68px);
+  }
   .thank-you-bg .thank-you-container {
     width: 352px;
     height: 412.12px;
@@ -1848,6 +1851,7 @@ header .navbar .nav-items .nav-cart .cart-items span {
     gap: 20px;
   }
   .finances-container .order-cards-container .order-cards-row .order-card {
+    max-width: none;
     width: 100%;
   }
   /* --- MOBILE ORDERS --- */

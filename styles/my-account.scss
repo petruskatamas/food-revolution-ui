@@ -483,7 +483,7 @@ header {
 }
 
 /* --- MOBILE VIEW --- */
-@media only screen and (max-width: 450px) {
+@media only screen and (max-width: 1080px) {
   /* --- MOBILE HEADER ---*/
 
   header {
@@ -548,6 +548,8 @@ header {
     top: 0;
     left: 0;
     height: 100vh;
+    min-width: none;
+    max-width: 250px;
     width: 90vw;
     z-index: 20;
     background-color: var(--primary);
@@ -612,6 +614,7 @@ header {
 
   .my-account-bg {
     padding-bottom: 20px;
+    height: calc(100vh - 68px);
 
     h2 {
       font-size: 23px;
