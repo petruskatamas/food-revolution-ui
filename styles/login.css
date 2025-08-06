@@ -155,6 +155,29 @@ body {
   align-items: center;
   margin-bottom: 30px;
 }
+.login-bg .login-container .login-form .form-header .spacer {
+  flex: 1;
+}
+.login-bg .login-container .login-form .form-header .login-link .login-btn-link {
+  background: transparent;
+  border: 2px solid var(--light-beige);
+  padding: 8px 16px;
+  font-family: "Red Hat Display";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 130%;
+  color: #999;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 4px;
+}
+.login-bg .login-container .login-form .form-header .login-link .login-btn-link:hover {
+  color: var(--primary);
+  border-color: var(--primary);
+  background: rgba(27, 62, 61, 0.05);
+}
 .login-bg .login-container .login-form .form-header .language-toggle {
   display: flex;
   gap: 8px;
@@ -561,6 +584,92 @@ body {
   line-height: 130%;
   color: var(--black);
 }
+.login-bg .login-container .login-form.forgot-psw-form .form-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+.login-bg .login-container .login-form.forgot-psw-form .form-header h2 {
+  font-family: "Conso";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 130%;
+  color: var(--black);
+  margin: 0;
+  text-align: left;
+}
+.login-bg .login-container .login-form.forgot-psw-form .form-header .login-link .login-btn-link {
+  background: var(--primary) !important;
+  border: none !important;
+  padding: 12px 20px !important;
+  font-family: "Conso" !important;
+  font-style: normal !important;
+  font-weight: 600 !important;
+  font-size: 16px !important;
+  line-height: 140% !important;
+  text-align: center !important;
+  color: var(--white) !important;
+  text-decoration: none !important;
+  cursor: pointer !important;
+  transition: background 0.3s ease !important;
+  border-radius: 0 !important;
+  display: inline-block !important;
+}
+.login-bg .login-container .login-form.forgot-psw-form .form-header .login-link .login-btn-link:hover {
+  background: var(--black) !important;
+  border: none !important;
+  color: var(--white) !important;
+}
+.login-bg .login-container .login-form.forgot-psw-form .form-header .login-link .login-btn-link:focus {
+  outline: none !important;
+  background: var(--black) !important;
+  border: none !important;
+  color: var(--white) !important;
+}
+.login-bg .login-container .login-form.forgot-psw-form .form-header .login-link .login-btn-link:active {
+  background: var(--black) !important;
+  border: none !important;
+  color: var(--white) !important;
+}
+.login-bg .login-container .login-form.forgot-psw-form form {
+  gap: 0px;
+}
+.login-bg .login-container .login-form.forgot-psw-form form .form-input {
+  margin: 0 0 20px 0;
+}
+.login-bg .login-container .login-form.forgot-psw-form .send-reminder-btn {
+  width: 100% !important;
+  height: 60px !important;
+  margin-top: 10px !important;
+  background: var(--primary) !important;
+  border: none !important;
+  padding: 12px 24px !important;
+  font-family: "Conso" !important;
+  font-style: normal !important;
+  font-weight: 600 !important;
+  font-size: 18px !important;
+  line-height: 140% !important;
+  text-align: center !important;
+  color: var(--white) !important;
+  cursor: pointer !important;
+  transition: background 0.3s ease !important;
+  border-radius: 0 !important;
+}
+.login-bg .login-container .login-form.forgot-psw-form .send-reminder-btn:hover {
+  background: var(--black) !important;
+}
+.login-bg .login-container .login-form.forgot-psw-form .send-reminder-btn:focus {
+  outline: none !important;
+  background: var(--black) !important;
+}
+.login-bg .login-container .login-form.forgot-psw-form .send-reminder-btn:active {
+  background: var(--black) !important;
+}
+.login-bg .login-container .login-form.forgot-psw-form .mobile-login-link {
+  display: none;
+}
 .login-bg .login-container .register-user {
   display: flex;
   justify-content: center;
@@ -646,6 +755,62 @@ body {
     height: 56px;
     margin-top: 0px;
     width: 100% !important;
+  }
+  .login-bg .login-container .login-form.forgot-psw-form .form-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    margin-bottom: 20px;
+  }
+  .login-bg .login-container .login-form.forgot-psw-form .form-header h2 {
+    font-size: 38px;
+    margin-bottom: 10px;
+  }
+  .login-bg .login-container .login-form.forgot-psw-form .form-header .login-link {
+    display: none;
+  }
+  .login-bg .login-container .login-form.forgot-psw-form .send-reminder-btn {
+    width: 100% !important;
+    height: 56px !important;
+    margin-top: 5px !important;
+  }
+  .login-bg .login-container .login-form.forgot-psw-form .mobile-login-link {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+  }
+  .login-bg .login-container .login-form.forgot-psw-form .mobile-login-link .login-btn-link {
+    background: var(--primary) !important;
+    border: none !important;
+    padding: 8px 16px !important;
+    font-family: "Conso" !important;
+    font-style: normal !important;
+    font-weight: 600 !important;
+    font-size: 14px !important;
+    line-height: 140% !important;
+    text-align: center !important;
+    color: var(--white) !important;
+    text-decoration: none !important;
+    cursor: pointer !important;
+    transition: background 0.3s ease !important;
+    border-radius: 0 !important;
+    display: inline-block !important;
+  }
+  .login-bg .login-container .login-form.forgot-psw-form .mobile-login-link .login-btn-link:hover {
+    background: var(--black) !important;
+    border: none !important;
+    color: var(--white) !important;
+  }
+  .login-bg .login-container .login-form.forgot-psw-form .mobile-login-link .login-btn-link:focus {
+    outline: none !important;
+    background: var(--black) !important;
+    border: none !important;
+    color: var(--white) !important;
+  }
+  .login-bg .login-container .login-form.forgot-psw-form .mobile-login-link .login-btn-link:active {
+    background: var(--black) !important;
+    border: none !important;
+    color: var(--white) !important;
   }
   .login-bg .login-container {
     width: 90%;
