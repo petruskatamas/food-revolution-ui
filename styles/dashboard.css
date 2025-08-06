@@ -51,6 +51,7 @@ body {
 :root {
   --primary: #1b3e3d;
   --light-beige: #e9e2db;
+  --lighter-beige: #FBF4EE;
   --secondary: #c18f75;
   --secondary-colorful: #a65023;
   --black: #0c1c18;
@@ -1634,6 +1635,729 @@ header .navbar .nav-items .nav-cart .cart-items span {
   display: none;
 }
 
+/* --- CHECKOUT --- */
+.checkout-bg {
+  width: 100vw;
+  height: calc(100vh - 80px);
+  display: flex;
+  justify-content: center;
+  padding: 40px 20px;
+  background-color: var(--white);
+  position: absolute;
+  overflow-y: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.checkout-bg .checkout-container {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.checkout-bg .checkout-container .checkout-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.checkout-bg .checkout-container .checkout-header h1 {
+  font-family: "Conso";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 130%;
+  color: var(--primary);
+}
+.checkout-bg .checkout-container .checkout-header .checkout-timer {
+  background: var(--secondary-colorful);
+  padding: 12px 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  width: 415px;
+  border-radius: 8px;
+}
+.checkout-bg .checkout-container .checkout-header .checkout-timer .timer-text {
+  font-family: "Red Hat Display";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 130%;
+  color: var(--white);
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+.checkout-bg .checkout-container .checkout-header .checkout-timer .timer-display {
+  color: var(--white);
+  font-family: "Conso";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 130%;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+}
+.checkout-bg .checkout-container .checkout-content {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  padding-bottom: 30px;
+}
+.checkout-bg .checkout-container .checkout-content .checkout-left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.checkout-bg .checkout-container .checkout-content .checkout-left .checkout-section {
+  background: var(--lighter-beige);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.checkout-bg .checkout-container .checkout-content .checkout-left .checkout-section .section-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+.checkout-bg .checkout-container .checkout-content .checkout-left .checkout-section .section-header::before {
+  content: "";
+  width: 20px;
+  height: 20px;
+  background: var(--primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.checkout-bg .checkout-container .checkout-content .checkout-left .checkout-section .section-header .section-content {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  flex: 1;
+}
+.checkout-bg .checkout-container .checkout-content .checkout-left .checkout-section .section-header h2 {
+  font-family: "Conso";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 130%;
+  color: var(--primary);
+  margin: 0;
+}
+.checkout-bg .checkout-container .checkout-content .checkout-left .checkout-section .section-header .section-description {
+  font-family: "Red Hat Display";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 130%;
+  color: var(--black);
+  opacity: 0.7;
+  margin: 0;
+}
+.checkout-bg .checkout-container .checkout-content .checkout-left .checkout-section .coupon-input-container {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+.checkout-bg .checkout-container .checkout-content .checkout-left .checkout-section .coupon-input-container .coupon-input {
+  flex: 1;
+  height: 45px;
+  padding: 10px 15px;
+  border: 1px solid var(--primary);
+  border-radius: 8px;
+  background: transparent;
+  font-family: "Red Hat Display";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 130%;
+  color: var(--primary);
+  opacity: 0.6;
+}
+.checkout-bg .checkout-container .checkout-content .checkout-left .checkout-section .coupon-input-container .coupon-input::-moz-placeholder {
+  color: var(--primary);
+  opacity: 0.6;
+}
+.checkout-bg .checkout-container .checkout-content .checkout-left .checkout-section .coupon-input-container .coupon-input::placeholder {
+  color: var(--primary);
+  opacity: 0.6;
+}
+.checkout-bg .checkout-container .checkout-content .checkout-left .checkout-section .coupon-input-container .coupon-input:focus {
+  outline: none;
+  border-color: var(--primary);
+  opacity: 1;
+}
+.checkout-bg .checkout-container .checkout-content .checkout-left .checkout-section .coupon-input-container .coupon-input:not(:focus) {
+  border-color: var(--primary);
+  opacity: 0.6;
+}
+.checkout-bg .checkout-container .checkout-content .checkout-left .checkout-section .coupon-input-container .coupon-apply-btn {
+  width: 100px;
+  height: 45px;
+  background: transparent;
+  color: var(--primary);
+  border: 1px solid var(--primary);
+  border-radius: 8px;
+  font-family: "Conso";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 130%;
+  cursor: pointer;
+}
+.checkout-bg .checkout-container .checkout-content .checkout-left .checkout-section .coupon-input-container .coupon-apply-btn:hover {
+  background: rgba(27, 62, 61, 0.05);
+}
+.checkout-bg .checkout-container .checkout-content .checkout-left .checkout-section .points-options {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+.checkout-bg .checkout-container .checkout-content .checkout-left .checkout-section .points-options .points-option {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  padding: 12px 20px;
+  border: 1px solid var(--primary);
+  border-radius: 8px;
+  cursor: pointer;
+  flex: 1;
+  position: relative;
+  opacity: 0.6;
+}
+.checkout-bg .checkout-container .checkout-content .checkout-left .checkout-section .points-options .points-option input[type=radio] {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  margin: 0;
+}
+.checkout-bg .checkout-container .checkout-content .checkout-left .checkout-section .points-options .points-option label {
+  font-family: "Red Hat Display";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 130%;
+  color: var(--primary);
+  cursor: pointer;
+  text-align: center;
+  width: 100%;
+}
+.checkout-bg .checkout-container .checkout-content .checkout-left .checkout-section .points-options .points-option:hover {
+  opacity: 0.8;
+}
+.checkout-bg .checkout-container .checkout-content .checkout-left .checkout-section .points-options .points-option input[type=radio]:checked + label {
+  font-weight: 600;
+}
+.checkout-bg .checkout-container .checkout-content .checkout-left .checkout-section .points-options .points-option:has(input[type=radio]:checked) {
+  opacity: 1;
+}
+.checkout-bg .checkout-container .checkout-content .checkout-left .checkout-section .payment-methods {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.checkout-bg .checkout-container .checkout-content .checkout-left .checkout-section .payment-methods .payment-method {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  padding: 12px 20px;
+  border: 1px solid var(--primary);
+  border-radius: 8px;
+  cursor: pointer;
+  width: 100%;
+  position: relative;
+  opacity: 0.6;
+}
+.checkout-bg .checkout-container .checkout-content .checkout-left .checkout-section .payment-methods .payment-method input[type=radio] {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  margin: 0;
+}
+.checkout-bg .checkout-container .checkout-content .checkout-left .checkout-section .payment-methods .payment-method label {
+  font-family: "Red Hat Display";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 130%;
+  color: var(--primary);
+  cursor: pointer;
+  text-align: center;
+  width: 100%;
+}
+.checkout-bg .checkout-container .checkout-content .checkout-left .checkout-section .payment-methods .payment-method:hover {
+  opacity: 0.8;
+}
+.checkout-bg .checkout-container .checkout-content .checkout-left .checkout-section .payment-methods .payment-method input[type=radio]:checked + label {
+  font-weight: 600;
+}
+.checkout-bg .checkout-container .checkout-content .checkout-left .checkout-section .payment-methods .payment-method:has(input[type=radio]:checked) {
+  opacity: 1;
+}
+.checkout-bg .checkout-container .checkout-content .checkout-left .checkout-section .tip-options {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.checkout-bg .checkout-container .checkout-content .checkout-left .checkout-section .tip-options .tip-option {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  padding: 12px 20px;
+  border: 1px solid var(--primary);
+  border-radius: 8px;
+  cursor: pointer;
+  min-width: 120px;
+  flex: 1;
+  position: relative;
+  opacity: 0.6;
+}
+.checkout-bg .checkout-container .checkout-content .checkout-left .checkout-section .tip-options .tip-option input[type=radio] {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  margin: 0;
+}
+.checkout-bg .checkout-container .checkout-content .checkout-left .checkout-section .tip-options .tip-option label {
+  font-family: "Red Hat Display";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 130%;
+  color: var(--primary);
+  cursor: pointer;
+  text-align: center;
+  width: 100%;
+}
+.checkout-bg .checkout-container .checkout-content .checkout-left .checkout-section .tip-options .tip-option:hover {
+  opacity: 0.8;
+}
+.checkout-bg .checkout-container .checkout-content .checkout-left .checkout-section .tip-options .tip-option input[type=radio]:checked + label {
+  font-weight: 600;
+}
+.checkout-bg .checkout-container .checkout-content .checkout-left .checkout-section .tip-options .tip-option:has(input[type=radio]:checked) {
+  opacity: 1;
+}
+.checkout-bg .checkout-container .checkout-content .checkout-left .checkout-section .custom-tip-input {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 15px;
+}
+.checkout-bg .checkout-container .checkout-content .checkout-left .checkout-section .custom-tip-input input[type=number] {
+  flex: 1;
+  height: 45px;
+  padding: 10px 15px;
+  border: 1px solid var(--primary);
+  border-radius: 8px;
+  background: transparent;
+  font-family: "Red Hat Display";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 130%;
+  color: var(--primary);
+  opacity: 0.6;
+}
+.checkout-bg .checkout-container .checkout-content .checkout-left .checkout-section .custom-tip-input input[type=number]::-moz-placeholder {
+  color: var(--primary);
+  opacity: 0.6;
+}
+.checkout-bg .checkout-container .checkout-content .checkout-left .checkout-section .custom-tip-input input[type=number]::placeholder {
+  color: var(--primary);
+  opacity: 0.6;
+}
+.checkout-bg .checkout-container .checkout-content .checkout-left .checkout-section .custom-tip-input input[type=number]:focus {
+  outline: none;
+  border-color: var(--primary);
+  opacity: 1;
+}
+.checkout-bg .checkout-container .checkout-content .checkout-left .checkout-section .custom-tip-input input[type=number]:not(:focus) {
+  border-color: var(--primary);
+  opacity: 0.6;
+}
+.checkout-bg .checkout-container .checkout-content .checkout-left .checkout-section .custom-tip-input .currency {
+  font-family: "Red Hat Display";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 130%;
+  color: var(--primary);
+  opacity: 0.6;
+}
+.checkout-bg .checkout-container .checkout-content .checkout-left .checkout-section .custom-tip-input.hidden {
+  display: none;
+}
+.checkout-bg .checkout-container .checkout-content .checkout-right {
+  width: 415px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 80px;
+}
+.checkout-bg .checkout-container .checkout-content .checkout-right .order-summary {
+  background: transparent;
+  border: 2px solid var(--primary);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.checkout-bg .checkout-container .checkout-content .checkout-right .order-summary .summary-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+}
+.checkout-bg .checkout-container .checkout-content .checkout-right .order-summary .summary-row:not(:last-child) {
+  border-bottom: 1px solid var(--light-beige);
+}
+.checkout-bg .checkout-container .checkout-content .checkout-right .order-summary .summary-row .summary-label {
+  font-family: "Red Hat Display";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 130%;
+  color: var(--primary);
+}
+.checkout-bg .checkout-container .checkout-content .checkout-right .order-summary .summary-row .summary-value {
+  font-family: "Red Hat Display";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 130%;
+  color: var(--black);
+}
+.checkout-bg .checkout-container .checkout-content .checkout-right .order-summary .summary-row .summary-discount {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.checkout-bg .checkout-container .checkout-content .checkout-right .order-summary .summary-row .summary-discount .discount-percent {
+  font-family: "Red Hat Display";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 130%;
+  color: var(--black);
+}
+.checkout-bg .checkout-container .checkout-content .checkout-right .order-summary .summary-total {
+  border-top: 2px solid var(--primary);
+  padding-top: 15px;
+  margin-top: 15px;
+}
+.checkout-bg .checkout-container .checkout-content .checkout-right .order-summary .summary-total .total-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.checkout-bg .checkout-container .checkout-content .checkout-right .order-summary .summary-total .total-row .total-label {
+  font-family: "Red Hat Display";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 130%;
+  color: var(--primary);
+}
+.checkout-bg .checkout-container .checkout-content .checkout-right .order-summary .summary-total .total-row .total-amounts {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 5px;
+}
+.checkout-bg .checkout-container .checkout-content .checkout-right .order-summary .summary-total .total-row .total-amounts .total-value {
+  font-family: "Conso";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 130%;
+  color: var(--primary);
+}
+.checkout-bg .checkout-container .checkout-content .checkout-right .order-summary .summary-total .total-row .total-amounts .original-total {
+  font-family: "Red Hat Display";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 130%;
+  color: var(--black);
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+.checkout-bg .checkout-container .checkout-content .checkout-right .order-summary .bank-payment-section {
+  background: var(--lighter-beige);
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 8px;
+}
+.checkout-bg .checkout-container .checkout-content .checkout-right .order-summary .bank-payment-section h3 {
+  font-family: "Conso";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 130%;
+  color: var(--primary);
+  margin-bottom: 15px;
+}
+.checkout-bg .checkout-container .checkout-content .checkout-right .order-summary .bank-payment-section .saved-card {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 15px;
+  background: var(--white);
+  border: 1px solid var(--primary);
+  border-radius: 8px;
+  margin-bottom: 10px;
+  opacity: 0.6;
+}
+.checkout-bg .checkout-container .checkout-content .checkout-right .order-summary .bank-payment-section .saved-card .card-icon {
+  width: 20px;
+  height: 15px;
+  background: var(--primary);
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+.checkout-bg .checkout-container .checkout-content .checkout-right .order-summary .bank-payment-section .saved-card .card-info {
+  font-family: "Red Hat Display";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 130%;
+  color: var(--primary);
+  flex: 1;
+}
+.checkout-bg .checkout-container .checkout-content .checkout-right .order-summary .bank-payment-section .saved-card .card-number {
+  font-family: "Red Hat Display";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 130%;
+  color: var(--primary);
+}
+.checkout-bg .checkout-container .checkout-content .checkout-right .order-summary .bank-payment-section .add-new-card-btn {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+  width: 100%;
+  padding: 12px 15px;
+  background: transparent;
+  border: 1px solid var(--primary);
+  border-radius: 8px;
+  cursor: pointer;
+  opacity: 0.6;
+}
+.checkout-bg .checkout-container .checkout-content .checkout-right .order-summary .bank-payment-section .add-new-card-btn .plus-icon {
+  font-family: "Red Hat Display";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 130%;
+  color: var(--primary);
+}
+.checkout-bg .checkout-container .checkout-content .checkout-right .order-summary .bank-payment-section .add-new-card-btn span:not(.plus-icon) {
+  font-family: "Red Hat Display";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 130%;
+  color: var(--primary);
+}
+.checkout-bg .checkout-container .checkout-content .checkout-right .order-summary .bank-payment-section .add-new-card-btn:hover {
+  opacity: 0.8;
+}
+.checkout-bg .checkout-container .checkout-content .checkout-right .order-summary .bank-payment-section .new-card-form {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 20px;
+  background: transparent;
+  border: 1px solid var(--primary);
+  border-radius: 8px;
+}
+.checkout-bg .checkout-container .checkout-content .checkout-right .order-summary .bank-payment-section .new-card-form .form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.checkout-bg .checkout-container .checkout-content .checkout-right .order-summary .bank-payment-section .new-card-form .form-group.half {
+  flex: 1;
+  min-width: 0;
+}
+.checkout-bg .checkout-container .checkout-content .checkout-right .order-summary .bank-payment-section .new-card-form .form-group label {
+  font-family: "Red Hat Display";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 130%;
+  color: var(--primary);
+}
+.checkout-bg .checkout-container .checkout-content .checkout-right .order-summary .bank-payment-section .new-card-form .form-group input {
+  height: 45px;
+  padding: 10px 15px;
+  border: 1px solid var(--light-beige);
+  border-radius: 8px;
+  background: var(--lighter-beige);
+  font-family: "Red Hat Display";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 130%;
+  color: var(--black);
+  min-width: 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+.checkout-bg .checkout-container .checkout-content .checkout-right .order-summary .bank-payment-section .new-card-form .form-group input::-moz-placeholder {
+  color: var(--black);
+  opacity: 0.6;
+}
+.checkout-bg .checkout-container .checkout-content .checkout-right .order-summary .bank-payment-section .new-card-form .form-group input::placeholder {
+  color: var(--black);
+  opacity: 0.6;
+}
+.checkout-bg .checkout-container .checkout-content .checkout-right .order-summary .bank-payment-section .new-card-form .form-group input:focus {
+  outline: none;
+  border-color: var(--primary);
+  background: var(--white);
+}
+.checkout-bg .checkout-container .checkout-content .checkout-right .order-summary .bank-payment-section .new-card-form .form-row {
+  display: flex;
+  gap: 15px;
+  width: 100%;
+}
+.checkout-bg .checkout-container .checkout-content .checkout-right .order-summary .bank-payment-section .new-card-form .save-card-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+.checkout-bg .checkout-container .checkout-content .checkout-right .order-summary .bank-payment-section .new-card-form .save-card-checkbox input[type=checkbox] {
+  width: 16px;
+  height: 16px;
+  border: 1px solid var(--primary);
+  border-radius: 2px;
+  background: var(--white);
+  cursor: pointer;
+  min-width: 16px;
+}
+.checkout-bg .checkout-container .checkout-content .checkout-right .order-summary .bank-payment-section .new-card-form .save-card-checkbox label {
+  font-family: "Red Hat Display";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 130%;
+  color: var(--primary);
+  cursor: pointer;
+}
+.checkout-bg .checkout-container .checkout-content .checkout-right .order-summary .bank-payment-section .new-card-form .payment-providers {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+  margin-top: 15px;
+  flex-wrap: wrap;
+}
+.checkout-bg .checkout-container .checkout-content .checkout-right .order-summary .bank-payment-section .new-card-form .payment-providers .provider-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 16px;
+  background: transparent;
+  border: 1px solid var(--primary);
+  border-radius: 8px;
+  cursor: pointer;
+  opacity: 0.6;
+  font-family: "Conso";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 130%;
+  color: var(--primary);
+}
+.checkout-bg .checkout-container .checkout-content .checkout-right .order-summary .bank-payment-section .new-card-form .payment-providers .provider-button:hover {
+  background: rgba(27, 62, 61, 0.05);
+  opacity: 1;
+}
+.checkout-bg .checkout-container .checkout-content .checkout-right .order-summary .bank-payment-section .new-card-form .payment-providers .provider-button img {
+  height: 20px;
+  width: auto;
+}
+.checkout-bg .checkout-container .checkout-content .checkout-right .order-summary .bank-payment-section .new-card-form .payment-providers .stripe-logo {
+  height: 16px;
+  opacity: 0.6;
+  margin-left: auto;
+}
+.checkout-bg .checkout-container .checkout-content .checkout-right .order-summary .bank-payment-section.hidden {
+  display: none;
+}
+.checkout-bg .checkout-container .checkout-content .checkout-right .order-summary .payment-btn {
+  width: 100%;
+  height: 56px;
+  background: var(--primary-gradient);
+  color: var(--white);
+  border: none;
+  font-family: "Conso";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 140%;
+  cursor: pointer;
+  margin-top: 20px;
+}
+.checkout-bg .checkout-container .checkout-content .checkout-right .checkout-right {
+  width: 100%;
+  margin-bottom: 60px;
+}
+.checkout-bg .checkout-container .checkout-content .checkout-right .checkout-right .order-summary {
+  padding: 15px;
+}
+.checkout-bg .checkout-container .checkout-content .checkout-right .checkout-right .order-summary .summary-row {
+  padding: 10px 0;
+}
+.checkout-bg .checkout-container .checkout-content .checkout-right .checkout-right .order-summary .summary-row .summary-label, .checkout-bg .checkout-container .checkout-content .checkout-right .checkout-right .order-summary .summary-row .summary-value {
+  font-size: 14px;
+}
+.checkout-bg .checkout-container .checkout-content .checkout-right .checkout-right .order-summary .summary-row .summary-discount .discount-percent {
+  font-size: 14px;
+}
+.checkout-bg .checkout-container .checkout-content .checkout-right .checkout-right .order-summary .summary-total .total-row .total-label {
+  font-size: 16px;
+}
+.checkout-bg .checkout-container .checkout-content .checkout-right .checkout-right .order-summary .summary-total .total-row .total-amounts .total-value {
+  font-size: 20px;
+}
+.checkout-bg .checkout-container .checkout-content .checkout-right .checkout-right .order-summary .summary-total .total-row .total-amounts .original-total {
+  font-size: 12px;
+}
+.checkout-bg .checkout-container .checkout-content .checkout-right .checkout-right .payment-btn {
+  height: 50px;
+  font-size: 16px;
+}
+
+.checkout-bg::-webkit-scrollbar {
+  display: none;
+}
+
 /* --- MOBILE VIEW --- */
 @media only screen and (max-width: 1080px) {
   .checkbox-container:hover input ~ .custom-checkbox {
@@ -2028,5 +2752,162 @@ header .navbar .nav-items .nav-cart .cart-items span {
     background-repeat: no-repeat;
     width: 8px;
     height: 5px;
+  }
+  /* --- MOBILE CHECKOUT --- */
+  .checkout-bg {
+    height: calc(100vh - 68px);
+    padding: 20px;
+  }
+  .checkout-bg .checkout-container {
+    max-width: none;
+  }
+  .checkout-bg .checkout-container .checkout-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+  .checkout-bg .checkout-container .checkout-header h1 {
+    font-size: 24px;
+  }
+  .checkout-bg .checkout-container .checkout-header .checkout-timer {
+    align-self: stretch;
+    align-items: center;
+    width: 100%;
+  }
+  .checkout-bg .checkout-container .checkout-header .checkout-timer .timer-text {
+    font-size: 11px;
+    text-align: left;
+  }
+  .checkout-bg .checkout-container .checkout-header .checkout-timer .timer-display {
+    font-size: 20px;
+  }
+  .checkout-bg .checkout-container .checkout-content {
+    flex-direction: column;
+    gap: 20px;
+    padding-bottom: 30px;
+  }
+  .checkout-bg .checkout-container .checkout-content .checkout-left .checkout-section {
+    padding: 15px;
+  }
+  .checkout-bg .checkout-container .checkout-content .checkout-left .checkout-section .section-header h2 {
+    font-size: 16px;
+  }
+  .checkout-bg .checkout-container .checkout-content .checkout-left .checkout-section .section-header .section-description {
+    font-size: 13px;
+  }
+  .checkout-bg .checkout-container .checkout-content .checkout-left .checkout-section .coupon-input-container {
+    flex-direction: column;
+  }
+  .checkout-bg .checkout-container .checkout-content .checkout-left .checkout-section .coupon-input-container .coupon-apply-btn {
+    width: 100%;
+  }
+  .checkout-bg .checkout-container .checkout-content .checkout-left .checkout-section .tip-options {
+    flex-direction: column;
+  }
+  .checkout-bg .checkout-container .checkout-content .checkout-left .checkout-section .tip-options .tip-option {
+    min-width: auto;
+    justify-content: flex-start;
+  }
+  .checkout-bg .checkout-container .checkout-content .checkout-left .checkout-section .points-options, .checkout-bg .checkout-container .checkout-content .checkout-left .checkout-section .payment-methods {
+    flex-direction: column;
+  }
+  .checkout-bg .checkout-container .checkout-content .checkout-left .checkout-section .points-options .points-option, .checkout-bg .checkout-container .checkout-content .checkout-left .checkout-section .points-options .payment-method, .checkout-bg .checkout-container .checkout-content .checkout-left .checkout-section .payment-methods .points-option, .checkout-bg .checkout-container .checkout-content .checkout-left .checkout-section .payment-methods .payment-method {
+    justify-content: flex-start;
+  }
+  .checkout-bg .checkout-container .checkout-content .checkout-left .checkout-section .points-options {
+    flex-direction: column;
+  }
+  .checkout-bg .checkout-container .checkout-content .checkout-left .checkout-section .custom-tip-input {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .checkout-bg .checkout-container .checkout-content .checkout-left .checkout-section .custom-tip-input input[type=number] {
+    width: 100%;
+  }
+  .checkout-bg .checkout-container .checkout-content .checkout-left .checkout-section .custom-tip-input .currency {
+    align-self: flex-end;
+    margin-top: 5px;
+  }
+  .checkout-bg .checkout-container .checkout-content .checkout-left .checkout-section .bank-payment-section {
+    padding: 15px;
+    margin: 15px 0;
+  }
+  .checkout-bg .checkout-container .checkout-content .checkout-left .checkout-section .bank-payment-section h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  .checkout-bg .checkout-container .checkout-content .checkout-left .checkout-section .bank-payment-section .saved-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+    padding: 10px;
+  }
+  .checkout-bg .checkout-container .checkout-content .checkout-left .checkout-section .bank-payment-section .saved-card .card-info, .checkout-bg .checkout-container .checkout-content .checkout-left .checkout-section .bank-payment-section .saved-card .card-number {
+    font-size: 14px;
+  }
+  .checkout-bg .checkout-container .checkout-content .checkout-left .checkout-section .bank-payment-section .add-new-card-btn {
+    padding: 10px;
+  }
+  .checkout-bg .checkout-container .checkout-content .checkout-left .checkout-section .bank-payment-section .add-new-card-btn span {
+    font-size: 14px;
+  }
+  .checkout-bg .checkout-container .checkout-content .checkout-left .checkout-section .bank-payment-section .new-card-form {
+    gap: 12px;
+    padding: 15px;
+  }
+  .checkout-bg .checkout-container .checkout-content .checkout-left .checkout-section .bank-payment-section .new-card-form .form-group label {
+    font-size: 13px;
+  }
+  .checkout-bg .checkout-container .checkout-content .checkout-left .checkout-section .bank-payment-section .new-card-form .form-group input {
+    height: 40px;
+    font-size: 14px;
+    min-width: 0;
+    width: 100%;
+  }
+  .checkout-bg .checkout-container .checkout-content .checkout-left .checkout-section .bank-payment-section .new-card-form .form-row {
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+  }
+  .checkout-bg .checkout-container .checkout-content .checkout-left .checkout-section .bank-payment-section .new-card-form .save-card-checkbox label {
+    font-size: 14px;
+  }
+  .checkout-bg .checkout-container .checkout-content .checkout-left .checkout-section .bank-payment-section .new-card-form .payment-providers {
+    justify-content: center;
+  }
+  .checkout-bg .checkout-container .checkout-content .checkout-left .checkout-section .bank-payment-section .new-card-form .payment-providers .provider-button img {
+    height: 18px;
+  }
+  .checkout-bg .checkout-container .checkout-content .checkout-left .checkout-section .bank-payment-section .new-card-form .payment-providers .stripe-logo {
+    height: 14px;
+  }
+  .checkout-bg .checkout-container .checkout-content .checkout-right {
+    width: 100%;
+    padding-bottom: 30px;
+  }
+  .checkout-bg .checkout-container .checkout-content .checkout-right .order-summary {
+    padding: 15px;
+  }
+  .checkout-bg .checkout-container .checkout-content .checkout-right .order-summary .summary-row {
+    padding: 10px 0;
+  }
+  .checkout-bg .checkout-container .checkout-content .checkout-right .order-summary .summary-row .summary-label, .checkout-bg .checkout-container .checkout-content .checkout-right .order-summary .summary-row .summary-value {
+    font-size: 14px;
+  }
+  .checkout-bg .checkout-container .checkout-content .checkout-right .order-summary .summary-row .summary-discount .discount-percent {
+    font-size: 14px;
+  }
+  .checkout-bg .checkout-container .checkout-content .checkout-right .order-summary .summary-total .total-row .total-label {
+    font-size: 16px;
+  }
+  .checkout-bg .checkout-container .checkout-content .checkout-right .order-summary .summary-total .total-row .total-amounts .total-value {
+    font-size: 20px;
+  }
+  .checkout-bg .checkout-container .checkout-content .checkout-right .order-summary .summary-total .total-row .total-amounts .original-total {
+    font-size: 12px;
+  }
+  .checkout-bg .checkout-container .checkout-content .checkout-right .payment-btn {
+    height: 50px;
+    font-size: 16px;
   }
 }/*# sourceMappingURL=dashboard.css.map */
