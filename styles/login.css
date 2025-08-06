@@ -99,19 +99,23 @@ body {
 }
 .login-bg::before {
   content: "";
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
+  width: 100vw;
+  height: 100vh;
   background-color: var(--secondary);
   opacity: 0.85;
   z-index: 1;
 }
 .login-bg.register {
-  overflow-y: scroll;
+  overflow-y: auto;
   -ms-overflow-style: none;
   scrollbar-width: none;
+  align-items: flex-start;
+  padding: 20px;
 }
 .login-bg.register::-webkit-scrollbar {
   display: none;
@@ -346,6 +350,15 @@ body {
 .login-bg .login-container .login-form form .input-area:focus {
   outline: none;
   border-color: var(--primary);
+}
+.login-bg .login-container .login-form form .field-description {
+  font-family: "Red Hat Display";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 130%;
+  color: #999;
+  margin: 5px 0 0 0;
 }
 .login-bg .login-container .login-form form .checkbox-container {
   display: flex;
@@ -670,6 +683,102 @@ body {
 .login-bg .login-container .login-form.forgot-psw-form .mobile-login-link {
   display: none;
 }
+.login-bg .login-container .login-form.register .form-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+.login-bg .login-container .login-form.register .form-header h2 {
+  font-family: "Conso";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 130%;
+  color: var(--black);
+  margin: 0;
+  text-align: left;
+}
+.login-bg .login-container .login-form.register .form-section {
+  margin: 20px 0;
+}
+.login-bg .login-container .login-form.register .form-section h3 {
+  font-family: "Conso";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 130%;
+  color: var(--black);
+  margin-bottom: 15px;
+}
+.login-bg .login-container .login-form.register .form-section .radio-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.login-bg .login-container .login-form.register .form-section .radio-group .radio-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  font-family: "Red Hat Display";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 130%;
+  color: var(--black);
+}
+.login-bg .login-container .login-form.register .form-section .radio-group .radio-container input[type=radio] {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+.login-bg .login-container .login-form.register .form-section .radio-group .radio-container input:checked ~ .radio-checkmark {
+  background-color: var(--primary);
+  border-color: var(--primary);
+}
+.login-bg .login-container .login-form.register .form-section .radio-group .radio-container input:checked ~ .radio-checkmark::after {
+  display: block;
+}
+.login-bg .login-container .login-form.register .form-section .radio-group .radio-container .radio-checkmark {
+  position: relative;
+  height: 20px;
+  width: 20px;
+  background-color: var(--white);
+  border: 2px solid var(--light-beige);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.login-bg .login-container .login-form.register .form-section .radio-group .radio-container .radio-checkmark::after {
+  content: "";
+  position: absolute;
+  display: none;
+  top: 4px;
+  left: 4px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--white);
+}
+.login-bg .login-container .login-form.register .form-section .radio-group .radio-container:hover .radio-checkmark {
+  border-color: var(--primary);
+}
+.login-bg .login-container .login-form.register .form-section .radio-group .personal-input {
+  margin-left: 32px;
+  margin-bottom: 12px;
+  transition: all 0.3s ease;
+}
+.login-bg .login-container .login-form.register .form-section .radio-group .form-input {
+  margin-left: 32px;
+  margin-bottom: 12px;
+}
+.login-bg .login-container .login-form.register .register-btn {
+  width: 100% !important;
+  height: 60px !important;
+  margin-top: 20px !important;
+}
 .login-bg .login-container .register-user {
   display: flex;
   justify-content: center;
@@ -691,6 +800,44 @@ body {
     -ms-overflow-style: none;
     scrollbar-width: none;
     overflow-y: hidden;
+  }
+  .login-bg.register {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    align-items: flex-start;
+    padding: 0;
+  }
+  .login-bg.register::before {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1;
+  }
+  .login-bg.register .login-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    max-width: 100vw;
+    padding: 10px;
+    margin: 0;
+    z-index: 2;
+    overflow-y: auto;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+  }
+  .login-bg.register .login-container .logo {
+    margin-bottom: 15px;
+  }
+  .login-bg.register .login-container .logo img {
+    height: 45px;
   }
   .login-bg .login-container .logo {
     margin-bottom: 20px;
@@ -812,53 +959,61 @@ body {
     border: none !important;
     color: var(--white) !important;
   }
-  .login-bg .login-container {
-    width: 90%;
+  .login-bg .login-container .login-form.register {
+    padding: 15px;
+    max-height: none;
   }
-  .login-bg .login-container .login-form {
-    width: 100%;
-    padding: 20px 30px;
-  }
-  .login-bg .login-container .login-form .login-btn {
-    width: 156px !important;
-    height: 56px !important;
-  }
-  .login-bg .login-container .login-form .form-btns {
-    padding-top: 0;
-  }
-  .login-bg .login-container .login-form.register .form-input-row {
+  .login-bg .login-container .login-form.register .form-header {
     flex-direction: column;
-    gap: 20px;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 15px;
   }
-  .login-bg .login-container .login-form.register .form-input-row .form-input.half {
+  .login-bg .login-container .login-form.register .form-header h2 {
+    font-size: 24px;
+    margin-bottom: 0;
+  }
+  .login-bg .login-container .login-form.register .form-header .app-store-buttons {
+    flex-direction: column;
+    gap: 6px;
+    align-self: flex-start;
+  }
+  .login-bg .login-container .login-form.register .form-header .app-store-buttons .store-btn {
+    height: 32px;
+    width: auto;
+  }
+  .login-bg .login-container .login-form.register form {
+    gap: 12px;
+  }
+  .login-bg .login-container .login-form.register form .form-input {
+    margin: 0 0 12px 0;
+  }
+  .login-bg .login-container .login-form.register form .form-input.half {
     width: 100% !important;
   }
-  .login-bg .login-container .login-form.register .form-input-row .form-input.third {
-    width: 100% !important;
+  .login-bg .login-container .login-form.register form .form-input-row {
+    flex-direction: column;
+    gap: 12px;
   }
-  .login-bg .login-container .login-form.register .form-input-row .form-input.two-third {
-    width: 100% !important;
+  .login-bg .login-container .login-form.register form .form-section {
+    margin: 12px 0;
   }
-  .login-bg .login-container .login-form.register .form-btns {
-    flex-direction: column-reverse;
-    gap: 20px;
-    width: 100%;
+  .login-bg .login-container .login-form.register form .form-section h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
   }
-  .login-bg .login-container .login-form.register .form-btns .back-to-login-btn {
-    text-align: center;
+  .login-bg .login-container .login-form.register form .form-section .radio-group {
+    gap: 8px;
   }
-  .login-bg .login-container .login-form.register .form-btns .register-btn {
-    width: 100% !important;
+  .login-bg .login-container .login-form.register form .form-section .radio-group .radio-container {
+    font-size: 14px;
   }
-  .login-bg .login-container .login-form.forgot-psw-form .form-btns {
-    flex-direction: column-reverse;
-    gap: 20px;
-    width: 100%;
+  .login-bg .login-container .login-form.register form .form-section .radio-group .personal-input {
+    margin-left: 24px;
+    margin-bottom: 8px;
   }
-  .login-bg .login-container .login-form.forgot-psw-form .form-btns .send-reminder-btn {
-    width: 100% !important;
-  }
-  .login-bg .login-container .login-form.forgot-psw-form .form-btns .back-to-login-btn {
-    text-align: center;
+  .login-bg .login-container .login-form.register form .register-btn {
+    height: 52px !important;
+    margin-top: 12px !important;
   }
 }/*# sourceMappingURL=login.css.map */
