@@ -92,13 +92,29 @@ body {
 .login-bg {
   width: 100vw;
   height: 100vh;
+  position: relative;
 
-  background: var(--primary-gradient);
+  background-image: url('../images/placeholder-8.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--secondary);
+    opacity: 0.85;
+    z-index: 1;
+  }
 
   display: flex;
   justify-content: center;
-  padding-top: 35px;
-  align-items: start;
+  align-items: center;
+  padding: 20px;
 
   &.register {
     overflow-y: scroll;
@@ -111,10 +127,13 @@ body {
   }
 
   .login-container {
+    position: relative;
+    z-index: 2;
     display: flex;
     flex-direction: column;
-    justify-content: start;
     align-items: center;
+    max-width: 1400px;
+    width: 100%;
 
     &.register {
       position: relative;
@@ -125,39 +144,90 @@ body {
       display: flex;
       justify-content: center;
       align-items: center;
-      overflow: hidden;
-
-      padding-bottom: 36px;
-
-      .img {
+      margin-bottom: 40px;
+      
+      img {
         object-fit: contain;
-        min-width: 100%;
-        min-height: 100%;
+        height: 60px;
       }
     }
 
     .login-form {
       display: flex;
       flex-direction: column;
-
       background: var(--white);
-      width: 560px;
-      padding: 30px 40px;
+      width: 100%;
+      max-width: 800px;
+      padding: 40px;
+      border-radius: 0;
+
+      .form-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 30px;
+
+        .language-toggle {
+          display: flex;
+          gap: 8px;
+
+          .lang-btn {
+            background: transparent;
+            border: 2px solid var(--light-beige);
+            color: var(--black);
+            font-family: "Red Hat Display";
+            font-weight: 500;
+            font-size: 14px;
+            padding: 8px 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border-radius: 4px;
+
+            &.active {
+              background: transparent;
+              color: var(--black);
+              border-color: var(--primary);
+            }
+
+            &:not(.active):hover {
+              background: transparent;
+              border-color: var(--secondary);
+            }
+          }
+        }
+
+        .app-store-buttons {
+          display: flex;
+          gap: 10px;
+
+          .store-btn {
+            height: 40px;
+            width: auto;
+            cursor: pointer;
+            transition: opacity 0.3s ease;
+
+            &:hover {
+              opacity: 0.8;
+            }
+          }
+        }
+      }
 
       h2 {
         font-family: "Conso";
         font-style: normal;
         font-weight: 400;
-        font-size: 24px;
+        font-size: 32px;
         line-height: 130%;
         color: var(--black);
+        margin-bottom: 30px;
+        text-align: left;
       }
 
       form {
         display: flex;
         flex-direction: column;
-        gap: 20px;
-        padding-top: 16px;
+        gap: 0px;
 
         h2 {
           padding-top: 10px;
@@ -238,7 +308,8 @@ body {
         .form-input {
           display: flex;
           flex-direction: column;
-          gap: 5px;
+          gap: 8px;
+          margin: 0 0 15px 0;
 
           &.half {
             width: 47.5%;
@@ -260,45 +331,242 @@ body {
         .input-label {
           font-family: "Red Hat Display";
           font-style: normal;
-          font-weight: 400;
-          font-size: 12px;
+          font-weight: 500;
+          font-size: 14px;
           line-height: 130%;
-          text-transform: uppercase;
           color: var(--black);
+          text-transform: none;
+          margin: 0;
         }
 
         .input-area {
           width: 100%;
           padding: 16px;
-          border: 1px solid var(--light-beige);
+          border: 2px solid var(--light-beige);
+          background: var(--white);
+          margin: 0;
 
+          font-family: "Red Hat Display";
+          font-style: normal;
+          font-weight: 400;
+          font-size: 16px;
+          line-height: 130%;
+          color: var(--black);
+
+          &::placeholder {
+            color: #999;
+          }
+
+          &:focus {
+            outline: none;
+            border-color: var(--primary);
+          }
+        }
+
+        .checkbox-container {
+          display: flex;
+          align-items: center;
+          gap: 12px;
+          margin: 0;
+          cursor: pointer;
           font-family: "Red Hat Display";
           font-style: normal;
           font-weight: 400;
           font-size: 15px;
           line-height: 130%;
           color: var(--black);
+
+          input[type="checkbox"] {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+            height: 0;
+            width: 0;
+          }
+
+          input:checked ~ .custom-checkbox {
+            background-color: var(--primary);
+            border-color: var(--primary);
+          }
+
+          input:checked ~ .custom-checkbox::after {
+            display: block;
+          }
+
+          .custom-checkbox {
+            position: relative;
+            height: 20px;
+            width: 20px;
+            background-color: var(--white);
+            border: 2px solid var(--light-beige);
+            flex-shrink: 0;
+
+            &::after {
+              content: "";
+              position: absolute;
+              display: none;
+              left: 6px;
+              top: 2px;
+              width: 6px;
+              height: 10px;
+              border: solid white;
+              border-width: 0 2px 2px 0;
+              transform: rotate(45deg);
+            }
+          }
+
+          &:hover .custom-checkbox {
+            border-color: var(--primary);
+          }
+        }
+
+        .checkbox-and-buttons-row {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin: 0px 0 10px 0;
+
+          .form-btns {
+            display: flex;
+            gap: 20px;
+
+            .secondary-btn {
+              background: var(--primary) !important;
+              border: none !important;
+              padding: 12px 20px;
+              font-family: "Conso" !important;
+              font-style: normal;
+              font-weight: 600 !important;
+              font-size: 16px !important;
+              line-height: 140% !important;
+              text-align: center;
+              color: var(--white) !important;
+              cursor: pointer;
+              transition: background 0.3s ease !important;
+              border-radius: 0 !important;
+
+              &:hover {
+                background: var(--black) !important;
+                border: none !important;
+                color: var(--white) !important;
+              }
+
+              &:focus {
+                outline: none;
+                background: var(--black) !important;
+                border: none !important;
+                color: var(--white) !important;
+              }
+
+              &:active {
+                background: var(--black) !important;
+                border: none !important;
+                color: var(--white) !important;
+              }
+
+              &.forgot-psw-btn {
+                background: var(--primary) !important;
+                border: none !important;
+                color: var(--white) !important;
+                
+                &:hover {
+                  background: var(--black) !important;
+                  border: none !important;
+                  color: var(--white) !important;
+                }
+
+                &:focus {
+                  background: var(--black) !important;
+                  border: none !important;
+                  color: var(--white) !important;
+                }
+
+                &:active {
+                  background: var(--black) !important;
+                  border: none !important;
+                  color: var(--white) !important;
+                }
+              }
+
+              &.register-btn {
+                background: var(--primary) !important;
+                border: none !important;
+                color: var(--white) !important;
+                
+                &:hover {
+                  background: var(--black) !important;
+                  border: none !important;
+                  color: var(--white) !important;
+                }
+
+                &:focus {
+                  background: var(--black) !important;
+                  border: none !important;
+                  color: var(--white) !important;
+                }
+
+                &:active {
+                  background: var(--black) !important;
+                  border: none !important;
+                  color: var(--white) !important;
+                }
+              }
+            }
+          }
         }
 
         .form-btns {
           display: flex;
-          flex-direction: row;
           justify-content: space-between;
-          align-items: center;
-          width: 100%;
-          padding-top: 10px;
+          gap: 20px;
+          margin: 20px 0 10px 0;
 
           .secondary-btn {
+            background: transparent;
+            border: 2px solid var(--light-beige);
+            padding: 12px 20px;
             font-family: "Red Hat Display";
             font-style: normal;
-            font-weight: 400;
+            font-weight: 500;
             font-size: 15px;
             line-height: 130%;
-            color: var(--black);
+            color: #999;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border-radius: 4px;
+
+            &:hover {
+              color: var(--primary);
+              border-color: var(--primary);
+              background: rgba(27, 62, 61, 0.05);
+            }
+          }
+        }
+
+        .primary-btn {
+          width: 100%;
+          height: 60px;
+          margin-top: 10px;
+
+          font-family: "Conso";
+          font-style: normal;
+          font-weight: 600;
+          font-size: 18px;
+          line-height: 140%;
+          text-align: center;
+          color: var(--white);
+          background: var(--primary);
+          border: none;
+          cursor: pointer;
+          transition: background 0.3s ease;
+          border-radius: 0;
+
+          &:hover {
+            background: var(--black);
           }
 
-          .primary-btn {
-            width: 192px;
+          &.send-reminder-btn {
+            width: 251px;
             height: 60px;
 
             font-family: "Conso";
@@ -309,34 +577,20 @@ body {
             text-align: center;
             color: var(--white);
             background: var(--primary-gradient);
+          }
 
-            &.send-reminder-btn {
-              width: 251px;
-              height: 60px;
+          &.register-btn {
+            width: 177px;
+            height: 60px;
 
-              font-family: "Conso";
-              font-style: normal;
-              font-weight: 600;
-              font-size: 18px;
-              line-height: 140%;
-              text-align: center;
-              color: var(--white);
-              background: var(--primary-gradient);
-            }
-
-            &.register-btn {
-              width: 177px;
-              height: 60px;
-
-              font-family: "Conso";
-              font-style: normal;
-              font-weight: 600;
-              font-size: 18px;
-              line-height: 140%;
-              text-align: center;
-              color: var(--white);
-              background: var(--primary-gradient);
-            }
+            font-family: "Conso";
+            font-style: normal;
+            font-weight: 600;
+            font-size: 18px;
+            line-height: 140%;
+            text-align: center;
+            color: var(--white);
+            background: var(--primary-gradient);
           }
         }
 
@@ -406,6 +660,87 @@ body {
 @media only screen and (max-width: 750px) {
   /* --- MOBILE LOGIN --- */
   .login-bg {
+    .login-container {
+      .logo {
+        margin-bottom: 20px;
+        
+        img {
+          height: 50px;
+        }
+      }
+
+      .login-form {
+        width: 100%;
+        padding: 20px;
+
+        .form-header {
+          flex-direction: column;
+          gap: 12px;
+          align-items: flex-start;
+          margin-bottom: 20px;
+
+          .language-toggle {
+            align-self: flex-start;
+          }
+
+          .app-store-buttons {
+            flex-direction: column;
+            gap: 8px;
+            align-self: flex-start;
+
+            .store-btn {
+              height: 35px;
+              width: auto;
+            }
+          }
+        }
+
+        h2 {
+          font-size: 28px;
+          text-align: left;
+          margin-bottom: 15px;
+        }
+
+        form {
+          gap: 12px;
+
+          .form-input {
+            margin: 0 0 12px 0;
+          }
+
+          .checkbox-and-buttons-row {
+            flex-direction: column;
+            gap: 12px;
+            align-items: flex-start;
+            margin: 0px 0 12px 0;
+
+            .checkbox-container {
+              align-self: flex-start;
+            }
+
+            .form-btns {
+              width: 100%;
+              justify-content: space-between;
+              gap: 12px;
+
+              .secondary-btn {
+                flex: 1;
+                padding: 10px 12px !important;
+                font-size: 12px !important;
+                margin: 0;
+              }
+            }
+          }
+
+          .primary-btn {
+            height: 56px;
+            margin-top: 0px;
+            width: 100% !important;
+          }
+        }
+      }
+    }
+
     -ms-overflow-style: none;
     scrollbar-width: none;
     overflow-y: hidden;

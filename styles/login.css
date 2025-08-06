@@ -87,11 +87,26 @@ body {
 .login-bg {
   width: 100vw;
   height: 100vh;
-  background: var(--primary-gradient);
+  position: relative;
+  background-image: url("../images/placeholder-8.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   display: flex;
   justify-content: center;
-  padding-top: 35px;
-  align-items: start;
+  align-items: center;
+  padding: 20px;
+}
+.login-bg::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--secondary);
+  opacity: 0.85;
+  z-index: 1;
 }
 .login-bg.register {
   overflow-y: scroll;
@@ -102,10 +117,13 @@ body {
   display: none;
 }
 .login-bg .login-container {
+  position: relative;
+  z-index: 2;
   display: flex;
   flex-direction: column;
-  justify-content: start;
   align-items: center;
+  max-width: 1400px;
+  width: 100%;
 }
 .login-bg .login-container.register {
   position: relative;
@@ -115,35 +133,80 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: hidden;
-  padding-bottom: 36px;
+  margin-bottom: 40px;
 }
-.login-bg .login-container .logo .img {
+.login-bg .login-container .logo img {
   -o-object-fit: contain;
      object-fit: contain;
-  min-width: 100%;
-  min-height: 100%;
+  height: 60px;
 }
 .login-bg .login-container .login-form {
   display: flex;
   flex-direction: column;
   background: var(--white);
-  width: 560px;
-  padding: 30px 40px;
+  width: 100%;
+  max-width: 800px;
+  padding: 40px;
+  border-radius: 0;
+}
+.login-bg .login-container .login-form .form-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+.login-bg .login-container .login-form .form-header .language-toggle {
+  display: flex;
+  gap: 8px;
+}
+.login-bg .login-container .login-form .form-header .language-toggle .lang-btn {
+  background: transparent;
+  border: 2px solid var(--light-beige);
+  color: var(--black);
+  font-family: "Red Hat Display";
+  font-weight: 500;
+  font-size: 14px;
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 4px;
+}
+.login-bg .login-container .login-form .form-header .language-toggle .lang-btn.active {
+  background: transparent;
+  color: var(--black);
+  border-color: var(--primary);
+}
+.login-bg .login-container .login-form .form-header .language-toggle .lang-btn:not(.active):hover {
+  background: transparent;
+  border-color: var(--secondary);
+}
+.login-bg .login-container .login-form .form-header .app-store-buttons {
+  display: flex;
+  gap: 10px;
+}
+.login-bg .login-container .login-form .form-header .app-store-buttons .store-btn {
+  height: 40px;
+  width: auto;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+.login-bg .login-container .login-form .form-header .app-store-buttons .store-btn:hover {
+  opacity: 0.8;
 }
 .login-bg .login-container .login-form h2 {
   font-family: "Conso";
   font-style: normal;
   font-weight: 400;
-  font-size: 24px;
+  font-size: 32px;
   line-height: 130%;
   color: var(--black);
+  margin-bottom: 30px;
+  text-align: left;
 }
 .login-bg .login-container .login-form form {
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  padding-top: 16px;
+  gap: 0px;
 }
 .login-bg .login-container .login-form form h2 {
   padding-top: 10px;
@@ -213,7 +276,8 @@ body {
 .login-bg .login-container .login-form form .form-input {
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 8px;
+  margin: 0 0 15px 0;
 }
 .login-bg .login-container .login-form form .form-input.half {
   width: 47.5%;
@@ -230,42 +294,196 @@ body {
 .login-bg .login-container .login-form form .input-label {
   font-family: "Red Hat Display";
   font-style: normal;
-  font-weight: 400;
-  font-size: 12px;
+  font-weight: 500;
+  font-size: 14px;
   line-height: 130%;
-  text-transform: uppercase;
   color: var(--black);
+  text-transform: none;
+  margin: 0;
 }
 .login-bg .login-container .login-form form .input-area {
   width: 100%;
   padding: 16px;
-  border: 1px solid var(--light-beige);
+  border: 2px solid var(--light-beige);
+  background: var(--white);
+  margin: 0;
+  font-family: "Red Hat Display";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 130%;
+  color: var(--black);
+}
+.login-bg .login-container .login-form form .input-area::-moz-placeholder {
+  color: #999;
+}
+.login-bg .login-container .login-form form .input-area::placeholder {
+  color: #999;
+}
+.login-bg .login-container .login-form form .input-area:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+.login-bg .login-container .login-form form .checkbox-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0;
+  cursor: pointer;
   font-family: "Red Hat Display";
   font-style: normal;
   font-weight: 400;
   font-size: 15px;
   line-height: 130%;
   color: var(--black);
+}
+.login-bg .login-container .login-form form .checkbox-container input[type=checkbox] {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+.login-bg .login-container .login-form form .checkbox-container input:checked ~ .custom-checkbox {
+  background-color: var(--primary);
+  border-color: var(--primary);
+}
+.login-bg .login-container .login-form form .checkbox-container input:checked ~ .custom-checkbox::after {
+  display: block;
+}
+.login-bg .login-container .login-form form .checkbox-container .custom-checkbox {
+  position: relative;
+  height: 20px;
+  width: 20px;
+  background-color: var(--white);
+  border: 2px solid var(--light-beige);
+  flex-shrink: 0;
+}
+.login-bg .login-container .login-form form .checkbox-container .custom-checkbox::after {
+  content: "";
+  position: absolute;
+  display: none;
+  left: 6px;
+  top: 2px;
+  width: 6px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+.login-bg .login-container .login-form form .checkbox-container:hover .custom-checkbox {
+  border-color: var(--primary);
+}
+.login-bg .login-container .login-form form .checkbox-and-buttons-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0px 0 10px 0;
+}
+.login-bg .login-container .login-form form .checkbox-and-buttons-row .form-btns {
+  display: flex;
+  gap: 20px;
+}
+.login-bg .login-container .login-form form .checkbox-and-buttons-row .form-btns .secondary-btn {
+  background: var(--primary) !important;
+  border: none !important;
+  padding: 12px 20px;
+  font-family: "Conso" !important;
+  font-style: normal;
+  font-weight: 600 !important;
+  font-size: 16px !important;
+  line-height: 140% !important;
+  text-align: center;
+  color: var(--white) !important;
+  cursor: pointer;
+  transition: background 0.3s ease !important;
+  border-radius: 0 !important;
+}
+.login-bg .login-container .login-form form .checkbox-and-buttons-row .form-btns .secondary-btn:hover {
+  background: var(--black) !important;
+  border: none !important;
+  color: var(--white) !important;
+}
+.login-bg .login-container .login-form form .checkbox-and-buttons-row .form-btns .secondary-btn:focus {
+  outline: none;
+  background: var(--black) !important;
+  border: none !important;
+  color: var(--white) !important;
+}
+.login-bg .login-container .login-form form .checkbox-and-buttons-row .form-btns .secondary-btn:active {
+  background: var(--black) !important;
+  border: none !important;
+  color: var(--white) !important;
+}
+.login-bg .login-container .login-form form .checkbox-and-buttons-row .form-btns .secondary-btn.forgot-psw-btn {
+  background: var(--primary) !important;
+  border: none !important;
+  color: var(--white) !important;
+}
+.login-bg .login-container .login-form form .checkbox-and-buttons-row .form-btns .secondary-btn.forgot-psw-btn:hover {
+  background: var(--black) !important;
+  border: none !important;
+  color: var(--white) !important;
+}
+.login-bg .login-container .login-form form .checkbox-and-buttons-row .form-btns .secondary-btn.forgot-psw-btn:focus {
+  background: var(--black) !important;
+  border: none !important;
+  color: var(--white) !important;
+}
+.login-bg .login-container .login-form form .checkbox-and-buttons-row .form-btns .secondary-btn.forgot-psw-btn:active {
+  background: var(--black) !important;
+  border: none !important;
+  color: var(--white) !important;
+}
+.login-bg .login-container .login-form form .checkbox-and-buttons-row .form-btns .secondary-btn.register-btn {
+  background: var(--primary) !important;
+  border: none !important;
+  color: var(--white) !important;
+}
+.login-bg .login-container .login-form form .checkbox-and-buttons-row .form-btns .secondary-btn.register-btn:hover {
+  background: var(--black) !important;
+  border: none !important;
+  color: var(--white) !important;
+}
+.login-bg .login-container .login-form form .checkbox-and-buttons-row .form-btns .secondary-btn.register-btn:focus {
+  background: var(--black) !important;
+  border: none !important;
+  color: var(--white) !important;
+}
+.login-bg .login-container .login-form form .checkbox-and-buttons-row .form-btns .secondary-btn.register-btn:active {
+  background: var(--black) !important;
+  border: none !important;
+  color: var(--white) !important;
 }
 .login-bg .login-container .login-form form .form-btns {
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  padding-top: 10px;
+  gap: 20px;
+  margin: 20px 0 10px 0;
 }
 .login-bg .login-container .login-form form .form-btns .secondary-btn {
+  background: transparent;
+  border: 2px solid var(--light-beige);
+  padding: 12px 20px;
   font-family: "Red Hat Display";
   font-style: normal;
-  font-weight: 400;
+  font-weight: 500;
   font-size: 15px;
   line-height: 130%;
-  color: var(--black);
+  color: #999;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 4px;
 }
-.login-bg .login-container .login-form form .form-btns .primary-btn {
-  width: 192px;
+.login-bg .login-container .login-form form .form-btns .secondary-btn:hover {
+  color: var(--primary);
+  border-color: var(--primary);
+  background: rgba(27, 62, 61, 0.05);
+}
+.login-bg .login-container .login-form form .primary-btn {
+  width: 100%;
   height: 60px;
+  margin-top: 10px;
   font-family: "Conso";
   font-style: normal;
   font-weight: 600;
@@ -273,9 +491,16 @@ body {
   line-height: 140%;
   text-align: center;
   color: var(--white);
-  background: var(--primary-gradient);
+  background: var(--primary);
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  border-radius: 0;
 }
-.login-bg .login-container .login-form form .form-btns .primary-btn.send-reminder-btn {
+.login-bg .login-container .login-form form .primary-btn:hover {
+  background: var(--black);
+}
+.login-bg .login-container .login-form form .primary-btn.send-reminder-btn {
   width: 251px;
   height: 60px;
   font-family: "Conso";
@@ -287,7 +512,7 @@ body {
   color: var(--white);
   background: var(--primary-gradient);
 }
-.login-bg .login-container .login-form form .form-btns .primary-btn.register-btn {
+.login-bg .login-container .login-form form .primary-btn.register-btn {
   width: 177px;
   height: 60px;
   font-family: "Conso";
@@ -357,6 +582,70 @@ body {
     -ms-overflow-style: none;
     scrollbar-width: none;
     overflow-y: hidden;
+  }
+  .login-bg .login-container .logo {
+    margin-bottom: 20px;
+  }
+  .login-bg .login-container .logo img {
+    height: 50px;
+  }
+  .login-bg .login-container .login-form {
+    width: 100%;
+    padding: 20px;
+  }
+  .login-bg .login-container .login-form .form-header {
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-start;
+    margin-bottom: 20px;
+  }
+  .login-bg .login-container .login-form .form-header .language-toggle {
+    align-self: flex-start;
+  }
+  .login-bg .login-container .login-form .form-header .app-store-buttons {
+    flex-direction: column;
+    gap: 8px;
+    align-self: flex-start;
+  }
+  .login-bg .login-container .login-form .form-header .app-store-buttons .store-btn {
+    height: 35px;
+    width: auto;
+  }
+  .login-bg .login-container .login-form h2 {
+    font-size: 28px;
+    text-align: left;
+    margin-bottom: 15px;
+  }
+  .login-bg .login-container .login-form form {
+    gap: 12px;
+  }
+  .login-bg .login-container .login-form form .form-input {
+    margin: 0 0 12px 0;
+  }
+  .login-bg .login-container .login-form form .checkbox-and-buttons-row {
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-start;
+    margin: 0px 0 12px 0;
+  }
+  .login-bg .login-container .login-form form .checkbox-and-buttons-row .checkbox-container {
+    align-self: flex-start;
+  }
+  .login-bg .login-container .login-form form .checkbox-and-buttons-row .form-btns {
+    width: 100%;
+    justify-content: space-between;
+    gap: 12px;
+  }
+  .login-bg .login-container .login-form form .checkbox-and-buttons-row .form-btns .secondary-btn {
+    flex: 1;
+    padding: 10px 12px !important;
+    font-size: 12px !important;
+    margin: 0;
+  }
+  .login-bg .login-container .login-form form .primary-btn {
+    height: 56px;
+    margin-top: 0px;
+    width: 100% !important;
   }
   .login-bg .login-container {
     width: 90%;
