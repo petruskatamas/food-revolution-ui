@@ -964,7 +964,7 @@
         <!-- Fixed Top Summary Row -->
         <div class="cart-summary-top">
           <div class="cart-summary-item deadline">
-            <span class="summary-text">A keddi rendelés határideje hamarosan lejár:</span>
+            <span class="summary-text">A rendelés határideje hamarosan lejár:</span>
             <span class="summary-time">23:46</span>
           </div>
           <div class="cart-summary-item total">
@@ -996,11 +996,6 @@
                   <option value="address-3">1014, Budapest, Szép út 78</option>
                 </select>
               </div>
-              <div class="address-options">
-                <button class="address-btn active">Társasház</button>
-                <button class="address-btn">Személyes átvétel</button>
-                <button class="address-btn">Bejutás kapukóddal</button>
-              </div>
               <p class="delivery-note">Ennyi hiányzik még az ingyenes szállításhoz: <span class="price-highlight">2.190 Ft</span></p>
             </div>
 
@@ -1013,33 +1008,39 @@
                 </div>
                 <div class="cart-item-info">
                   <span class="cart-item-category">FŐÉTEL</span>
-                  <h4 class="cart-item-name">Bazsalikom pesztos csirkemell bébi cavaolo neros sült édesburgonyával és fehérrépa krémmel</h4>
+                  <div class="cart-item-header">
+                    <h4 class="cart-item-name">Bazsalikom pesztos csirkemell bébi cavaolo neros sült édesburgonyával és fehérrépa krémmel</h4>
+                    <div class="cart-item-controls">
+                      <select class="portion-dropdown">
+                        <option value="normal">Normál adag</option>
+                        <option value="small">Kicsi adag</option>
+                        <option value="large">Nagy adag</option>
+                      </select>
+                      <div class="quantity-control">
+                        <button class="qty-btn minus">−</button>
+                        <span class="qty-value">1</span>
+                        <button class="qty-btn plus">+</button>
+                      </div>
+                      <span class="item-total">5.490 Ft</span>
+                      <button class="remove-item">🗑</button>
+                    </div>
+                  </div>
                   <div class="cart-item-extras">
                     <div class="cart-extra">
                       <span>+ gluténmentes</span>
-                      <span class="extra-price">+490</span>
-                      <button class="remove-extra">🗑</button>
+                      <div class="extra-right">
+                        <span class="extra-price">+490</span>
+                        <button class="remove-extra">🗑</button>
+                      </div>
                     </div>
                     <div class="cart-extra">
                       <span>+ 100 g köret</span>
-                      <span class="extra-price">+690</span>
-                      <button class="remove-extra">🗑</button>
+                      <div class="extra-right">
+                        <span class="extra-price">+690</span>
+                        <button class="remove-extra">🗑</button>
+                      </div>
                     </div>
                   </div>
-                </div>
-                <div class="cart-item-controls">
-                  <select class="portion-dropdown">
-                    <option value="normal">Normál adag</option>
-                    <option value="small">Kicsi adag</option>
-                    <option value="large">Nagy adag</option>
-                  </select>
-                  <div class="quantity-control">
-                    <button class="qty-btn minus">−</button>
-                    <span class="qty-value">1</span>
-                    <button class="qty-btn plus">+</button>
-                  </div>
-                  <span class="item-total">5.490 Ft</span>
-                  <button class="remove-item">🗑</button>
                 </div>
               </div>
 
@@ -1049,19 +1050,21 @@
                 </div>
                 <div class="cart-item-info">
                   <span class="cart-item-category">LEVES</span>
-                  <h4 class="cart-item-name">Mentás zöldborsókrémleves</h4>
-                </div>
-                <div class="cart-item-controls">
-                  <select class="portion-dropdown">
-                    <option value="normal">Normál adag</option>
-                  </select>
-                  <div class="quantity-control">
-                    <button class="qty-btn minus">−</button>
-                    <span class="qty-value">1</span>
-                    <button class="qty-btn plus">+</button>
+                  <div class="cart-item-header">
+                    <h4 class="cart-item-name">Mentás zöldborsókrémleves</h4>
+                    <div class="cart-item-controls">
+                      <select class="portion-dropdown">
+                        <option value="normal">Normál adag</option>
+                      </select>
+                      <div class="quantity-control">
+                        <button class="qty-btn minus">−</button>
+                        <span class="qty-value">1</span>
+                        <button class="qty-btn plus">+</button>
+                      </div>
+                      <span class="item-total">5.490 Ft</span>
+                      <button class="remove-item">🗑</button>
+                    </div>
                   </div>
-                  <span class="item-total">5.490 Ft</span>
-                  <button class="remove-item">🗑</button>
                 </div>
               </div>
 
@@ -1071,19 +1074,21 @@
                 </div>
                 <div class="cart-item-info">
                   <span class="cart-item-category">FŐÉTEL</span>
-                  <h4 class="cart-item-name">Roston sült tökkel bébi cavaolo neros sült édesburgonyával és fehérrépa krémmel</h4>
-                </div>
-                <div class="cart-item-controls">
-                  <select class="portion-dropdown">
-                    <option value="normal">Normál adag</option>
-                  </select>
-                  <div class="quantity-control">
-                    <button class="qty-btn minus">−</button>
-                    <span class="qty-value">1</span>
-                    <button class="qty-btn plus">+</button>
+                  <div class="cart-item-header">
+                    <h4 class="cart-item-name">Roston sült tökkel bébi cavaolo neros sült édesburgonyával és fehérrépa krémmel</h4>
+                    <div class="cart-item-controls">
+                      <select class="portion-dropdown">
+                        <option value="normal">Normál adag</option>
+                      </select>
+                      <div class="quantity-control">
+                        <button class="qty-btn minus">−</button>
+                        <span class="qty-value">1</span>
+                        <button class="qty-btn plus">+</button>
+                      </div>
+                      <span class="item-total">5.490 Ft</span>
+                      <button class="remove-item">🗑</button>
+                    </div>
                   </div>
-                  <span class="item-total">5.490 Ft</span>
-                  <button class="remove-item">🗑</button>
                 </div>
               </div>
             </div>
@@ -1094,22 +1099,30 @@
                 <div class="recommendation-card">
                   <div class="recommendation-image">
                     <img src="images/placeholder-1.png" alt="Naponta változó nyersaladág box" />
-                    <button class="recommendation-info">
-                      <span class="info-icon"></span>
-                      Infó
-                    </button>
+                    <div class="points-badge">3 pont</div>
+                    <div class="attribute-icon">🌶</div>
+                    <button class="favorite-btn">♥</button>
                   </div>
                   <div class="recommendation-body">
+                    <div class="recommendation-header">
+                      <span class="recommendation-category">ZÖLDSÉG</span>
+                      <button class="recommendation-info">i</button>
+                    </div>
                     <h4 class="recommendation-name">Naponta változó nyersaladág box</h4>
-                    <p class="recommendation-desc">70 gramm</p>
                     <div class="recommendation-controls">
-                      <span class="recommendation-price">2.290 Ft</span>
-                      <div class="quantity-control small">
-                        <button class="qty-btn minus">−</button>
-                        <span class="qty-value">1</span>
-                        <button class="qty-btn plus">+</button>
+                      <select class="portion-select">
+                        <option value="normal">2.290 Ft - Normál adag</option>
+                        <option value="small">1.990 Ft - Kicsi adag</option>
+                        <option value="large">2.590 Ft - Nagy adag</option>
+                      </select>
+                      <div class="controls-bottom">
+                        <div class="quantity-control small">
+                          <button class="qty-btn minus">−</button>
+                          <span class="qty-value">1</span>
+                          <button class="qty-btn plus">+</button>
+                        </div>
+                        <button class="add-to-cart">Kosárba</button>
                       </div>
-                      <button class="add-to-cart">Kosárba</button>
                     </div>
                   </div>
                 </div>
@@ -1117,22 +1130,28 @@
                 <div class="recommendation-card">
                   <div class="recommendation-image">
                     <img src="images/placeholder-1.png" alt="Kovászos uborka" />
-                    <button class="recommendation-info">
-                      <span class="info-icon"></span>
-                      Infó
-                    </button>
+                    <div class="points-badge">3 pont</div>
+                    <div class="attribute-icon">🌶</div>
+                    <button class="favorite-btn">♥</button>
                   </div>
                   <div class="recommendation-body">
+                    <div class="recommendation-header">
+                      <span class="recommendation-category">SAVANYÚSÁG</span>
+                      <button class="recommendation-info">i</button>
+                    </div>
                     <h4 class="recommendation-name">Kovászos uborka</h4>
-                    <p class="recommendation-desc">40 gramm</p>
                     <div class="recommendation-controls">
-                      <span class="recommendation-price">490 Ft</span>
-                      <div class="quantity-control small">
-                        <button class="qty-btn minus">−</button>
-                        <span class="qty-value">1</span>
-                        <button class="qty-btn plus">+</button>
+                      <select class="portion-select">
+                        <option value="normal">490 Ft - Normál adag</option>
+                      </select>
+                      <div class="controls-bottom">
+                        <div class="quantity-control small">
+                          <button class="qty-btn minus">−</button>
+                          <span class="qty-value">1</span>
+                          <button class="qty-btn plus">+</button>
+                        </div>
+                        <button class="add-to-cart">Kosárba</button>
                       </div>
-                      <button class="add-to-cart">Kosárba</button>
                     </div>
                   </div>
                 </div>
@@ -1140,45 +1159,57 @@
                 <div class="recommendation-card">
                   <div class="recommendation-image">
                     <img src="images/placeholder-1.png" alt="Kókuszos panna cotta" />
-                    <button class="recommendation-info">
-                      <span class="info-icon"></span>
-                      Infó
-                    </button>
+                    <div class="points-badge">3 pont</div>
+                    <div class="attribute-icon">🌶</div>
+                    <button class="favorite-btn">♥</button>
                   </div>
                   <div class="recommendation-body">
+                    <div class="recommendation-header">
+                      <span class="recommendation-category">DESSZERT</span>
+                      <button class="recommendation-info">i</button>
+                    </div>
                     <h4 class="recommendation-name">Kókuszos panna cotta málnával</h4>
-                    <p class="recommendation-desc">80 gramm</p>
                     <div class="recommendation-controls">
-                      <span class="recommendation-price">1.490 Ft</span>
-                      <div class="quantity-control small">
-                        <button class="qty-btn minus">−</button>
-                        <span class="qty-value">1</span>
-                        <button class="qty-btn plus">+</button>
+                      <select class="portion-select">
+                        <option value="normal">1.490 Ft - Normál adag</option>
+                      </select>
+                      <div class="controls-bottom">
+                        <div class="quantity-control small">
+                          <button class="qty-btn minus">−</button>
+                          <span class="qty-value">1</span>
+                          <button class="qty-btn plus">+</button>
+                        </div>
+                        <button class="add-to-cart">Kosárba</button>
                       </div>
-                      <button class="add-to-cart">Kosárba</button>
                     </div>
                   </div>
                 </div>
 
                 <div class="recommendation-card">
                   <div class="recommendation-image">
-                    <img src="images/placeholder-1.png" alt="Almás-epres smoothie" />
-                    <button class="recommendation-info">
-                      <span class="info-icon"></span>
-                      Infó
-                    </button>
+                    <img src="images/placeholder-1.png" alt="Áfonyás-epres smoothie" />
+                    <div class="points-badge">3 pont</div>
+                    <div class="attribute-icon">🌶</div>
+                    <button class="favorite-btn">♥</button>
                   </div>
                   <div class="recommendation-body">
-                    <h4 class="recommendation-name">Almás-epres smoothie tea</h4>
-                    <p class="recommendation-desc">250 ml</p>
+                    <div class="recommendation-header">
+                      <span class="recommendation-category">ITAL</span>
+                      <button class="recommendation-info">i</button>
+                    </div>
+                    <h4 class="recommendation-name">Áfonyás-epres sencha tea</h4>
                     <div class="recommendation-controls">
-                      <span class="recommendation-price">1.310 Ft</span>
-                      <div class="quantity-control small">
-                        <button class="qty-btn minus">−</button>
-                        <span class="qty-value">1</span>
-                        <button class="qty-btn plus">+</button>
+                      <select class="portion-select">
+                        <option value="normal">1.290 Ft - Normál adag</option>
+                      </select>
+                      <div class="controls-bottom">
+                        <div class="quantity-control small">
+                          <button class="qty-btn minus">−</button>
+                          <span class="qty-value">1</span>
+                          <button class="qty-btn plus">+</button>
+                        </div>
+                        <button class="add-to-cart">Kosárba</button>
                       </div>
-                      <button class="add-to-cart">Kosárba</button>
                     </div>
                   </div>
                 </div>
@@ -1205,11 +1236,6 @@
                   <option value="address-3">1014, Budapest, Szép út 78</option>
                 </select>
               </div>
-              <div class="address-options">
-                <button class="address-btn active">Társasház</button>
-                <button class="address-btn">Személyes átvétel</button>
-                <button class="address-btn">Bejutás kapukóddal</button>
-              </div>
               <p class="delivery-note">Ennyi hiányzik még az ingyenes szállításhoz: <span class="price-highlight">1.890 Ft</span></p>
             </div>
 
@@ -1222,21 +1248,23 @@
                 </div>
                 <div class="cart-item-info">
                   <span class="cart-item-category">FŐÉTEL</span>
-                  <h4 class="cart-item-name">Csirke teriyaki, szezámmagos rizzsel és brokkolival</h4>
-                </div>
-                <div class="cart-item-controls">
-                  <select class="portion-dropdown">
-                    <option value="normal">Normál adag</option>
-                    <option value="small">Kicsi adag</option>
-                    <option value="large">Nagy adag</option>
-                  </select>
-                  <div class="quantity-control">
-                    <button class="qty-btn minus">−</button>
-                    <span class="qty-value">1</span>
-                    <button class="qty-btn plus">+</button>
+                  <div class="cart-item-header">
+                    <h4 class="cart-item-name">Csirke teriyaki, szezámmagos rizzsel és brokkolival</h4>
+                    <div class="cart-item-controls">
+                      <select class="portion-dropdown">
+                        <option value="normal">Normál adag</option>
+                        <option value="small">Kicsi adag</option>
+                        <option value="large">Nagy adag</option>
+                      </select>
+                      <div class="quantity-control">
+                        <button class="qty-btn minus">−</button>
+                        <span class="qty-value">1</span>
+                        <button class="qty-btn plus">+</button>
+                      </div>
+                      <span class="item-total">4.290 Ft</span>
+                      <button class="remove-item">🗑</button>
+                    </div>
                   </div>
-                  <span class="item-total">4.290 Ft</span>
-                  <button class="remove-item">🗑</button>
                 </div>
               </div>
 
@@ -1246,19 +1274,21 @@
                 </div>
                 <div class="cart-item-info">
                   <span class="cart-item-category">LEVES</span>
-                  <h4 class="cart-item-name">Japán gombaleves</h4>
-                </div>
-                <div class="cart-item-controls">
-                  <select class="portion-dropdown">
-                    <option value="normal">Normál adag</option>
-                  </select>
-                  <div class="quantity-control">
-                    <button class="qty-btn minus">−</button>
-                    <span class="qty-value">1</span>
-                    <button class="qty-btn plus">+</button>
+                  <div class="cart-item-header">
+                    <h4 class="cart-item-name">Japán gombaleves</h4>
+                    <div class="cart-item-controls">
+                      <select class="portion-dropdown">
+                        <option value="normal">Normál adag</option>
+                      </select>
+                      <div class="quantity-control">
+                        <button class="qty-btn minus">−</button>
+                        <span class="qty-value">1</span>
+                        <button class="qty-btn plus">+</button>
+                      </div>
+                      <span class="item-total">1.390 Ft</span>
+                      <button class="remove-item">🗑</button>
+                    </div>
                   </div>
-                  <span class="item-total">1.390 Ft</span>
-                  <button class="remove-item">🗑</button>
                 </div>
               </div>
             </div>
@@ -1269,22 +1299,28 @@
                 <div class="recommendation-card">
                   <div class="recommendation-image">
                     <img src="images/placeholder-1.png" alt="Saláta mix" />
-                    <button class="recommendation-info">
-                      <span class="info-icon"></span>
-                      Infó
-                    </button>
+                    <div class="points-badge">3 pont</div>
+                    <div class="attribute-icon">🌿</div>
+                    <button class="favorite-btn">♥</button>
                   </div>
                   <div class="recommendation-body">
+                    <div class="recommendation-header">
+                      <span class="recommendation-category">SALÁTA</span>
+                      <button class="recommendation-info">i</button>
+                    </div>
                     <h4 class="recommendation-name">Saláta mix</h4>
-                    <p class="recommendation-desc">200 gramm</p>
                     <div class="recommendation-controls">
-                      <span class="recommendation-price">500 Ft</span>
-                      <div class="quantity-control small">
-                        <button class="qty-btn minus">−</button>
-                        <span class="qty-value">1</span>
-                        <button class="qty-btn plus">+</button>
+                      <select class="portion-select">
+                        <option value="normal">500 Ft - Normál adag</option>
+                      </select>
+                      <div class="controls-bottom">
+                        <div class="quantity-control small">
+                          <button class="qty-btn minus">−</button>
+                          <span class="qty-value">1</span>
+                          <button class="qty-btn plus">+</button>
+                        </div>
+                        <button class="add-to-cart">Kosárba</button>
                       </div>
-                      <button class="add-to-cart">Kosárba</button>
                     </div>
                   </div>
                 </div>
@@ -1292,22 +1328,28 @@
                 <div class="recommendation-card">
                   <div class="recommendation-image">
                     <img src="images/placeholder-1.png" alt="Gyümölcs smoothie" />
-                    <button class="recommendation-info">
-                      <span class="info-icon"></span>
-                      Infó
-                    </button>
+                    <div class="points-badge">3 pont</div>
+                    <div class="attribute-icon">🍓</div>
+                    <button class="favorite-btn">♥</button>
                   </div>
                   <div class="recommendation-body">
+                    <div class="recommendation-header">
+                      <span class="recommendation-category">ITAL</span>
+                      <button class="recommendation-info">i</button>
+                    </div>
                     <h4 class="recommendation-name">Gyümölcs smoothie</h4>
-                    <p class="recommendation-desc">300 ml</p>
                     <div class="recommendation-controls">
-                      <span class="recommendation-price">890 Ft</span>
-                      <div class="quantity-control small">
-                        <button class="qty-btn minus">−</button>
-                        <span class="qty-value">1</span>
-                        <button class="qty-btn plus">+</button>
+                      <select class="portion-select">
+                        <option value="normal">890 Ft - Normál adag</option>
+                      </select>
+                      <div class="controls-bottom">
+                        <div class="quantity-control small">
+                          <button class="qty-btn minus">−</button>
+                          <span class="qty-value">1</span>
+                          <button class="qty-btn plus">+</button>
+                        </div>
+                        <button class="add-to-cart">Kosárba</button>
                       </div>
-                      <button class="add-to-cart">Kosárba</button>
                     </div>
                   </div>
                 </div>

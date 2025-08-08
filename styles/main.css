@@ -50,7 +50,7 @@ body {
 /* --- GLOBAL VARIABLES --- */
 :root {
   --primary: #1b3e3d;
-  --primary-muted: #ADB8B8,
+  --primary-muted: #ADB8B8;
   --light-beige: #e9e2db;
   --lighter-beige: #FBF4EE;
   --secondary: #c18f75;
@@ -403,25 +403,24 @@ header .navbar .nav-items .nav-cart .cart-items span {
 /* --- MAIN DASHBOARD ---*/
 .dashboard {
   display: flex;
-  flex-direction: row;
-  max-width: 100vw;
-  height: calc(100vh - 80px);
+  width: 100%;
+  min-height: 100vh;
 }
 .dashboard .main {
-  width: 80%;
-  display: flex;
-  flex-direction: column;
-  background: var(--light-beige);
-  overflow-y: hidden;
+  flex: 1;
+  width: 100%;
+  background: var(--lighter-beige);
+  position: relative;
+  overflow: hidden;
 }
-.dashboard .main .main-top {
+.dashboard .main-top {
   display: flex;
   flex-direction: row;
   background: var(--white);
   padding-left: 80px;
   height: 80px;
 }
-.dashboard .main .main-top .main-top-days {
+.dashboard .main-top .main-top-days {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
@@ -433,7 +432,7 @@ header .navbar .nav-items .nav-cart .cart-items span {
   left: 90px;
   top: 10px;
 }
-.dashboard .main .main-top .main-top-days .main-top-card {
+.dashboard .main-top .main-top-days .main-top-card {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -444,7 +443,7 @@ header .navbar .nav-items .nav-cart .cart-items span {
   background: var(--white);
   box-shadow: 0px 4px 40px rgba(106, 92, 77, 0.2);
 }
-.dashboard .main .main-top .main-top-days .main-top-card .day {
+.dashboard .main-top .main-top-days .main-top-card .day {
   font-family: "Conso";
   font-style: normal;
   font-weight: 600;
@@ -452,7 +451,7 @@ header .navbar .nav-items .nav-cart .cart-items span {
   line-height: 120%;
   color: var(--black);
 }
-.dashboard .main .main-top .main-top-days .main-top-card .date {
+.dashboard .main-top .main-top-days .main-top-card .date {
   font-family: "Red Hat Display";
   font-style: normal;
   font-weight: 400;
@@ -461,7 +460,7 @@ header .navbar .nav-items .nav-cart .cart-items span {
   color: var(--black);
   opacity: 0.6;
 }
-.dashboard .main .main-top .main-top-days .main-top-card .cart-tag {
+.dashboard .main-top .main-top-days .main-top-card .cart-tag {
   font-family: "Red Hat Display";
   font-style: normal;
   font-weight: 700;
@@ -472,22 +471,22 @@ header .navbar .nav-items .nav-cart .cart-items span {
   text-transform: uppercase;
   padding: 2px 6px;
 }
-.dashboard .main .main-top .main-top-days .main-top-card.in-cart {
+.dashboard .main-top .main-top-days .main-top-card.in-cart {
   height: 85px;
 }
-.dashboard .main .main-top .main-top-days .main-top-card.day-active {
+.dashboard .main-top .main-top-days .main-top-card.day-active {
   border-bottom: 3px solid var(--secondary-colorful);
 }
-.dashboard .main .main-top .main-top-days .main-top-card.day-active .day {
+.dashboard .main-top .main-top-days .main-top-card.day-active .day {
   color: var(--secondary-colorful);
 }
-.dashboard .main .main-bottom {
+.dashboard .main-bottom {
   position: relative;
 }
-.dashboard .main .main-bottom .mobile-categories-dropdown {
+.dashboard .main-bottom .mobile-categories-dropdown {
   display: none;
 }
-.dashboard .main .main-bottom .top-container {
+.dashboard .main-bottom .top-container {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
@@ -500,7 +499,7 @@ header .navbar .nav-items .nav-cart .cart-items span {
   padding-left: 90px;
   padding-right: 30px;
 }
-.dashboard .main .main-bottom .top-container .categories {
+.dashboard .main-bottom .top-container .categories {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
@@ -511,7 +510,7 @@ header .navbar .nav-items .nav-cart .cart-items span {
   min-width: fit-content;
   min-height: 31px;
 }
-.dashboard .main .main-bottom .top-container .categories p {
+.dashboard .main-bottom .top-container .categories p {
   font-family: "Red Hat Display";
   font-style: normal;
   font-weight: 400;
@@ -522,7 +521,7 @@ header .navbar .nav-items .nav-cart .cart-items span {
   min-width: -moz-fit-content;
   min-width: fit-content;
 }
-.dashboard .main .main-bottom .top-container .categories p.category-active {
+.dashboard .main-bottom .top-container .categories p.category-active {
   position: relative;
   font-family: "Red Hat Display";
   font-style: normal;
@@ -532,7 +531,7 @@ header .navbar .nav-items .nav-cart .cart-items span {
   color: var(--black);
   opacity: 1;
 }
-.dashboard .main .main-bottom .top-container .categories p.category-active a::after {
+.dashboard .main-bottom .top-container .categories p.category-active a::after {
   position: absolute;
   bottom: -10px;
   left: 0;
@@ -543,7 +542,7 @@ header .navbar .nav-items .nav-cart .cart-items span {
   height: 5px;
   background: #c18f75;
 }
-.dashboard .main .main-bottom .top-container .address-dropdown {
+.dashboard .main-bottom .top-container .address-dropdown {
   width: 300px;
   height: 40px;
   background: var(--white);
@@ -554,7 +553,7 @@ header .navbar .nav-items .nav-cart .cart-items span {
   padding: 10px 14px;
   gap: 20px;
 }
-.dashboard .main .main-bottom .top-container .address-dropdown select {
+.dashboard .main-bottom .top-container .address-dropdown select {
   width: inherit;
   height: inherit;
   font-family: "Red Hat Display";
@@ -569,7 +568,7 @@ header .navbar .nav-items .nav-cart .cart-items span {
   background-position-x: 100%;
   background-position-y: 45%;
 }
-.dashboard .main .main-bottom .top-container .address-dropdown select option {
+.dashboard .main-bottom .top-container .address-dropdown select option {
   font-family: "Red Hat Display";
   font-style: normal;
   font-weight: 400;
@@ -577,44 +576,44 @@ header .navbar .nav-items .nav-cart .cart-items span {
   line-height: 130%;
   color: var(--black);
 }
-.dashboard .main .main-bottom .main-banner {
+.dashboard .main-bottom .main-banner {
   padding: 20px 30px 20px 90px;
 }
-.dashboard .main .main-bottom .main-banner .banner-container {
+.dashboard .main-bottom .main-banner .banner-container {
   display: flex;
   flex-direction: row;
   width: 100%;
   height: 140px;
 }
-.dashboard .main .main-bottom .main-banner .banner-container .banner-image {
+.dashboard .main-bottom .main-banner .banner-container .banner-image {
   display: flex;
   justify-content: center;
   align-items: center;
   overflow: hidden;
   position: relative;
 }
-.dashboard .main .main-bottom .main-banner .banner-container .banner-image img {
+.dashboard .main-bottom .main-banner .banner-container .banner-image img {
   -o-object-fit: cover;
      object-fit: cover;
 }
-.dashboard .main .main-bottom .main-banner .banner-container .banner-image .banner-gradient {
+.dashboard .main-bottom .main-banner .banner-container .banner-image .banner-gradient {
   position: absolute;
   height: 100%;
   width: 200px;
   right: 0;
   background: linear-gradient(270deg, #6b615e 0%, rgba(107, 97, 94, 0) 100%);
 }
-.dashboard .main .main-bottom .main-banner .banner-container .banner-content {
+.dashboard .main-bottom .main-banner .banner-container .banner-content {
   display: flex;
   background: rgb(107, 97, 94);
   padding-left: 1px;
 }
-.dashboard .main .main-bottom .main-banner .banner-container .banner-content .banner-text-container {
+.dashboard .main-bottom .main-banner .banner-container .banner-content .banner-text-container {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.dashboard .main .main-bottom .main-banner .banner-container .banner-content .banner-text-container p {
+.dashboard .main-bottom .main-banner .banner-container .banner-content .banner-text-container p {
   font-family: "Conso";
   font-style: normal;
   font-weight: 400;
@@ -622,13 +621,13 @@ header .navbar .nav-items .nav-cart .cart-items span {
   line-height: 130%;
   color: var(--light-beige);
 }
-.dashboard .main .main-bottom .main-banner .banner-container .banner-content .banner-button-container {
+.dashboard .main-bottom .main-banner .banner-container .banner-content .banner-button-container {
   display: flex;
   justify-content: center;
   align-items: center;
   padding-right: 35px;
 }
-.dashboard .main .main-bottom .main-banner .banner-container .banner-content .banner-button-container button {
+.dashboard .main-bottom .main-banner .banner-container .banner-content .banner-button-container button {
   width: 197px;
   height: 45px;
   background-color: var(--white);
@@ -639,7 +638,7 @@ header .navbar .nav-items .nav-cart .cart-items span {
   line-height: 140%;
   color: var(--black);
 }
-.dashboard .main .main-bottom .cards-container {
+.dashboard .main-bottom .cards-container {
   padding: 20px 90px;
   display: flex;
   flex-direction: column;
@@ -649,7 +648,7 @@ header .navbar .nav-items .nav-cart .cart-items span {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
-.dashboard .main .main-bottom .cards-container .category-name {
+.dashboard .main-bottom .cards-container .category-name {
   font-family: "Conso";
   font-style: normal;
   font-weight: 400;
@@ -657,7 +656,7 @@ header .navbar .nav-items .nav-cart .cart-items span {
   line-height: 130%;
   color: var(--black);
 }
-.dashboard .main .main-bottom .cards-container .cards {
+.dashboard .main-bottom .cards-container .cards {
   padding-top: 10px;
   padding-bottom: 20px;
   display: flex;
@@ -665,7 +664,7 @@ header .navbar .nav-items .nav-cart .cart-items span {
   align-items: flex-start;
   gap: 25px;
 }
-.dashboard .main .main-bottom .bottom-gradient {
+.dashboard .main-bottom .bottom-gradient {
   position: absolute;
   width: 100%;
   height: 150px;
@@ -673,7 +672,7 @@ header .navbar .nav-items .nav-cart .cart-items span {
   bottom: 0px;
   background: linear-gradient(180deg, rgba(233, 226, 219, 0) 0%, #e9e2db 100%);
 }
-.dashboard .main .main-bottom .cards-container::-webkit-scrollbar {
+.dashboard .main-bottom .cards-container::-webkit-scrollbar {
   display: none;
 }
 .dashboard .cart {
@@ -1039,7 +1038,7 @@ header .navbar .nav-items .nav-cart .cart-items span {
   right: 0;
   width: 66.67vw;
   height: 100vh;
-  background: var(--lighter-beige);
+  background: var(--white);
   z-index: 2;
   transform: translateX(100%);
   transition: transform 0.3s ease;
@@ -1051,9 +1050,9 @@ header .navbar .nav-items .nav-cart .cart-items span {
 }
 .cart-modal .cart-summary-top {
   display: flex;
-  border-bottom: 1px solid var(--primary);
-  padding: 20px;
+  border-bottom: 1px solid var(--primary-muted);
   flex-shrink: 0;
+  padding: 20px;
 }
 .cart-modal .cart-summary-top .cart-summary-item {
   display: flex;
@@ -1069,6 +1068,10 @@ header .navbar .nav-items .nav-cart .cart-items span {
   flex-direction: row;
   background: var(--secondary);
   color: var(--white);
+  align-items: center;
+  justify-content: flex-start;
+  text-align: left;
+  gap: 12px;
 }
 .cart-modal .cart-summary-top .cart-summary-item.deadline .summary-text {
   color: var(--white);
@@ -1091,6 +1094,9 @@ header .navbar .nav-items .nav-cart .cart-items span {
 .cart-modal .cart-summary-top .cart-summary-item.total {
   flex: 1.5;
   color: var(--black);
+  align-items: flex-end;
+  justify-content: center;
+  text-align: right;
 }
 .cart-modal .cart-summary-top .cart-summary-item.total .summary-text {
   font-family: "Red Hat Display";
@@ -1100,6 +1106,7 @@ header .navbar .nav-items .nav-cart .cart-items span {
   line-height: 130%;
   color: var(--black);
   margin: 0;
+  align-self: flex-end;
 }
 .cart-modal .cart-summary-top .cart-summary-item.total .summary-price {
   font-family: "Red Hat Display";
@@ -1109,6 +1116,7 @@ header .navbar .nav-items .nav-cart .cart-items span {
   line-height: 130%;
   color: var(--black);
   margin: 0;
+  align-self: flex-end;
 }
 .cart-modal .cart-summary-top .cart-summary-item.primary {
   flex: 1;
@@ -1141,7 +1149,6 @@ header .navbar .nav-items .nav-cart .cart-items span {
 .cart-modal .cart-day-entry {
   display: flex;
   flex-direction: column;
-  padding: 20px;
   border-bottom: 8px solid var(--light-beige);
 }
 .cart-modal .cart-day-entry:last-child {
@@ -1152,26 +1159,27 @@ header .navbar .nav-items .nav-cart .cart-items span {
   align-items: center;
   padding: 25px 30px;
   background: var(--white);
-  border-bottom: 1px solid var(--primary);
+  border-bottom: 1px solid var(--primary-muted);
 }
 .cart-modal .cart-day-header h2 {
   font-family: "Conso";
   font-style: normal;
-  font-weight: 600;
+  font-weight: 700;
   font-size: 32px;
   line-height: 130%;
   color: var(--black);
   margin: 0;
 }
 .cart-modal .cart-day-header .cart-day-date {
-  font-family: "Red Hat Display";
+  font-family: "Conso";
   font-style: normal;
   font-weight: 400;
-  font-size: 18px;
+  font-size: 32px;
   line-height: 130%;
   color: var(--black);
-  opacity: 0.7;
   margin-left: 20px;
+  padding-left: 20px;
+  border-left: 1px solid var(--primary-muted);
 }
 .cart-modal .cart-day-header .cart-panel-close {
   background: none;
@@ -1199,15 +1207,15 @@ header .navbar .nav-items .nav-cart .cart-items span {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 .cart-modal .cart-address-section .address-header h3 {
   font-family: "Conso";
   font-style: normal;
   font-weight: 400;
-  font-size: 24px;
+  font-size: 25px;
   line-height: 130%;
-  color: var(--black);
+  color: var(--secondary);
   margin: 0;
 }
 .cart-modal .cart-address-section .address-header .address-add-btn {
@@ -1229,66 +1237,36 @@ header .navbar .nav-items .nav-cart .cart-items span {
 }
 .cart-modal .cart-address-section .address-dropdown {
   width: 100%;
-  background: var(--white);
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  padding: 16px;
-  border: 2px solid var(--light-beige);
-  gap: 20px;
-  cursor: pointer;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 .cart-modal .cart-address-section .address-dropdown select {
   width: 100%;
-  height: inherit;
+  height: 48px;
   font-family: "Red Hat Display";
   font-style: normal;
-  font-weight: 400;
+  font-weight: 700;
   font-size: 16px;
   line-height: 130%;
   color: var(--black);
   cursor: pointer;
-  background: transparent;
+  background: var(--white);
   background-image: url("../images/dropdown.png");
   background-repeat: no-repeat;
   background-position-x: calc(100% - 16px);
   background-position-y: center;
+  padding: 12px 16px;
   padding-right: 40px;
+  border: 1px solid var(--primary-muted);
+  outline: none;
 }
 .cart-modal .cart-address-section .address-dropdown select option {
   cursor: pointer;
   font-family: "Red Hat Display";
   font-style: normal;
-  font-weight: 400;
+  font-weight: 700;
   font-size: 16px;
   line-height: 130%;
   color: var(--black);
-}
-.cart-modal .cart-address-section .address-options {
-  display: flex;
-  gap: 12px;
-  margin-bottom: 20px;
-  flex-wrap: wrap;
-}
-.cart-modal .cart-address-section .address-options .address-btn {
-  padding: 8px 16px;
-  border: 2px solid var(--light-beige);
-  background: var(--white);
-  font-family: "Red Hat Display";
-  font-style: normal;
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 130%;
-  color: var(--black);
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-.cart-modal .cart-address-section .address-options .address-btn.active, .cart-modal .cart-address-section .address-options .address-btn:hover {
-  border-color: var(--primary);
-  background: var(--primary);
-  color: var(--white);
 }
 .cart-modal .cart-address-section .delivery-note {
   font-family: "Red Hat Display";
@@ -1296,15 +1274,16 @@ header .navbar .nav-items .nav-cart .cart-items span {
   font-weight: 400;
   font-size: 14px;
   line-height: 130%;
-  color: var(--black);
+  color: var(--secondary);
   margin: 0;
+  text-align: right;
 }
 .cart-modal .cart-address-section .delivery-note .price-highlight {
-  color: var(--secondary-colorful);
+  color: var(--secondary);
   font-weight: 700;
 }
 .cart-modal .cart-items-section {
-  padding: 30px;
+  padding: 0px 30px;
   background: var(--white);
   margin-bottom: 2px;
 }
@@ -1312,17 +1291,17 @@ header .navbar .nav-items .nav-cart .cart-items span {
   font-family: "Conso";
   font-style: normal;
   font-weight: 400;
-  font-size: 24px;
+  font-size: 25px;
   line-height: 130%;
-  color: var(--black);
+  color: var(--secondary);
   margin: 0 0 25px 0;
 }
 .cart-modal .cart-item {
   display: flex;
   align-items: flex-start;
   gap: 20px;
-  padding: 20px 0;
-  border-bottom: 1px solid var(--light-beige);
+  padding: 10px 0;
+  border-bottom: 1px solid var(--primary-muted);
 }
 .cart-modal .cart-item:last-child {
   border-bottom: none;
@@ -1340,33 +1319,121 @@ header .navbar .nav-items .nav-cart .cart-items span {
 }
 .cart-modal .cart-item .cart-item-info {
   flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 .cart-modal .cart-item .cart-item-info .cart-item-category {
+  font-family: "Red Hat Display";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 130%;
+  color: var(--primary-muted);
+  margin-bottom: 8px;
+  display: block;
+}
+.cart-modal .cart-item .cart-item-info .cart-item-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 12px;
+}
+.cart-modal .cart-item .cart-item-info .cart-item-header .cart-item-name {
+  font-family: "Conso";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 130%;
+  color: var(--black);
+  margin: 0;
+  flex: 1;
+}
+.cart-modal .cart-item .cart-item-info .cart-item-header .cart-item-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.cart-modal .cart-item .cart-item-info .cart-item-header .cart-item-controls .portion-dropdown {
+  padding: 8px 12px;
+  border: 1px solid var(--primary-muted);
+  background: var(--white);
   font-family: "Red Hat Display";
   font-style: normal;
   font-weight: 400;
   font-size: 12px;
   line-height: 130%;
   color: var(--black);
-  opacity: 0.6;
-  text-transform: uppercase;
-  display: block;
-  margin-bottom: 8px;
+  cursor: pointer;
+  background-image: url("../images/dropdown.png");
+  background-repeat: no-repeat;
+  background-position-x: calc(100% - 8px);
+  background-position-y: center;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  min-width: 130px;
 }
-.cart-modal .cart-item .cart-item-info .cart-item-name {
+.cart-modal .cart-item .cart-item-info .cart-item-header .cart-item-controls .quantity-control {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid var(--primary-muted);
+  background: var(--white);
+  padding: 4px 8px;
+}
+.cart-modal .cart-item .cart-item-info .cart-item-header .cart-item-controls .quantity-control .qty-btn {
+  background: none;
+  border: none;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 14px;
+  color: var(--black);
+}
+.cart-modal .cart-item .cart-item-info .cart-item-header .cart-item-controls .quantity-control .qty-btn:hover {
+  color: var(--primary);
+}
+.cart-modal .cart-item .cart-item-info .cart-item-header .cart-item-controls .quantity-control .qty-value {
+  font-family: "Red Hat Display";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 130%;
+  color: var(--black);
+  min-width: 16px;
+  text-align: center;
+}
+.cart-modal .cart-item .cart-item-info .cart-item-header .cart-item-controls .item-total {
   font-family: "Red Hat Display";
   font-style: normal;
   font-weight: 700;
   font-size: 16px;
   line-height: 130%;
   color: var(--black);
-  margin: 0 0 12px 0;
+}
+.cart-modal .cart-item .cart-item-info .cart-item-header .cart-item-controls .remove-item {
+  background: none;
+  border: none;
+  color: var(--secondary);
+  cursor: pointer;
+  font-size: 16px;
+}
+.cart-modal .cart-item .cart-item-info .cart-item-extras {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
 }
 .cart-modal .cart-item .cart-item-info .cart-item-extras .cart-extra {
   display: flex;
   align-items: center;
-  gap: 10px;
-  margin-bottom: 5px;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
 }
 .cart-modal .cart-item .cart-item-info .cart-item-extras .cart-extra span {
   font-family: "Red Hat Display";
@@ -1376,113 +1443,39 @@ header .navbar .nav-items .nav-cart .cart-items span {
   line-height: 130%;
   color: var(--black);
 }
-.cart-modal .cart-item .cart-item-info .cart-item-extras .cart-extra .extra-price {
-  font-weight: 700;
-  color: var(--secondary-colorful);
-}
-.cart-modal .cart-item .cart-item-info .cart-item-extras .cart-extra .remove-extra {
-  background: none;
-  border: none;
-  color: #999;
-  cursor: pointer;
-  font-size: 16px;
-}
-.cart-modal .cart-item .cart-item-info .cart-item-extras .cart-extra .remove-extra:hover {
-  color: var(--secondary-colorful);
-}
-.cart-modal .cart-item .cart-item-controls {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 12px;
-  min-width: 180px;
-}
-.cart-modal .cart-item .cart-item-controls .portion-dropdown {
-  padding: 10px 14px;
-  border: 2px solid var(--light-beige);
-  background: var(--white);
-  font-family: "Red Hat Display";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 130%;
-  color: var(--black);
-  cursor: pointer;
-  width: 100%;
-}
-.cart-modal .cart-item .cart-item-controls .portion-dropdown:focus {
-  outline: none;
-  border-color: var(--primary);
-}
-.cart-modal .cart-item .cart-item-controls .quantity-control {
+.cart-modal .cart-item .cart-item-info .cart-item-extras .cart-extra .extra-right {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
 }
-.cart-modal .cart-item .cart-item-controls .quantity-control .qty-btn {
-  width: 35px;
-  height: 35px;
-  background: var(--light-beige);
-  border: none;
-  font-family: "Red Hat Display";
-  font-style: normal;
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 130%;
+.cart-modal .cart-item .cart-item-info .cart-item-extras .cart-extra .extra-right .extra-price {
   color: var(--black);
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  font-weight: 600;
 }
-.cart-modal .cart-item .cart-item-controls .quantity-control .qty-btn:hover {
-  background: var(--secondary);
-  color: var(--white);
-}
-.cart-modal .cart-item .cart-item-controls .quantity-control .qty-value {
-  font-family: "Red Hat Display";
-  font-style: normal;
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 130%;
-  color: var(--black);
-  min-width: 20px;
-  text-align: center;
-}
-.cart-modal .cart-item .cart-item-controls .item-total {
-  font-family: "Red Hat Display";
-  font-style: normal;
-  font-weight: 700;
-  font-size: 18px;
-  line-height: 130%;
-  color: var(--black);
-}
-.cart-modal .cart-item .cart-item-controls .remove-item {
+.cart-modal .cart-item .cart-item-info .cart-item-extras .cart-extra .extra-right .remove-extra {
   background: none;
   border: none;
-  color: #999;
+  color: var(--secondary);
   cursor: pointer;
-  font-size: 18px;
-}
-.cart-modal .cart-item .cart-item-controls .remove-item:hover {
-  color: var(--secondary-colorful);
+  font-size: 16px;
 }
 .cart-modal .cart-recommendations-section {
   padding: 30px;
   background: var(--white);
+  margin-bottom: 2px;
 }
 .cart-modal .cart-recommendations-section h3 {
   font-family: "Conso";
   font-style: normal;
   font-weight: 400;
-  font-size: 24px;
+  font-size: 25px;
   line-height: 130%;
-  color: var(--black);
+  color: var(--secondary);
   margin: 0 0 20px 0;
 }
 .cart-modal .cart-recommendations-section .recommendations-scroll {
   display: flex;
-  gap: 25px;
+  gap: 20px;
   overflow-x: auto;
   padding-bottom: 15px;
   -ms-overflow-style: none;
@@ -1494,15 +1487,17 @@ header .navbar .nav-items .nav-cart .cart-items span {
 .cart-modal .cart-recommendations-section .recommendation-card {
   width: 270px;
   height: 460px;
-  background: var(--white);
+  background: var(--light-beige);
+  flex-shrink: 0;
   display: flex;
   flex-direction: column;
-  flex-shrink: 0;
+  overflow: hidden;
 }
 .cart-modal .cart-recommendations-section .recommendation-card .recommendation-image {
+  width: 100%;
+  height: 180px;
   position: relative;
-  width: 270px;
-  height: 140px;
+  overflow: hidden;
 }
 .cart-modal .cart-recommendations-section .recommendation-card .recommendation-image img {
   width: 100%;
@@ -1510,127 +1505,193 @@ header .navbar .nav-items .nav-cart .cart-items span {
   -o-object-fit: cover;
      object-fit: cover;
 }
-.cart-modal .cart-recommendations-section .recommendation-card .recommendation-image .recommendation-info {
+.cart-modal .cart-recommendations-section .recommendation-card .recommendation-image .points-badge {
   position: absolute;
-  right: 10px;
-  bottom: 10px;
-  background: var(--secondary-colorful);
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  padding: 4px 6px;
-  gap: 10px;
+  top: 12px;
+  left: 12px;
+  background: rgba(0, 0, 0, 0.7);
   color: var(--white);
+  padding: 6px 12px;
+  border-radius: 20px;
   font-family: "Red Hat Display";
   font-style: normal;
-  font-weight: 700;
-  font-size: 14px;
+  font-weight: 600;
+  font-size: 12px;
   line-height: 130%;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 999px;
-  border: none;
-  cursor: pointer;
 }
-.cart-modal .cart-recommendations-section .recommendation-card .recommendation-image .recommendation-info .info-icon {
-  width: 20px;
-  height: 20px;
-  background: transparent;
-  background-repeat: no-repeat;
-  background-image: url("../images/info-button-icon.png");
+.cart-modal .cart-recommendations-section .recommendation-card .recommendation-image .attribute-icon {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 32px;
+  height: 32px;
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  font-size: 16px;
+}
+.cart-modal .cart-recommendations-section .recommendation-card .recommendation-image .favorite-btn {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  width: 40px;
+  height: 40px;
+  background: var(--white);
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 18px;
+  color: #ff4444;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+.cart-modal .cart-recommendations-section .recommendation-card .recommendation-image .favorite-btn:hover {
+  color: #cc0000;
+}
+.cart-modal .cart-recommendations-section .recommendation-card .recommendation-image .favorite-btn.active {
+  color: #ff4444;
 }
 .cart-modal .cart-recommendations-section .recommendation-card .recommendation-body {
-  margin: 20px;
+  padding: 20px;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
   flex: 1;
+}
+.cart-modal .cart-recommendations-section .recommendation-card .recommendation-body .recommendation-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+.cart-modal .cart-recommendations-section .recommendation-card .recommendation-body .recommendation-header .recommendation-category {
+  font-family: "Red Hat Display";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 130%;
+  color: var(--secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.cart-modal .cart-recommendations-section .recommendation-card .recommendation-body .recommendation-header .recommendation-info {
+  background: var(--secondary);
+  border: none;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--white);
+  font-size: 12px;
+  font-weight: 600;
+}
+.cart-modal .cart-recommendations-section .recommendation-card .recommendation-body .recommendation-header .recommendation-info:hover {
+  background: var(--primary);
 }
 .cart-modal .cart-recommendations-section .recommendation-card .recommendation-body .recommendation-name {
   font-family: "Conso";
   font-style: normal;
-  font-weight: 600;
-  font-size: 18px;
-  line-height: 140%;
-  color: var(--black);
-  margin: 0 0 20px 0;
-}
-.cart-modal .cart-recommendations-section .recommendation-card .recommendation-body .recommendation-desc {
-  font-family: "Red Hat Display";
-  font-style: normal;
   font-weight: 700;
-  font-size: 15px;
+  font-size: 18px;
   line-height: 130%;
   color: var(--black);
-  opacity: 0.4;
   margin: 0 0 20px 0;
+  max-height: 60px;
+  overflow-y: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.cart-modal .cart-recommendations-section .recommendation-card .recommendation-body .recommendation-name::-webkit-scrollbar {
+  display: none;
 }
 .cart-modal .cart-recommendations-section .recommendation-card .recommendation-body .recommendation-controls {
   display: flex;
   flex-direction: column;
-  gap: 15px;
-  width: 100%;
+  gap: 12px;
   margin-top: auto;
 }
-.cart-modal .cart-recommendations-section .recommendation-card .recommendation-body .recommendation-controls .recommendation-price {
+.cart-modal .cart-recommendations-section .recommendation-card .recommendation-body .recommendation-controls .portion-select {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid var(--primary-muted);
+  background: transparent;
   font-family: "Red Hat Display";
   font-style: normal;
   font-weight: 400;
-  font-size: 15px;
+  font-size: 14px;
   line-height: 130%;
   color: var(--black);
+  cursor: pointer;
+  background-image: url("../images/dropdown.png");
+  background-repeat: no-repeat;
+  background-position-x: calc(100% - 12px);
+  background-position-y: center;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
 }
-.cart-modal .cart-recommendations-section .recommendation-card .recommendation-body .recommendation-controls .quantity-control.small {
+.cart-modal .cart-recommendations-section .recommendation-card .recommendation-body .recommendation-controls .controls-bottom {
   display: flex;
-  flex-direction: row;
+  align-items: center;
   justify-content: space-between;
-  gap: 10px;
-  width: 95px;
-  height: 45px;
-  background: var(--white);
-  border: 1px solid var(--light-beige);
-  align-self: flex-start;
+  gap: 12px;
 }
-.cart-modal .cart-recommendations-section .recommendation-card .recommendation-body .recommendation-controls .quantity-control.small .qty-btn {
-  width: 40px;
-  height: inherit;
-  font-family: "Red Hat Display";
-  font-style: normal;
-  font-weight: 700;
-  font-size: 15px;
-  line-height: 130%;
-  color: var(--black);
+.cart-modal .cart-recommendations-section .recommendation-card .recommendation-body .recommendation-controls .controls-bottom .quantity-control.small {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid var(--primary-muted);
+  background: transparent;
+  padding: 8px 12px;
+}
+.cart-modal .cart-recommendations-section .recommendation-card .recommendation-body .recommendation-controls .controls-bottom .quantity-control.small .qty-btn {
   background: none;
   border: none;
-}
-.cart-modal .cart-recommendations-section .recommendation-card .recommendation-body .recommendation-controls .quantity-control.small .qty-value {
-  font-family: "Red Hat Display";
-  font-style: normal;
-  font-weight: 700;
-  font-size: 15px;
-  line-height: 130%;
-  color: var(--black);
-  height: inherit;
+  width: 24px;
+  height: 24px;
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
+  font-size: 16px;
+  color: var(--black);
 }
-.cart-modal .cart-recommendations-section .recommendation-card .recommendation-body .recommendation-controls .add-to-cart {
-  width: 125px;
-  height: 45px;
-  background: var(--primary-gradient);
+.cart-modal .cart-recommendations-section .recommendation-card .recommendation-body .recommendation-controls .controls-bottom .quantity-control.small .qty-btn:hover {
+  color: var(--primary);
+}
+.cart-modal .cart-recommendations-section .recommendation-card .recommendation-body .recommendation-controls .controls-bottom .quantity-control.small .qty-value {
+  font-family: "Red Hat Display";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 130%;
+  color: var(--black);
+  min-width: 16px;
+  text-align: center;
+}
+.cart-modal .cart-recommendations-section .recommendation-card .recommendation-body .recommendation-controls .controls-bottom .add-to-cart {
+  flex: 1;
+  background: var(--secondary);
   border: none;
+  padding: 12px 20px;
   font-family: "Conso";
   font-style: normal;
   font-weight: 600;
-  font-size: 16px;
-  line-height: 140%;
-  text-align: center;
+  font-size: 14px;
+  line-height: 130%;
   color: var(--white);
   cursor: pointer;
   transition: background 0.3s ease;
 }
-.cart-modal .cart-recommendations-section .recommendation-card .recommendation-body .recommendation-controls .add-to-cart:hover {
-  background: var(--black);
+.cart-modal .cart-recommendations-section .recommendation-card .recommendation-body .recommendation-controls .controls-bottom .add-to-cart:hover {
+  background: var(--primary);
 }
 
 /* --- MAIN POPUP --- */
@@ -2043,14 +2104,6 @@ header .navbar .nav-items .nav-cart .cart-items span {
   .cart-modal .cart-address-section .address-dropdown select {
     font-size: 14px;
     padding-right: 35px;
-  }
-  .cart-modal .cart-address-section .address-options {
-    gap: 8px;
-    margin-bottom: 15px;
-  }
-  .cart-modal .cart-address-section .address-options .address-btn {
-    padding: 6px 12px;
-    font-size: 12px;
   }
   .cart-modal .cart-address-section .delivery-note {
     font-size: 12px;
