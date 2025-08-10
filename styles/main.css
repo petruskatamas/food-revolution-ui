@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* --- CSS RESET --- */
 * {
   margin: 0;
@@ -2363,10 +2364,10 @@ header .navbar .nav-items .nav-cart .cart-items span {
   .cart-modal .cart-item .cart-item-info .cart-item-extras .cart-extra span {
     font-size: 12px;
   }
-  .cart-modal .cart-item .cart-item-info .cart-item-extras .cart-extra .extra-right .extra-price {
+  .cart-modal .cart-item .cart-item-info .cart-item-extras .cart-extra å .extra-right .extra-price {
     font-size: 12px;
   }
-  .cart-modal .cart-item .cart-item-info .cart-item-extras .cart-extra .extra-right .remove-extra {
+  .cart-modal .cart-item .cart-item-info .cart-item-extras .cart-extra å .extra-right .remove-extra {
     font-size: 14px;
   }
   .cart-modal .cart-recommendations-section {
@@ -2456,5 +2457,4 @@ header .navbar .nav-items .nav-cart .cart-items span {
   .popup-bg .popup-container .popup-bottom .popup-data-container .data-col {
     width: 100%;
   }
-  /* deduped: desktop/mobile visibility handled in base + main mobile media query above */
 }/*# sourceMappingURL=main.css.map */
