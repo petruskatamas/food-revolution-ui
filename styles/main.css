@@ -1029,7 +1029,7 @@ header .navbar .nav-items .nav-cart .cart-items span {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(193, 143, 117, 0.6);
   z-index: 1;
 }
 .cart-modal .cart-panel {
@@ -1322,6 +1322,12 @@ header .navbar .nav-items .nav-cart .cart-items span {
   display: flex;
   flex-direction: column;
 }
+.cart-modal .cart-item .cart-item-info .cart-item-mobile-row {
+  display: none;
+}
+.cart-modal .cart-item .cart-item-info .cart-item-mobile-controls {
+  display: none;
+}
 .cart-modal .cart-item .cart-item-info .cart-item-category {
   font-family: "Red Hat Display";
   font-style: normal;
@@ -1353,6 +1359,9 @@ header .navbar .nav-items .nav-cart .cart-items span {
   display: flex;
   align-items: center;
   gap: 10px;
+  width: auto;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
 }
 .cart-modal .cart-item .cart-item-info .cart-item-header .cart-item-controls .portion-dropdown {
   padding: 8px 12px;
@@ -1373,6 +1382,7 @@ header .navbar .nav-items .nav-cart .cart-items span {
      -moz-appearance: none;
           appearance: none;
   min-width: 130px;
+  flex-shrink: 0;
 }
 .cart-modal .cart-item .cart-item-info .cart-item-header .cart-item-controls .quantity-control {
   display: flex;
@@ -1381,6 +1391,7 @@ header .navbar .nav-items .nav-cart .cart-items span {
   border: 1px solid var(--primary-muted);
   background: var(--white);
   padding: 4px 8px;
+  flex-shrink: 0;
 }
 .cart-modal .cart-item .cart-item-info .cart-item-header .cart-item-controls .quantity-control .qty-btn {
   background: none;
@@ -1407,20 +1418,35 @@ header .navbar .nav-items .nav-cart .cart-items span {
   min-width: 16px;
   text-align: center;
 }
-.cart-modal .cart-item .cart-item-info .cart-item-header .cart-item-controls .item-total {
+.cart-modal .cart-item .cart-item-info .cart-item-header .cart-item-controls .price-trash-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: auto;
+  flex-shrink: 0;
+}
+.cart-modal .cart-item .cart-item-info .cart-item-header .cart-item-controls .price-trash-group .item-total {
   font-family: "Red Hat Display";
   font-style: normal;
   font-weight: 700;
   font-size: 16px;
   line-height: 130%;
   color: var(--black);
+  white-space: nowrap;
 }
-.cart-modal .cart-item .cart-item-info .cart-item-header .cart-item-controls .remove-item {
+.cart-modal .cart-item .cart-item-info .cart-item-header .cart-item-controls .price-trash-group .remove-item {
   background: none;
   border: none;
   color: var(--secondary);
   cursor: pointer;
   font-size: 16px;
+  width: 20px;
+  height: 20px;
+  background-image: url("../images/trash-Icon.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  flex-shrink: 0;
 }
 .cart-modal .cart-item .cart-item-info .cart-item-extras {
   display: flex;
@@ -1458,6 +1484,12 @@ header .navbar .nav-items .nav-cart .cart-items span {
   color: var(--secondary);
   cursor: pointer;
   font-size: 16px;
+  width: 20px;
+  height: 20px;
+  background-image: url("../images/trash-Icon.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
 }
 .cart-modal .cart-recommendations-section {
   padding: 30px;
@@ -1485,7 +1517,7 @@ header .navbar .nav-items .nav-cart .cart-items span {
   display: none;
 }
 .cart-modal .cart-recommendations-section .recommendation-card {
-  width: 270px;
+  width: 300px;
   height: 460px;
   background: var(--light-beige);
   flex-shrink: 0;
@@ -2067,11 +2099,53 @@ header .navbar .nav-items .nav-cart .cart-items span {
     display: none;
   }
   /* --- MOBILE MODAL CART --- */
+  .cart-modal {
+    top: 68px;
+    height: calc(100vh - 68px);
+  }
+  .cart-modal::before {
+    height: 100%;
+  }
   .cart-modal .cart-panel {
-    width: 85vw;
+    width: 100vw;
+    height: calc(100vh - 68px);
   }
   .cart-modal .cart-summary-top {
-    display: none;
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    gap: 12px;
+  }
+  .cart-modal .cart-summary-top .cart-summary-item {
+    padding: 12px;
+  }
+  .cart-modal .cart-summary-top .cart-summary-item.deadline {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 8px;
+  }
+  .cart-modal .cart-summary-top .cart-summary-item.deadline .summary-text {
+    font-size: 12px;
+  }
+  .cart-modal .cart-summary-top .cart-summary-item.deadline .summary-time {
+    font-size: 24px;
+  }
+  .cart-modal .cart-summary-top .cart-summary-item.total {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  .cart-modal .cart-summary-top .cart-summary-item.total .summary-text {
+    font-size: 12px;
+    align-self: center;
+  }
+  .cart-modal .cart-summary-top .cart-summary-item.total .summary-price {
+    font-size: 14px;
+    align-self: center;
+  }
+  .cart-modal .cart-summary-top .cart-summary-item.primary .summary-text {
+    font-size: 14px;
   }
   .cart-modal .cart-day-header {
     padding: 20px;
@@ -2098,7 +2172,6 @@ header .navbar .nav-items .nav-cart .cart-items span {
     height: 25px;
   }
   .cart-modal .cart-address-section .address-dropdown {
-    padding: 12px 14px;
     margin-bottom: 15px;
   }
   .cart-modal .cart-address-section .address-dropdown select {
@@ -2120,24 +2193,168 @@ header .navbar .nav-items .nav-cart .cart-items span {
   }
   .cart-modal .cart-item {
     flex-direction: column;
-    gap: 15px;
+    gap: 0;
     padding: 15px 0;
   }
   .cart-modal .cart-item .cart-item-image {
-    width: 60px;
-    height: 60px;
-    align-self: flex-start;
+    display: none;
   }
   .cart-modal .cart-item .cart-item-info {
     width: 100%;
   }
-  .cart-modal .cart-item .cart-item-info .cart-item-category {
-    font-size: 11px;
-    margin-bottom: 6px;
+  .cart-modal .cart-item .cart-item-info .cart-item-header {
+    display: none;
   }
-  .cart-modal .cart-item .cart-item-info .cart-item-name {
+  .cart-modal .cart-item .cart-item-info .cart-item-mobile-row {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+  }
+  .cart-modal .cart-item .cart-item-info .cart-item-mobile-row .cart-item-image {
+    display: block;
+    width: 50%;
+    height: 150px;
+    flex-shrink: 0;
+  }
+  .cart-modal .cart-item .cart-item-info .cart-item-mobile-row .cart-item-image img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  .cart-modal .cart-item .cart-item-info .cart-item-mobile-row .cart-item-name-section {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .cart-modal .cart-item .cart-item-info .cart-item-mobile-row .cart-item-name-section .cart-item-category {
+    display: block;
+    font-family: "Red Hat Display";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 11px;
+    line-height: 130%;
+    color: var(--primary-muted);
+    margin: 0;
+  }
+  .cart-modal .cart-item .cart-item-info .cart-item-mobile-row .cart-item-name-section .cart-item-name {
+    font-family: "Conso";
+    font-style: normal;
+    font-weight: 600;
     font-size: 14px;
-    margin-bottom: 10px;
+    line-height: 130%;
+    color: var(--black);
+    margin: 0;
+  }
+  .cart-modal .cart-item .cart-item-info .cart-item-mobile-controls {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+  }
+  .cart-modal .cart-item .cart-item-info .cart-item-mobile-controls .portion-quantity-row {
+    display: flex;
+    gap: 12px;
+    width: 100%;
+  }
+  .cart-modal .cart-item .cart-item-info .cart-item-mobile-controls .portion-quantity-row .portion-dropdown {
+    flex: 1;
+    font-size: 12px;
+    padding: 8px 10px;
+    border: 1px solid var(--primary-muted);
+    background: var(--white);
+    font-family: "Red Hat Display";
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%;
+    color: var(--black);
+    cursor: pointer;
+    background-image: url("../images/dropdown.png");
+    background-repeat: no-repeat;
+    background-position-x: calc(100% - 8px);
+    background-position-y: center;
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+  }
+  .cart-modal .cart-item .cart-item-info .cart-item-mobile-controls .portion-quantity-row .quantity-control {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    border: 1px solid var(--primary-muted);
+    background: var(--white);
+    padding: 4px 8px;
+    justify-content: center;
+  }
+  .cart-modal .cart-item .cart-item-info .cart-item-mobile-controls .portion-quantity-row .quantity-control .qty-btn {
+    background: none;
+    border: none;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 14px;
+    color: var(--black);
+  }
+  .cart-modal .cart-item .cart-item-info .cart-item-mobile-controls .portion-quantity-row .quantity-control .qty-btn:hover {
+    color: var(--primary);
+  }
+  .cart-modal .cart-item .cart-item-info .cart-item-mobile-controls .portion-quantity-row .quantity-control .qty-value {
+    font-family: "Red Hat Display";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 130%;
+    color: var(--black);
+    min-width: 16px;
+    text-align: center;
+  }
+  .cart-modal .cart-item .cart-item-info .cart-item-mobile-controls .mobile-price-trash-row {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: auto;
+    gap: 10px;
+    margin-left: auto;
+    margin-bottom: 8px;
+  }
+  .cart-modal .cart-item .cart-item-info .cart-item-mobile-controls .mobile-price-trash-row .mobile-price-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .cart-modal .cart-item .cart-item-info .cart-item-mobile-controls .mobile-price-trash-row .mobile-price-left .item-total {
+    font-family: "Red Hat Display";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 130%;
+    color: var(--black);
+    margin: 0;
+    display: block;
+  }
+  .cart-modal .cart-item .cart-item-info .cart-item-mobile-controls .mobile-price-trash-row .remove-item {
+    background: none;
+    border: none;
+    color: var(--secondary);
+    cursor: pointer;
+    font-size: 16px;
+    width: 20px;
+    height: 20px;
+    background-image: url("../images/trash-Icon.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+  }
+  .cart-modal .cart-item .cart-item-info .cart-item-mobile-controls .mobile-price-row {
+    display: none;
+  }
+  .cart-modal .cart-item .cart-item-info .cart-item-mobile-controls .item-total {
+    display: none;
   }
   .cart-modal .cart-item .cart-item-info .cart-item-extras .cart-extra {
     gap: 8px;
@@ -2146,43 +2363,11 @@ header .navbar .nav-items .nav-cart .cart-items span {
   .cart-modal .cart-item .cart-item-info .cart-item-extras .cart-extra span {
     font-size: 12px;
   }
-  .cart-modal .cart-item .cart-item-info .cart-item-extras .cart-extra .extra-price {
+  .cart-modal .cart-item .cart-item-info .cart-item-extras .cart-extra .extra-right .extra-price {
     font-size: 12px;
   }
-  .cart-modal .cart-item .cart-item-info .cart-item-extras .cart-extra .remove-extra {
+  .cart-modal .cart-item .cart-item-info .cart-item-extras .cart-extra .extra-right .remove-extra {
     font-size: 14px;
-  }
-  .cart-modal .cart-item .cart-item-controls {
-    width: 100%;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    min-width: auto;
-    gap: 10px;
-  }
-  .cart-modal .cart-item .cart-item-controls .portion-dropdown {
-    font-size: 12px;
-    padding: 8px 10px;
-    flex: 1;
-    max-width: 140px;
-  }
-  .cart-modal .cart-item .cart-item-controls .quantity-control {
-    gap: 6px;
-  }
-  .cart-modal .cart-item .cart-item-controls .quantity-control .qty-btn {
-    width: 28px;
-    height: 28px;
-    font-size: 14px;
-  }
-  .cart-modal .cart-item .cart-item-controls .quantity-control .qty-value {
-    font-size: 14px;
-    min-width: 16px;
-  }
-  .cart-modal .cart-item .cart-item-controls .item-total {
-    font-size: 16px;
-  }
-  .cart-modal .cart-item .cart-item-controls .remove-item {
-    font-size: 16px;
   }
   .cart-modal .cart-recommendations-section {
     padding: 20px;
@@ -2196,55 +2381,56 @@ header .navbar .nav-items .nav-cart .cart-items span {
     padding-bottom: 12px;
   }
   .cart-modal .cart-recommendations-section .recommendation-card {
-    width: 200px;
-    height: 360px;
+    width: 240px;
+    height: 380px;
   }
   .cart-modal .cart-recommendations-section .recommendation-card .recommendation-image {
-    width: 200px;
-    height: 120px;
-  }
-  .cart-modal .cart-recommendations-section .recommendation-card .recommendation-image .recommendation-info {
-    right: 8px;
-    bottom: 8px;
-    padding: 3px 5px;
-    font-size: 12px;
-  }
-  .cart-modal .cart-recommendations-section .recommendation-card .recommendation-image .recommendation-info .info-icon {
-    width: 16px;
-    height: 16px;
+    width: 240px;
+    height: 140px;
   }
   .cart-modal .cart-recommendations-section .recommendation-card .recommendation-body {
-    margin: 15px;
+    padding: 12px;
+  }
+  .cart-modal .cart-recommendations-section .recommendation-card .recommendation-body .recommendation-header {
+    margin-bottom: 8px;
+  }
+  .cart-modal .cart-recommendations-section .recommendation-card .recommendation-body .recommendation-header .recommendation-category {
+    font-size: 10px;
+  }
+  .cart-modal .cart-recommendations-section .recommendation-card .recommendation-body .recommendation-header .recommendation-info {
+    width: 20px;
+    height: 20px;
+    font-size: 10px;
   }
   .cart-modal .cart-recommendations-section .recommendation-card .recommendation-body .recommendation-name {
-    font-size: 16px;
-    margin-bottom: 15px;
-  }
-  .cart-modal .cart-recommendations-section .recommendation-card .recommendation-body .recommendation-desc {
-    font-size: 13px;
-    margin-bottom: 15px;
+    font-size: 14px;
+    margin-bottom: 12px;
+    max-height: 50px;
   }
   .cart-modal .cart-recommendations-section .recommendation-card .recommendation-body .recommendation-controls {
-    gap: 12px;
+    gap: 10px;
   }
-  .cart-modal .cart-recommendations-section .recommendation-card .recommendation-body .recommendation-controls .recommendation-price {
-    font-size: 13px;
+  .cart-modal .cart-recommendations-section .recommendation-card .recommendation-body .recommendation-controls .portion-select {
+    font-size: 12px;
+    padding: 8px 12px;
   }
-  .cart-modal .cart-recommendations-section .recommendation-card .recommendation-body .recommendation-controls .quantity-control.small {
-    width: 80px;
-    height: 38px;
+  .cart-modal .cart-recommendations-section .recommendation-card .recommendation-body .recommendation-controls .controls-bottom {
+    gap: 8px;
   }
-  .cart-modal .cart-recommendations-section .recommendation-card .recommendation-body .recommendation-controls .quantity-control.small .qty-btn {
-    width: 32px;
-    font-size: 13px;
+  .cart-modal .cart-recommendations-section .recommendation-card .recommendation-body .recommendation-controls .controls-bottom .quantity-control.small {
+    padding: 4px 8px;
   }
-  .cart-modal .cart-recommendations-section .recommendation-card .recommendation-body .recommendation-controls .quantity-control.small .qty-value {
-    font-size: 13px;
+  .cart-modal .cart-recommendations-section .recommendation-card .recommendation-body .recommendation-controls .controls-bottom .quantity-control.small .qty-btn {
+    width: 20px;
+    height: 20px;
+    font-size: 12px;
   }
-  .cart-modal .cart-recommendations-section .recommendation-card .recommendation-body .recommendation-controls .add-to-cart {
-    width: 110px;
-    height: 38px;
-    font-size: 14px;
+  .cart-modal .cart-recommendations-section .recommendation-card .recommendation-body .recommendation-controls .controls-bottom .quantity-control.small .qty-value {
+    font-size: 12px;
+  }
+  .cart-modal .cart-recommendations-section .recommendation-card .recommendation-body .recommendation-controls .controls-bottom .add-to-cart {
+    font-size: 12px;
+    padding: 8px 12px;
   }
   /* --- MOBILE MAIN POPUP --- */
   .popup-bg .popup-container {
@@ -2270,4 +2456,5 @@ header .navbar .nav-items .nav-cart .cart-items span {
   .popup-bg .popup-container .popup-bottom .popup-data-container .data-col {
     width: 100%;
   }
+  /* deduped: desktop/mobile visibility handled in base + main mobile media query above */
 }/*# sourceMappingURL=main.css.map */

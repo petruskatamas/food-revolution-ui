@@ -1174,7 +1174,7 @@ header {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5);
+    background: #C18F7599;
     z-index: 1;
   }
 
@@ -1503,6 +1503,9 @@ header {
       flex: 1;
       display: flex;
       flex-direction: column;
+      // default desktop: hide mobile-only pieces
+      .cart-item-mobile-row { display: none; }
+      .cart-item-mobile-controls { display: none; }
 
       .cart-item-category {
         font-family: "Red Hat Display";
@@ -1537,6 +1540,9 @@ header {
           display: flex;
           align-items: center;
           gap: 10px;
+          width: auto;
+          justify-content: flex-start;
+          flex-wrap: nowrap;
 
           .portion-dropdown {
             padding: 8px 12px;
@@ -1555,6 +1561,7 @@ header {
             background-position-y: center;
             appearance: none;
             min-width: 130px;
+            flex-shrink: 0;
           }
 
           .quantity-control {
@@ -1564,6 +1571,7 @@ header {
             border: 1px solid var(--primary-muted);
             background: var(--white);
             padding: 4px 8px;
+            flex-shrink: 0;
 
             .qty-btn {
               background: none;
@@ -1594,21 +1602,37 @@ header {
             }
           }
 
-          .item-total {
-            font-family: "Red Hat Display";
-            font-style: normal;
-            font-weight: 700;
-            font-size: 16px;
-            line-height: 130%;
-            color: var(--black);
-          }
+          .price-trash-group {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-left: auto;
+            flex-shrink: 0;
 
-          .remove-item {
-            background: none;
-            border: none;
-            color: var(--secondary);
-            cursor: pointer;
-            font-size: 16px;
+            .item-total {
+              font-family: "Red Hat Display";
+              font-style: normal;
+              font-weight: 700;
+              font-size: 16px;
+              line-height: 130%;
+              color: var(--black);
+              white-space: nowrap;
+            }
+
+            .remove-item {
+              background: none;
+              border: none;
+              color: var(--secondary);
+              cursor: pointer;
+              font-size: 16px;
+              width: 20px;
+              height: 20px;
+              background-image: url("../images/trash-Icon.png");
+              background-repeat: no-repeat;
+              background-position: center;
+              background-size: contain;
+              flex-shrink: 0;
+            }
           }
         }
       }
@@ -1651,6 +1675,12 @@ header {
               color: var(--secondary);
               cursor: pointer;
               font-size: 16px;
+              width: 20px;
+              height: 20px;
+              background-image: url("../images/trash-Icon.png");
+              background-repeat: no-repeat;
+              background-position: center;
+              background-size: contain;
             }
           }
         }
@@ -1687,7 +1717,7 @@ header {
     }
 
     .recommendation-card {
-      width: 270px;
+      width: 300px;
       height: 460px;
       background: var(--light-beige);
       flex-shrink: 0;
@@ -2367,12 +2397,62 @@ header {
   /* --- MOBILE MODAL CART --- */
   
   .cart-modal {
+    top: 68px;
+    height: calc(100vh - 68px);
+    &::before {
+      height: 100%;
+    }
     .cart-panel {
-      width: 85vw;
+      width: 100vw;
+      height: calc(100vh - 68px);
     }
 
     .cart-summary-top {
-      display: none;
+      display: flex;
+      flex-direction: column;
+      padding: 15px;
+      gap: 12px;
+
+      .cart-summary-item {
+        padding: 12px;
+        
+        &.deadline {
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+          gap: 8px;
+          
+          .summary-text {
+            font-size: 12px;
+          }
+          
+          .summary-time {
+            font-size: 24px;
+          }
+        }
+
+        &.total {
+          align-items: center;
+          justify-content: center;
+          text-align: center;
+          
+          .summary-text {
+            font-size: 12px;
+            align-self: center;
+          }
+          
+          .summary-price {
+            font-size: 14px;
+            align-self: center;
+          }
+        }
+
+        &.primary {
+          .summary-text {
+            font-size: 14px;
+          }
+        }
+      }
     }
 
     .cart-day-header {
@@ -2406,7 +2486,6 @@ header {
       }
 
       .address-dropdown {
-        padding: 12px 14px;
         margin-bottom: 15px;
 
         select {
@@ -2435,26 +2514,183 @@ header {
 
     .cart-item {
       flex-direction: column;
-      gap: 15px;
+      gap: 0;
       padding: 15px 0;
 
       .cart-item-image {
-        width: 60px;
-        height: 60px;
-        align-self: flex-start;
+        display: none;
       }
 
       .cart-item-info {
         width: 100%;
 
-        .cart-item-category {
-          font-size: 11px;
-          margin-bottom: 6px;
+        .cart-item-header { display: none; }
+
+        .cart-item-mobile-row {
+          display: flex;
+          gap: 15px;
+          margin-bottom: 15px;
+
+          .cart-item-image {
+            display: block;
+            width: 50%;
+            height: 150px;
+            flex-shrink: 0;
+
+            img {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+            }
+          }
+
+          .cart-item-name-section {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+
+            .cart-item-category {
+              display: block;
+              font-family: "Red Hat Display";
+              font-style: normal;
+              font-weight: 500;
+              font-size: 11px;
+              line-height: 130%;
+              color: var(--primary-muted);
+              margin: 0;
+            }
+
+            .cart-item-name {
+              font-family: "Conso";
+              font-style: normal;
+              font-weight: 600;
+              font-size: 14px;
+              line-height: 130%;
+              color: var(--black);
+              margin: 0;
+            }
+          }
         }
 
-        .cart-item-name {
-          font-size: 14px;
-          margin-bottom: 10px;
+        .cart-item-mobile-controls {
+          display: flex;
+          flex-direction: column;
+          gap: 12px;
+          width: 100%;
+
+          .portion-quantity-row {
+            display: flex;
+            gap: 12px;
+            width: 100%;
+
+            .portion-dropdown {
+              flex: 1;
+              font-size: 12px;
+              padding: 8px 10px;
+              border: 1px solid var(--primary-muted);
+              background: var(--white);
+              font-family: "Red Hat Display";
+              font-style: normal;
+              font-weight: 400;
+              line-height: 130%;
+              color: var(--black);
+              cursor: pointer;
+              background-image: url("../images/dropdown.png");
+              background-repeat: no-repeat;
+              background-position-x: calc(100% - 8px);
+              background-position-y: center;
+              appearance: none;
+            }
+
+            .quantity-control {
+              flex: 1;
+              display: flex;
+              align-items: center;
+              gap: 6px;
+              border: 1px solid var(--primary-muted);
+              background: var(--white);
+              padding: 4px 8px;
+              justify-content: center;
+
+              .qty-btn {
+                background: none;
+                border: none;
+                width: 28px;
+                height: 28px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+                font-size: 14px;
+                color: var(--black);
+
+                &:hover {
+                  color: var(--primary);
+                }
+              }
+
+              .qty-value {
+                font-family: "Red Hat Display";
+                font-style: normal;
+                font-weight: 600;
+                font-size: 14px;
+                line-height: 130%;
+                color: var(--black);
+                min-width: 16px;
+                text-align: center;
+              }
+            }
+          }
+
+          .mobile-price-trash-row {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            width: auto;
+            gap: 10px;
+            margin-left: auto;
+            margin-bottom: 8px;
+
+            .mobile-price-left {
+              display: flex;
+              align-items: center;
+              gap: 10px;
+
+              .item-total {
+                font-family: "Red Hat Display";
+                font-style: normal;
+                font-weight: 700;
+                font-size: 16px;
+                line-height: 130%;
+                color: var(--black);
+                margin: 0;
+                display: block;
+              }
+            }
+
+            .remove-item {
+              background: none;
+              border: none;
+              color: var(--secondary);
+              cursor: pointer;
+              font-size: 16px;
+              width: 20px;
+              height: 20px;
+              background-image: url("../images/trash-Icon.png");
+              background-repeat: no-repeat;
+              background-position: center;
+              background-size: contain;
+            }
+          }
+
+          .mobile-price-row {
+            display: none;
+          }
+
+          .item-total {
+            display: none;
+          }
         }
 
         .cart-item-extras {
@@ -2466,53 +2702,16 @@ header {
               font-size: 12px;
             }
 
-            .extra-price {
-              font-size: 12px;
+            .extra-right {
+              .extra-price {
+                font-size: 12px;
+              }
+
+              .remove-extra {
+                font-size: 14px;
+              }
             }
-
-            .remove-extra {
-              font-size: 14px;
-            }
           }
-        }
-      }
-
-      .cart-item-controls {
-        width: 100%;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        min-width: auto;
-        gap: 10px;
-
-        .portion-dropdown {
-          font-size: 12px;
-          padding: 8px 10px;
-          flex: 1;
-          max-width: 140px;
-        }
-
-        .quantity-control {
-          gap: 6px;
-
-          .qty-btn {
-            width: 28px;
-            height: 28px;
-            font-size: 14px;
-          }
-
-          .qty-value {
-            font-size: 14px;
-            min-width: 16px;
-          }
-        }
-
-        .item-total {
-          font-size: 16px;
-        }
-
-        .remove-item {
-          font-size: 16px;
         }
       }
     }
@@ -2531,64 +2730,66 @@ header {
       }
 
       .recommendation-card {
-        width: 200px;
-        height: 360px;
+        width: 240px;
+        height: 380px;
 
         .recommendation-image {
-          width: 200px;
-          height: 120px;
-
-          .recommendation-info {
-            right: 8px;
-            bottom: 8px;
-            padding: 3px 5px;
-            font-size: 12px;
-
-            .info-icon {
-              width: 16px;
-              height: 16px;
-            }
-          }
+          width: 240px;
+          height: 140px;
         }
 
         .recommendation-body {
-          margin: 15px;
+          padding: 12px;
 
-          .recommendation-name {
-            font-size: 16px;
-            margin-bottom: 15px;
+          .recommendation-header {
+            margin-bottom: 8px;
+
+            .recommendation-category {
+              font-size: 10px;
+            }
+
+            .recommendation-info {
+              width: 20px;
+              height: 20px;
+              font-size: 10px;
+            }
           }
 
-          .recommendation-desc {
-            font-size: 13px;
-            margin-bottom: 15px;
+          .recommendation-name {
+            font-size: 14px;
+            margin-bottom: 12px;
+            max-height: 50px;
           }
 
           .recommendation-controls {
-            gap: 12px;
+            gap: 10px;
 
-            .recommendation-price {
-              font-size: 13px;
+            .portion-select {
+              font-size: 12px;
+              padding: 8px 12px;
             }
 
-            .quantity-control.small {
-              width: 80px;
-              height: 38px;
+            .controls-bottom {
+              gap: 8px;
 
-              .qty-btn {
-                width: 32px;
-                font-size: 13px;
+              .quantity-control.small {
+                padding: 4px 8px;
+
+                .qty-btn {
+                  width: 20px;
+                  height: 20px;
+                  font-size: 12px;
+                }
+
+                .qty-value {
+                  font-size: 12px;
+                }
               }
 
-              .qty-value {
-                font-size: 13px;
+              .add-to-cart {
+                font-size: 12px;
+                padding: 8px 12px;
               }
-            }
-
-            .add-to-cart {
-              width: 110px;
-              height: 38px;
-              font-size: 14px;
             }
           }
         }
@@ -2624,5 +2825,8 @@ header {
       }
     }
   }
+
+  /* deduped: desktop/mobile visibility handled in base + main mobile media query above */
 }
+
 
