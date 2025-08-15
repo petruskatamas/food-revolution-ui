@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="custom-bootstrap-styles.css" />
+  </head>
+  <body id="root" class="min-vh-100">
+    <div class="position-relative">
+      <div class="position-fixed top-0 start-0 w-100 h-100" style="background-image: url('../images/placeholder-8.png'); background-size: cover; background-position: center; background-repeat: no-repeat;"></div>
+      <div class="position-fixed top-0 start-0 w-100 h-100" style="background-color: #c18f75; opacity: 0.85;"></div>
+
+      <div class="container position-relative d-flex flex-column align-items-center py-4 py-md-5" style="z-index: 2;">
+        <div class="logo d-flex justify-content-center align-items-center mb-4">
+          <img src="../images/logo.png" class="img-fluid" style="height: 60px;" alt="Foodrevo logo" />
+        </div>
+
+        <div class="bg-white w-100 p-4 p-md-5" style="max-width: 800px;">
+          <div class="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center gap-2 mb-3">
+            <h2 class="font-conso fs-2 m-0">Regisztráció</h2>
+            <div class="d-flex flex-column flex-sm-row gap-2">
+              <a href="#"><img src="../images/play-store.png" alt="Get it on Google Play" class="img-fluid" style="height: 40px;" /></a>
+              <a href="#"><img src="../images/app-strore.png" alt="Available on App Store" class="img-fluid" style="height: 40px;" /></a>
+            </div>
+          </div>
+
+          <form>
+            <div class="mb-3">
+              <label class="form-label" for="residency">Település / kerület</label>
+              <select class="form-select rounded-0 border-2" name="residency" id="residency">
+                <option value="">Válassz települést vagy budapesti kerületet</option>
+                <option value="residency-1">1091, Budapest</option>
+                <option value="residency-2">1165, Budapest</option>
+                <option value="residency-3">1014, Budapest</option>
+              </select>
+              <small class="text-muted d-block mt-1">(az alábbi helyszínekre szállítunk ki)</small>
+            </div>
+
+            <div class="row g-3 mb-2">
+              <div class="col-md-6">
+                <label class="form-label" for="lastname">Vezetéknév</label>
+                <input class="form-control rounded-0 border-2" type="text" id="lastname" name="lastname" placeholder="Vezetéknév" />
+              </div>
+              <div class="col-md-6">
+                <label class="form-label" for="firstname">Keresztnév</label>
+                <input class="form-control rounded-0 border-2" type="text" id="firstname" name="firstname" placeholder="Keresztnév" />
+              </div>
+            </div>
+
+            <div class="form-check mb-3">
+              <input class="form-check-input rounded-0 border-2" type="checkbox" id="different-phone" name="different-phone">
+              <label class="form-check-label ms-2" for="different-phone">Külföldi telefonszámom van</label>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label" for="phone">Telefon</label>
+              <input class="form-control rounded-0 border-2" type="tel" id="phone" name="phone" placeholder="Telefonszám" />
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label" for="email">E-mail cím</label>
+              <input class="form-control rounded-0 border-2" type="email" id="email" name="email" placeholder="E-mail cím" />
+            </div>
+
+            <div class="mb-3">
+              <h3 class="font-conso fs-4 mb-3">Honnan hallottál rólunk?</h3>
+              <div class="d-flex flex-column gap-2">
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="source" id="source-facebook" value="facebook">
+                  <label class="form-check-label ms-2" for="source-facebook">Facebook</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="source" id="source-instagram" value="instagram">
+                  <label class="form-check-label ms-2" for="source-instagram">Instagram</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="source" id="source-social" value="social">
+                  <label class="form-check-label ms-2" for="source-social">Egyéb social media</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="source" id="personal-radio" value="personal">
+                  <label class="form-check-label ms-2" for="personal-radio">Személyes ajánlás</label>
+                </div>
+                <div class="mt-1 d-none" id="personal-input">
+                  <input class="form-control rounded-0 border-2" type="text" placeholder="Megmondhatod, hogy kitől?" />
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="source" id="source-offline" value="offline">
+                  <label class="form-check-label ms-2" for="source-offline">Offline hirdetés (plakát, metró, brossúra)</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="source" id="source-other" value="other">
+                  <label class="form-check-label ms-2" for="source-other">Egyéb</label>
+                </div>
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary w-100 fw-semibold rounded-0" style="--bs-btn-bg: var(--primary); --bs-btn-border-color: var(--primary);">Regisztráció</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Show/hide personal recommendation text field
+      document.addEventListener('DOMContentLoaded', function() {
+        const personalRadio = document.getElementById('personal-radio');
+        const personalInput = document.getElementById('personal-input');
+        const allRadios = document.querySelectorAll('input[name="source"]');
+
+        const togglePersonalInput = () => {
+          if (personalRadio.checked) {
+            personalInput.classList.remove('d-none');
+          } else {
+            personalInput.classList.add('d-none');
+          }
+        };
+
+        allRadios.forEach(radio => {
+          radio.addEventListener('change', togglePersonalInput);
+        });
+
+        togglePersonalInput();
+      });
+    </script>
+  </body>
+</html>
+
