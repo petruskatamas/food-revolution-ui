@@ -11,49 +11,49 @@
   </head>
   <body id="root" class="min-vh-100">
     <div class="position-relative min-vh-100" style="background-image: url('../images/placeholder-8.png'); background-size: cover; background-position: center;">
-      <div class="position-absolute top-0 start-0 w-100 h-100" style="background-color: #c18f75; opacity: 0.85;"></div>
+      <div class="position-absolute top-0 start-0 w-100 h-100 bg-brand-secondary opacity-75"></div>
 
       <div class="container position-relative d-flex flex-column align-items-center py-4 py-md-5" style="z-index: 2;">
         <div class="logo d-flex justify-content-center align-items-center mb-4">
-          <img src="../images/logo.png" class="img-fluid" style="height: 60px;" alt="Foodrevo logo" />
+          <img src="../images/logo.png" class="img-fluid h-60" alt="Foodrevo logo" />
         </div>
 
-        <div class="bg-white w-100 p-4 p-md-5" style="max-width: 800px;">
+        <div class="bg-brand-white w-100 p-4 p-md-5 mx-auto" style="max-width: 800px;">
           <div class="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center gap-2 mb-3">
             <div class="btn-group" role="group" aria-label="Language toggle">
-              <button type="button" class="btn btn-outline-primary rounded-0 active" data-lang="hu" style="--bs-btn-color: var(--primary); --bs-btn-border-color: var(--primary); --bs-btn-active-bg: var(--primary); --bs-btn-active-border-color: var(--primary); --bs-btn-active-color: #fff;">HU</button>
-              <button type="button" class="btn btn-outline-primary rounded-0" data-lang="en" style="--bs-btn-color: var(--primary); --bs-btn-border-color: var(--primary); --bs-btn-active-bg: var(--primary); --bs-btn-active-border-color: var(--primary); --bs-btn-active-color: #fff;">EN</button>
+              <button type="button" class="btn btn-outline-primary rounded-0 active text-brand-primary border-brand-primary bg-brand-primary text-brand-white" data-lang="hu">HU</button>
+              <button type="button" class="btn btn-outline-primary rounded-0 text-brand-primary border-brand-primary" data-lang="en">EN</button>
             </div>
             <div class="d-flex flex-column flex-sm-row gap-2">
-              <a href="#"><img src="../images/play-store.png" alt="Get it on Google Play" class="img-fluid" style="height: 40px;" /></a>
-              <a href="#"><img src="../images/app-strore.png" alt="Available on App Store" class="img-fluid" style="height: 40px;" /></a>
+              <a href="#"><img src="../images/play-store.png" alt="Get it on Google Play" class="img-fluid h-40" /></a>
+              <a href="#"><img src="../images/app-strore.png" alt="Available on App Store" class="img-fluid h-40" /></a>
             </div>
           </div>
 
-          <h2 class="font-conso fs-2 mb-3">Belépés</h2>
+          <h2 class="text-conso fs-2 mb-3">Belépés</h2>
           <form>
             <div class="mb-3">
               <label class="form-label small fw-medium mb-1" for="email">E-mail</label>
-              <input class="form-control rounded-0 border-2" type="email" id="email" name="email" placeholder="E-mail" />
+              <input class="form-control rounded-0 border border-2 border-brand-primary-muted" type="email" id="email" name="email" placeholder="E-mail" />
             </div>
             <div class="mb-3">
               <label class="form-label small fw-medium mb-1" for="password">Jelszó</label>
-              <input class="form-control rounded-0 border-2" type="password" id="password" name="password" placeholder="Jelszó" />
+              <input class="form-control rounded-0 border border-2 border-brand-primary-muted" type="password" id="password" name="password" placeholder="Jelszó" />
             </div>
 
             <div class="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center gap-3 mb-2">
               <div class="form-check m-0">
-                <input class="form-check-input rounded-0 border-2" type="checkbox" id="remember" name="remember">
+                <input class="form-check-input rounded-0 border border-2 border-brand-primary-muted" type="checkbox" id="remember" name="remember">
                 <label class="form-check-label ms-2" for="remember">Belépve maradok</label>
               </div>
 
               <div class="d-flex gap-2">
-                <button type="button" class="btn btn-primary rounded-0 fs-6 px-3 py-2" style="--bs-btn-bg: var(--primary); --bs-btn-border-color: var(--primary);">Elfelejtett jelszó</button>
-                <button type="button" class="btn btn-primary rounded-0 fs-6 px-3 py-2" style="--bs-btn-bg: var(--primary); --bs-btn-border-color: var(--primary);">Regisztráció</button>
+                <button type="button" class="btn btn-primary rounded-0 fs-6 px-3 py-2 bg-brand-primary border-brand-primary text-brand-white">Elfelejtett jelszó</button>
+                <button type="button" class="btn btn-primary rounded-0 fs-6 px-3 py-2 bg-brand-primary border-brand-primary text-brand-white">Regisztráció</button>
               </div>
             </div>
 
-            <button type="submit" class="btn btn-primary w-100 fw-semibold rounded-0" style="--bs-btn-bg: var(--primary); --bs-btn-border-color: var(--primary);">Belépés</button>
+            <button type="submit" class="text-conso btn btn-primary w-100 login-btn-h fw-semibold rounded-0 bg-brand-primary border-brand-primary text-brand-white">Belépés</button>
           </form>
         </div>
       </div>
@@ -67,10 +67,18 @@
         langButtons.forEach(button => {
           button.addEventListener('click', function() {
             // Remove active class from all buttons
-            langButtons.forEach(btn => btn.classList.remove('active'));
+            langButtons.forEach(btn => {
+              btn.classList.remove('active');
+              btn.classList.remove('bg-brand-primary');
+              btn.classList.remove('text-brand-white');
+              btn.classList.add('text-brand-primary');
+            });
 
             // Add active class to clicked button
             this.classList.add('active');
+            this.classList.add('bg-brand-primary');
+            this.classList.add('text-brand-white');
+            this.classList.remove('text-brand-primary');
 
             // Here you could add language switching logic
             const selectedLang = this.getAttribute('data-lang');
